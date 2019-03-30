@@ -1,4 +1,5 @@
 %%%----Versions-----------------------------
+%stable-limit5.tex 2018/6/22  by
 %stable-limit4.tex 2018/6/21  by Yanxia-------
 %stable-limit3.tex 2018/6/13  by Zhenyao-------
 
@@ -10,6 +11,9 @@
 \usepackage{mathtools}
 \usepackage{stackrel}
 \usepackage{autonum}
+%new
+\usepackage{amsmath}
+%end new
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
@@ -21,6 +25,9 @@
 \newtheorem{innerasp}{Assumption}
 \newenvironment{asp}[1]{\renewcommand\theinnerasp{#1}\innerasp}{\endinnerasp}
 \numberwithin{equation}{section}
+%new
+\allowdisplaybreaks
+%end new
 
 %---Top matter------------------------------
 \begin{document}
@@ -67,10 +74,10 @@
 \section{Introduction}
 
 \subsection{Background}
-    The study of the asymptotic behavior of critical branching particle systems has a long history.
+%    The study of the asymptotic behavior 
+   The study of the asymptotic behaviors
+    of critical branching particle systems has a long history.
 	It is well known that for a critical Galton-Watson
-    %process $(Z_n)$,
-    %YX process $\{(Z_n)_{n = 0,1,\dots}; P\}$,	
     process $\{(Z_n)_{n\geq 0}; P\}$,	
 	we have
 	\[\label{eq: Kolmogorov's result with finite variance}
@@ -88,23 +95,20 @@
 	Since then, lots of analogous results were obtained for more general critical branching processes with finite 2nd moment, see \cite{AsmussenHering1983Branching}, \cite{AthreyaNey1974Functionals}, \cite{AthreyaNey1972Branching} and \cite{JoffeSpitzer1967On-multitype} for example.
 	
 
-    %YX Notice that, see \cite{KestenNeySpitzer1966The-Galton-Watson} for example,
      Notice that,
     \eqref{eq: Kolmogorov's result with finite variance} and \eqref{eq: Yaglom's result with finite variance} are still valid
-  %YX    even if the 2nd moment is infinite, i.e., $\sigma^2 = \infty$.
    even if  $\sigma^2 = \infty$,  see \cite{KestenNeySpitzer1966The-Galton-Watson} for example.
     In this case, the limits in \eqref{eq: Kolmogorov's result with finite variance} and \eqref{eq: Yaglom's result with finite variance} are degenerate,
-    %YX so a more appropriate scaling is needed.
-    and then  more appropriate scalings are needed.
-	%YX This was first obtained
-Research in this direction was first gaven
+%    and then  more appropriate scalings are needed.
+   and thus more appropriate scalings are needed.
+%Research in this direction was first gaven
+Research in this direction was first conducted 
 by Zolotarev \cite{Zolotarev1957More} in a simplified continuous time set-up,
-	which is then extended by Slack \cite{Slack1968A-branching} to discrete time critical Galton-Watson processes allowing infinite variance:  Consider a critical Galton-Watson
-	%process $(Z_n)$
-	%YX process $\{(Z_n)_{n = 0,1,\dots}; P\}$
+	which is then extended by Slack \cite{Slack1968A-branching} to discrete time critical Galton-Watson processes allowing infinite 
+%	variance:  Consider a critical Galton-Watson
+	variance. The main result of  \cite{Slack1968A-branching} can be stated as follows. Consider a critical Galton-Watson
     process $\{(Z_n)_{n\geq 0}; P\}$
 	with infinite variance.
-%YX	Assuming that  the corresponding offspring generating function $f(s)$
 Assume that the  generating function $f(s)$ of the offspring distribution
 	is of the form
 \[\label{eq: offspring generating function with alpha moment}
@@ -112,13 +116,14 @@ Assume that the  generating function $f(s)$ of the offspring distribution
 	= s + (1-s)^{1+ \alpha} l(1-s),
 	\quad s\geq 0,
 \]
-	where $l$ is a slowly varying function at $0$ and $0 < \alpha \leq 1$.
-%YX , then
+%	where $l$ is a slowly varying function at $0$ and $0 < \alpha \leq 1$.
+where $\alpha\in (0, 1]$ and $l$ is a function slowly varying at $0$.
 Then
 \[ \label{eq: extinction probability of critical GW process without 2rd moment}
 	P(Z_n > 0) = n^{-1/\alpha} L(n),
 \]
-	where $L$ is a slowly varying function at $\infty$, and
+%	where $L$ is a slowly varying function at $\infty$, and
+	where $L$ is a function slowly varying at $\infty$, and
 \[\label{eq: conditional distribution of critical GW process without 2rd moment}
 	\big\{ P(Z_n > 0) Z_n; P(\cdot | Z_n > 0)\big\}
 	\xrightarrow[n\to \infty]{\operatorname{law}} \mathbf z^{(\alpha)},
@@ -130,15 +135,28 @@ Then
 	\quad u \geq 0.
 \]
 	In this paper, we will call the distribution of $\mathbf z^{(\alpha)}$ \emph{Zolotarev's distribution with index $\alpha$}.
-	Slack \cite{Slack1972Further} considered the converse of this problem:
-	In order $\big\{ P(Z_n > 0) Z_n; P(\cdot | Z_n > 0)\big\}$ to have a non-degenerate weak limit, the offspring generating function must be of  the form of \eqref{eq: offspring generating function with alpha moment} for some $0 < \alpha \leq 1$.
+%	Slack \cite{Slack1972Further} considered the converse of this problem:
+	Slack \cite{Slack1972Further} also considered the converse of this problem:
+%	In order $\big\{ P(Z_n > 0) Z_n; P(\cdot | Z_n > 0)\big\}$ to have 
+	In order for $\big\{ P(Z_n > 0) Z_n; P(\cdot | Z_n > 0)\big\}$ to have
+	a non-degenerate weak limit, 
+%	the offspring generating function must be of  
+    the generating function of the offspring distribution must be of  
+	the form of \eqref{eq: offspring generating function with alpha moment} for some $0 < \alpha \leq 1$.
 	For shorter and more unified approaches to these results, we refer our readers to Borovkov \cite{Borovkov1989Method} and Pakes \cite{Pakes2010Critical}.
 
-	Goldstein and Hoppe \cite{GoldsteinHoppe1978Critical} considered the asymptotic behavior of multitype critical Galton-Watson processes without the 2nd moment condition:
+	Goldstein and Hoppe \cite{GoldsteinHoppe1978Critical} considered the asymptotic behavior of multitype critical Galton-Watson processes without the 2nd moment 
+%	condition:
+    condition. Their main result can be stated as follows. 
 	Let $\mathbf Z_n=(Z_n^{(1)}, \dots, Z_n^{(d)})$ be a critical, $d$-type, nonsingular and positively regular Galton-Watson process.
-	 Denote by $\mathbf F(\mathbf s) = (\mathbf F_1(\mathbf s), \dots, \mathbf F_d(\mathbf s))$ the corresponding offspring probability generating function,
+	 Denote by $\mathbf F(\mathbf s) = (\mathbf F_1(\mathbf s), \dots, \mathbf F_d(\mathbf s))$ 
+%	 the corresponding offspring probability generating function,
+     the generating function of the offspring distribution,
 	and  by $\mathbf F^{(n)}(\mathbf s), ~ n>1,$ its $n$th iterates.
-	Let $M$ be the mean matrix of $\mathbf Z$, $\mathbf v$ and $\mathbf u$ be its left and right principal  eigenvectors respectively, corresponding to the maximal eigenvalue 1, and normalized so that $\mathbf v \cdot \mathbf u = 1$ and $\mathbf 1 \cdot \mathbf u = 1$, with $\mathbf 1$ being the vector $(1,\dots, 1)$.
+	Let $M$ be the mean matrix of $\mathbf Z$, $\mathbf v$ and $\mathbf u$ be 
+%	its left and right principal  eigenvectors respectively, 
+	its left and right  eigenvectors, respectively, 
+	corresponding to the maximal eigenvalue 1, and normalized so that $\mathbf v \cdot \mathbf u = 1$ and $\mathbf 1 \cdot \mathbf u = 1$, with $\mathbf 1$ being the vector $(1,\dots, 1)$.
 	Suppose that
 \[\label{eq: regularly varying condition for multitype branching process}
 	\mathbf v G(\mathbf 1-x\mathbf u) \mathbf u
@@ -159,16 +177,20 @@ It was shown in \cite{GoldsteinHoppe1978Critical} that,
  for each $\mathbf i \in \mathbb N_0^d \setminus \{\mathbf 0\}$,
 \[ \label{eq: limit behavior of the exitinction probability without finite variance of multitype branching processes}
 	n L(a_n) \operatorname{P}(\mathbf Z_n \neq \mathbf 0| Z_0 = \mathbf i)^\alpha
-	\xrightarrow[n\to \infty]{} (\mathbf i \cdot \mathbf u)^\alpha / \alpha,
+	\xrightarrow[n\to \infty]{} 
+	%(\mathbf i \cdot \mathbf u)^\alpha / \alpha,
+	\frac{(\mathbf i \cdot \mathbf u)^\alpha}\alpha,
 \]
 	and for each $\mathbf j \in \mathbb N_0^d$,
 \[\label{eq: conditioned normalized multitype branching process}
 	\{ a_n \mathbf Z_n \cdot \mathbf j ; P(\cdot | \mathbf Z_n \neq \mathbf 0, \mathbf Z_0 = \mathbf i)\}
 	\xrightarrow[n\to \infty]{\operatorname{law}} (\mathbf v\cdot \mathbf j) \mathbf z^{(\alpha)},
 \]
-  %YX  where $\mathbf z^{(\alpha)}$ is a Zolotarev's random variable with index $\alpha$.
   where $\mathbf z^{(\alpha)}$ is a random variable with  Zolotarev's distribution with index  $\alpha$.
-	For the converse of this problem, Vatutin \cite{Vatutin1977Limit} showed that in order for the left side of \eqref{eq: conditioned normalized multitype branching process} has a non-degenerate weak limit, one must have \eqref{eq: regularly varying condition for multitype branching process} for some $0 < \alpha \leq 1$.
+	For the converse of this problem, Vatutin \cite{Vatutin1977Limit} showed that in order for the left side of \eqref{eq: conditioned normalized multitype branching process} 
+%	has a non-degenerate weak limit, 
+   to have a non-degenerate weak limit, 
+	one must have \eqref{eq: regularly varying condition for multitype branching process} for some $0 < \alpha \leq 1$.
 	Vatutin \cite{Vatutin1977Limit} also considered analogous results for the continuous time mutitype critical Galton-Watson processes.
 	
 	Asmussen and Hering \cite[Section~6.3~and~6.4]{AsmussenHering1983Branching} discussed similar questions for critical branching Markov processes $(Y_t)$ in a general space $E$ under some ergodicity condition (the so-called condition (M), see \cite[p.~156]{AsmussenHering1983Branching}) on the mean semigroup of $(Y_t)$.
@@ -190,26 +212,23 @@ When the second moment is infinite, under a condition  parallel  to \eqref{eq: r
 	Results parallel to \eqref{eq: Kolmogorov's result with finite variance} and \eqref{eq: Yaglom's result with finite variance} have been obtained for some critical superprocesses by Evans and Perkins \cite{EvansPerkins1990Measure-valued} and Ren, Song and Zhang \cite{RenSongZhang2015Limit}.
 	Evans and Perkins \cite{EvansPerkins1990Measure-valued} considered critical superprocesses with branching mechanism of the form $(x,z)\mapsto z^2$ and with the spatial motion satisfying some ergodicity conditions.
 	Ren, Song and Zhang \cite{RenSongZhang2015Limit} extended the results of \cite{EvansPerkins1990Measure-valued} to
-	a class of critical superprocesses with general branching mechanism and general spatial motions:
+	a class of critical superprocesses with general branching mechanism and general spatial 
+	%motions:
+	 motions. The main results of \cite{RenSongZhang2015Limit} are as follows.
 	Let $\{(X_t)_{t\geq 0}; \mathbf P_\mu \}$ be a critical superprocess starting from 
-%YX a measure $\mu$.
 a finite measure $\mu$ on $E$.
 	Suppose the spatial motion $\xi$ is intrinsically ultracontractive with respect to some reference measure $m$, and the branching mechanism $\psi$ satisfies the following second moment condition,
 \[\label{eq: second moment condition}
 	\sup_{x\in E} \int_{(0,\infty)} y^2 \pi(x,dy)
 	< \infty.
 \]
-%YX new added
 For any finite measure $\mu$ on $E$ and
 any measurable function $f$ on $E$, we use $\langle f,\mu\rangle$	 to denote the integral of $f$ with respect to $\mu$. 
 Put $\|\mu\|=\langle 1, \mu\rangle$.
-%end new
 	Under some other mild assumptions, it was proved in  \cite{RenSongZhang2015Limit} that
 \[\label{eq: Kolmogorov type result with 2rd moment}
-%Yx in the following "X_t \not \equiv 0" is replaced by "\|\mu\|\neq 0" without noticing
 	t \mathbf P_\mu(\|X_t\| \neq 0)
 	\xrightarrow[t\to \infty]{} c^{-1} 
-%YX \langle \phi, \mu \rangle_m,
 \langle \phi, \mu \rangle,
 \]
 	and for a large class of testing functions $f$ on $E$,
@@ -218,12 +237,11 @@ Put $\|\mu\|=\langle 1, \mu\rangle$.
 	\xrightarrow[t\to \infty]{\operatorname{law}} c \langle \phi^*, f\rangle_m \mathbf e.
 \]
 	Here, the constant $c > 0$ is independent of the choice of $\mu$ and $f$;
-%YX new added
-$\langle\cdot, \cdot \rangle$ denotes the inner product in $L^2(E, m)$;
-%end new
+%$\langle\cdot, \cdot \rangle$ denotes the inner product in $L^2(E, m)$;
+$\langle\cdot, \cdot \rangle_m$ denotes the inner product in $L^2(E, m)$;
 	$\mathbf e$ is an exponential random variable with mean $1$;
 	and $\phi$ (respectively, $\phi^*$) is the principal eigenfunction of (respectively, the dual of) the generator of the mean semigroup of $X$.
-	In \cite{RenSongSun2017Spine},  we %YX also
+	In \cite{RenSongSun2017Spine},  we 
 provided an alternative probabilistic approach to \eqref{eq: Kolmogorov type result with 2rd moment} and \eqref{eq: Ygalom type result with 2rd moment}.
 	
 	It is natural to ask whether results parallel to \eqref{eq: extinction probability of critical GW process without 2rd moment} and \eqref{eq: conditional distribution of critical GW process without 2rd moment} are still valid for some critical superprocesses without the second moment condition \eqref{eq: second moment condition}.
@@ -239,7 +257,6 @@ provided an alternative probabilistic approach to \eqref{eq: Kolmogorov type res
 	\xrightarrow[t\to \infty]{\operatorname{law}} \mathbf z^{(\gamma - 1)},
 \]
     where $\mathbf z^{(\gamma - 1)}$ is
-    %a Zolotarev's random variable with index $\gamma - 1$.
     a random variable with Zolotarev's distribution with index $\gamma - 1$.
 	Recently, Ren, Yang and Zhao \cite{RenYangZhao2014Conditional} studied
 	CSBPs $\{(Y_t)_{t\ge 0}; P\}$
@@ -249,7 +266,8 @@ provided an alternative probabilistic approach to \eqref{eq: Kolmogorov type res
 	= c z^\gamma l(z),
 	\quad z\geq 0.
 \]
-	where $c > 0$, $\gamma \in (1,2]$ and $l$ is a slowly varying function at $0$.
+%	where $c > 0$, $\gamma \in (1,2]$ and $l$ is a slowly varying function at $0$.
+	where $c > 0$, $\gamma \in (1,2]$ and $l$ is a function slowly varying  at $0$.
 It was proved in  \cite{RenYangZhao2014Conditional} that for all $x\geq 0$, with $\lambda_t: = P_1(Y_t > 0)$,
 \[\label{eq: conditional limit of CSBP}
 	\{ \lambda_t Y_t ; P(\cdot | Y_t > 0, Y_0 = x)\}
@@ -257,7 +275,9 @@ It was proved in  \cite{RenYangZhao2014Conditional} that for all $x\geq 0$, with
 \]
 	Later, Iyer, Leger and Pego \cite{IyerLegerPego2015Limit} considered the converse problem: Suppse that $(Z_t)$ is a CSBP with ciritical branching mechanism $\psi$
 	satisfying Grey's condition.
-	In order for the left side of \eqref{eq: conditional limit of CSBP} has non-trivial weak limit for
+	In order for the left side of \eqref{eq: conditional limit of CSBP} 
+%	has non-trivial weak limit for
+    to have a non-trivial weak limit for
 	some positive constants $(\lambda_t)_{t\geq 0}$,
 	one must have \eqref{eq: regular varing of branching mechanism of a CSBP} for some $1< \gamma \leq 2$.
 	
@@ -272,7 +292,7 @@ In this paper, we will establish a result parallel
 \]
 	where $\beta \in \mathscr B_b(E)$, $\gamma \in \mathscr B^+_b(E)$, $\kappa \in \mathscr B^+_b(E)$ with $1< \gamma(\cdot )<2$, $\gamma_0 := \operatorname{ess\,inf}_{m(dx)} \gamma(x)> 1$ and $\operatorname{ess\,inf}_{m(dx)}\kappa(x) > 0$.
 	We will show that $\mathbf P_{\delta_x}( X_t \not \equiv 0) $ converges to $0$ as $t\to \infty$ and
-	is regularly varying with index $\frac{1}{\gamma_0 - 1}$.
+	is regularly varying at infinity with index $\frac{1}{\gamma_0 - 1}$.
 	Furthermore, if $m(x: \gamma(x) = \gamma_0)>0$, we show that
 \[
 	\mathbf P_{\delta_x}( \|X_t\| \neq0)
@@ -284,10 +304,16 @@ In this paper, we will establish a result parallel
 	\xrightarrow[t\to \infty]{\operatorname{law}}
 	\langle f, \phi^*\rangle_m \mathbf z^{(\gamma_0 - 1)},
 \]
-	where $\eta_t := \big( C_X(\gamma_0 - 1) t \big)^{- \frac {1} {\gamma_0 - 1} },$ $C_X := \langle \mathbf 1_{\gamma(\cdot) = \gamma_0} \kappa \phi^{\gamma_0}, \phi^* \rangle_m$ and $\mathbf z^{(\gamma_0 - 1)}$ is a Zolotarev's random variable with index $\gamma_0 - 1$.
+	where $\eta_t := \big( C_X(\gamma_0 - 1) t \big)^{- \frac {1} {\gamma_0 - 1} },$ $C_X := \langle \mathbf 1_{\gamma(\cdot) = \gamma_0} \kappa \phi^{\gamma_0}, \phi^* \rangle_m$ and $\mathbf z^{(\gamma_0 - 1)}$ is a 
+%	Zolotarev's random variable with index $\gamma_0 - 1$.
+random variable with Zolotarev's distribution with index $\gamma_0 - 1$.
 	Precise statements of the assumptions and the results are presented in the next
-		section.
-    It is interesting to mention here that, even though the stable index $\gamma(x)$ is spatially dependent, the limiting behavior of the critical superprocess $(X_t)$   depends primarily on the lowest index $\gamma_0$.
+%		section.
+    subsection.
+    It is interesting to mention here that, even though the stable index $\gamma(x)$ is spatially dependent, the limiting behavior of the critical superprocess 
+%    $(X_t)$   
+   $\{X; \mathbf P\}$
+    depends primarily on the lowest index $\gamma_0$.
 	
 \subsection{Model and results}
 
@@ -311,10 +337,12 @@ In this paper, we will establish a result parallel
 	Let $E$ be a locally compact separable metric space,
 	the spatial motion
    $\xi:=\{(\xi_t)_{t\geq 0};(\Pi_x)_{x\in E}\}$
-	be a $E$-valued Hunt process with its lifetime denoted by $\zeta$, and the branching mechanism $\psi$ be a function on $E\times[0,\infty)$ given by
+%	be a $E$-valued Hunt process with its lifetime denoted by $\zeta$, 
+	be an $E$-valued Hunt process with its lifetime denoted by $\zeta$, 
+	and the branching mechanism $\psi$ be a function on $E\times[0,\infty)$ given by
 	\eqref{eq: branching mechanism}.
-	We say a $\mathcal M^1_E$-valued Hunt process
-	%YX $\{(X_t)_{t\geq 0}; (\mathbf P_\mu)_{\mu \in \mathcal M^1_E}\}$
+%	We say a $\mathcal M^1_E$-valued Hunt process
+	We say an $\mathcal M^1_E$-valued Hunt process
     $X:=\{(X_t)_{t\geq 0}; (\mathbf P_\mu)_{\mu \in \mathcal M^1_E}\}$
 	is a \emph{$(\xi,\psi)$-superprocess} if for each $t\geq 0, \mu \in \mathcal M_E^1$ and  $f\in \mathscr B^+_b(E)$, we have
 \[
@@ -344,12 +372,14 @@ then $P_t:= P^0_t$ is the \emph{transition semigroup} of the process $\xi$.)
 	\quad \mu \in \mathcal M^1_E,
 	t \geq 0,f \in \mathscr B_b(E).
 	\]
-	This mean semigroup plays a central role in the study of the asymptotic behavior of superprocesses.
+%	This mean semigroup plays a central role in the study of the 
+    The  mean semigroup plays a central role in the study of the 
+	asymptotic behavior of superprocesses.
 	As discussed in \cite{EvansPerkins1990Measure-valued}, in order to have a result like \eqref{eq: Ygalom type result with 2rd moment}
 		or \eqref{eq: result2},
 	we have to establish the asymptotic behavior of the mean semigroup first.
-	This can be done under the following assumptions on the underlying motion
-	%YX $\{(\xi_t); (\Pi_x)\}$:
+%	This can be done under the following assumptions on the underlying motion
+	This can be done under the following assumptions on the spatial motion
     $\xi$:
 \begin{asp}{1}
 \label{asp: 1}
@@ -382,7 +412,6 @@ and
 	P^\beta_t f(x)
 	= \int_E p_t^\beta (x,y) f(y) m(dy).
 \]
-%YX	 $(p^\beta_t)$ is called the \emph{density of semigroup $(P^\beta_t)$}.
     $(p^\beta_t)_{t\geq 0}$ is called the \emph{density of semigroup $(P^\beta_t)_{t\geq 0}$}.
 	Define the dual semigroup $(P^{\beta *}_t)_{t \geq 0}$ by
 \[
@@ -407,37 +436,31 @@ and
 	Now, from
 \[
 	\mathbf P_\mu[X_t(\phi)]
-%YX = e^{\lambda t} \mu(\phi).
    = e^{\lambda t} \mu(\phi),
 \]
 	we see that, if $\lambda > 0$, the mean of $X_t(\phi)$ will increase exponentially; if $\lambda < 0$, the mean of $X_t(\phi)$ will decrease exponentially; and if $\lambda = 0$, the mean of $X_t(\phi)$ will be a constant.
 	Therefore, we say $X$ is \emph{supercritical, critical or subcritical}, according to $\lambda > 0$, $\lambda = 0$ or $\lambda < 0$, respectively.
 	Since we are only interested in the critical case, we assume the following:
 \begin{asp}{2} \label{asp: 2}
-%YX	The superprocess $(X_t)$ is critical, i.e., $\lambda = 0$.
     The superprocess $X$ is critical, i.e., $\lambda = 0$.
 \end{asp}
 
 	Let $\varphi$ (resp. $\varphi^*$) be the principal eigenfunction of (resp. the dual of) the transition semigroup $(P_t)$ of the underlying process 
-%YX $\{\xi; \Pi\}$.
     $\xi$.
-Our second assumption on the underlying process 
-%YX $\{\xi; \Pi\}$
+%Our second assumption on the underlying process 
+Our second assumption on the spatial process 
     $\xi$
  is the following:
 
 \begin{asp}{3} \label{asp: 3}
 	$\varphi$ is bounded, and 
-%YX $(P_t)$ 
     $(P_t)_{t\geq 0}$ 
 is \emph{intrinsically ultracontractive}, that is, for each $t>0$, there is a constant $c_t >0$ such that for each $x,y\in E$, $p_t(x,y) \leq c_t \varphi(x) \varphi^*(y)$.
 \end{asp}
 	
 	Under Assumption \ref{asp: 3},	it is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that the principal eigenfunction $\phi$ of Feyman-Kac semigroup 
-%YX $(P^\beta_t)$ is also bounded.
     $(P^\beta_t)_{t\geq 0}$ is also bounded.
 	Moreover, 
-%YX $(P^\beta_t)$ 
 $(P^\beta_t)_{t\geq 0}$ 
 is also \emph{intrinsically ultracontractive}, in the sense that for each $t>0$, there is a constant $c_t >0$ such that for each $x,y\in E$, $p^\beta_t(x,y) \leq c_t \phi(x) \phi^*(y)$.
 	In fact, it is proved in \cite{KimSong2008Intrinsic} that for each $t>0$, $(p^\beta_t(x,y))_{x,y\in E}$ is comparable to $(\phi(x)\phi^*(y))_{x,y\in E}$ in the sense that there is a constant $c_t > 1$ such that
@@ -453,7 +476,9 @@ is also \emph{intrinsically ultracontractive}, in the sense that for each $t>0$,
 	\sup_{x,y\in E} \big|\frac{p^\beta_t(x,y)}{\phi(x)\phi^*(y)} - 1 \big| \leq c_0 e^{-c_1 t},
 	\quad t > 1.
 \]
-	We refer our readers to \cite{RenSongZhang2015Limit} for a list of examples of underlying processes satisfying Assumption \ref{asp: 1} and \ref{asp: 3}.
+	We refer our readers to \cite{RenSongZhang2015Limit} for a list of examples of 
+%	underlying processes satisfying Assumption \ref{asp: 1} and \ref{asp: 3}.
+    processes satisfying Assumption \ref{asp: 1} and \ref{asp: 3}.
 
 		Our assumption on the branching mechanism is the following:
 \begin{asp}{4} \label{asp: 4}
@@ -465,9 +490,9 @@ is also \emph{intrinsically ultracontractive}, in the sense that for each $t>0$,
 	\\&= -\beta (x) z + \kappa(x) z^{\gamma(x)},
 	\quad x\in E, z \geq 0,
 \end{split}\]
-	where $\beta \in \mathscr B_b(E), \gamma \in \mathscr B^+_b(E)$, $\kappa \in \mathscr B^{++}_b(E)$ with $1< \gamma(\cdot )<2$, $\gamma_0 := \operatorname{ess\,inf}_{m(dx)} \gamma(x)> 1$ and $\operatorname{ess\,inf}_{m(dx)}\kappa(x) > 0$.
+	where $\beta \in \mathscr B_b(E), \gamma \in \mathscr B^+_b(E)$, $\kappa \in \mathscr B^{++}_b(E)$ with $1< \gamma(\cdot )<2$, $\gamma_0 := \operatorname{ess\,inf}_{m(dx)} \gamma(x)> 1$ and $\kappa_0:=\operatorname{ess\,inf}_{m(dx)}\kappa(x) > 0$.
 \end{asp}
-	Here we used the definition of the Gamma function on the negative half line:
+	Here we use the definition of the Gamma function on the negative half line:
 \[\label{eq: definition of Gamma function}
 	\Gamma(x)
 	:= \int_0^\infty t^{x-1} \Big(e^{-t} - \sum_{k=0}^{n-1} \frac{(-t)^k}{k!}\Big) dt,
@@ -484,7 +509,6 @@ Assumptions \ref{asp: 1}--\ref{asp: 4}. Then,
 	\item[(1)] $\{X; \mathbf P\}$ is non-persistent, that is, for each $t > 0$ and $x\in E$, $\mathbf P_{\delta_x}(X_t \equiv 0) > 0$.
 	\item[(2)] For each $x\in E$, $\mathbf P_{\delta_x}(X_t \not \equiv 0)$
 	converges to $0$, and is regularly varying with index $-\frac{1}{\gamma_0-1}$
-%YX , 
 as $t\to \infty$.
 	Furthermore, if $m(x: \gamma (x)= \gamma_0)>0$, then
 \[
@@ -500,34 +524,36 @@ as $t\to \infty$.
 \]
 \end{itemize}
 	Here, $\eta_t := \big( C_X(\gamma_0 - 1) t \big)^{- \frac {1} {\gamma_0 - 1} }$, $C_X := \langle \mathbf 1_{\gamma(\cdot) = \gamma_0} \kappa \phi^{\gamma_0}, \phi^* \rangle_m$ and $\mathbf z^{(\gamma_0 - 1)}$ is 
-%a Zolotarev's random variable with index $\gamma_0 - 1$
  a random variable with Zolotarev's distribution with index $\gamma_0 - 1$.
 \end{thm}
 
 \subsection{Methods and overview}
 	
-	To establish Theorem \ref{thm: main theorem}(2) and Theorem \ref{thm: main theorem}(3), we use spine decomposition theorem for  
-%YX $\{X; \mathbf P\}$:
+	To establish Theorem \ref{thm: main theorem}(2) and Theorem \ref{thm: main theorem}(3), we use a spine decomposition theorem for  
     $X$:
 	Roughly speaking, the spine is the trajectory of an immortal moving particle and the spine decomposition theorem says that, after a size-biased transform, the transformed superprocess can be decomposed in law as the sum of a copy of the original superprocess and an immigration process along this spine, see \cite{EckhoffKyprianouWinkel2015Spines}, \cite{EnglanderKyprianou2004Local}, \cite{LiuRenSong2009Llog}.
 	The family of functions used for the size-biased transform is $(e^{-\lambda t} X_t(\phi))_{t\geq 0}$, which is a martingale.
 	Therefore, this size-biased transform can be viewed as a martingale change of measure.
-	Under the Assumptions \ref{asp: 1} and \ref{asp: 3},
+%	Under the Assumptions \ref{asp: 1} and \ref{asp: 3},
+	Under Assumptions \ref{asp: 1} and \ref{asp: 3},
 	the spine process $\{\xi; \Pi^{(\phi)}\}$ is an ergodic process.
 	We take advantage of this ergodicity to study the asymptotic behavior of the superprocess.
 	
 	Similar idea
 	has already been used by Powell \cite{Powell2015An-invariance} to establish results parallel to \eqref{eq: Kolmogorov type result with 2rd moment} and \eqref{eq: Ygalom type result with 2rd moment} for a class of critical branching diffusion processes.
     Let $\{(Y_t)_{t\geq 0}; P\}$
-	be a branching diffusion processes in a bounded domain with finite second moment.
+%	be a branching diffusion processes in a bounded domain with finite second moment.
+be a branching diffusion process, in a bounded domain,  with finite second moment.
 	As have been discussed in \cite{Powell2015An-invariance}, a direct study of the partial differential equation
 	satisfied by the survival probability
-%YX $(t,x) \mapsto P(Y_t \not\equiv 0)$ is tricky.
 $(t,x) \mapsto P_{\delta_x}(\|Y_t\| \neq 0)$ is tricky.
 	Instead, by using a spine decomposition approach, Powell \cite{Powell2015An-invariance} showed that the survival probability decays like $a(t)\phi(x)$ where $\phi(x)$ is the principal eigenfunction of the mean semigroup of $(Y_t)$, and $a(t)$ is a function capturing the uniform speed.
-	Then, the problem is reduced to the study of a single ODE satisfied by the speed function $a(t)$.
+	Then, the problem is reduced to the study of a single ordinary differential equation satisfied by the speed function $a(t)$.
 	Later, inspired by \cite{Powell2015An-invariance}, we gave in \cite{RenSongSun2017Spine} a similar proof of \eqref{eq: Kolmogorov type result with 2rd moment} for a class of critical superprocesses with finite second moment.
-	In this paper, we will  generalize these arguments to a class of critical superprocesses without finite second moment, and establish Theorem \ref{thm: main theorem}(2).
+	In this paper, we will  generalize these arguments to a class of 
+%	critical superprocesses without finite second moment, 
+    general critical superprocesses without finite second moment, 
+	and establish Theorem \ref{thm: main theorem}(2).
 	For the conditional weak convergence result, i.e., Theorem \ref{thm: main theorem}(3), we use a fact that the Laplace transform of Zolotarev's distribution can be characterized by a non-linear delay equation (see Lemma \ref{lem: characterize the general Mittag-Leffler distribution}).
 	Using the spine method, we show that the Laplace transform of
 		the one-dimensional distributions
@@ -542,10 +568,14 @@ $(t,x) \mapsto P_{\delta_x}(\|Y_t\| \neq 0)$ is tricky.
 	and to help us make the comparison, we investigated the double size-biased transform of the corresponding processes.
 	However, the
 	double-size-biased transform of a random variable requires its second moment being finite.
-	Since in this paper, we do not assume the second moment condition, we can not use the method of double size-biased transform.
+%	Since in this paper, we do not assume the second moment condition, 
+Since we do not assume the second moment condition in this paper,
+	we can not use the method of double size-biased transform.
 		
 	In \cite{Powell2015An-invariance} (for critical branching diffusions in a bounded domain with finite variance) and in \cite{RenSongSun2017Spine} and
-	\cite{RenSongZhang2015Limit} (for critical superprocesses with finite variance), the conditional weak convergence was proved in two steps.
+%	\cite{RenSongZhang2015Limit} (for critical superprocesses with finite variance), 
+	\cite{RenSongZhang2015Limit} (for general critical superprocesses with finite variance), 
+	the conditional weak convergence was proved in two steps.
     First, a convergence result was established for $\phi$, the principal eigenfunction of the mean semigroup of the corresponding processes, and then the second moment condition was used to extend the result to
      more general testing functions.
 	However, in the present case, since we are not assuming the second moment condition, this type of argument does not work.
@@ -554,36 +584,27 @@ $(t,x) \mapsto P_{\delta_x}(\|Y_t\| \neq 0)$ is tricky.
 
 	
 	The rest of this paper is organized as follows:
-%YX	In Section 
     In Subsections
 \ref{sec: Asymptotic equivalence}, \ref{sec: Regularly variation} and \ref{sec: Superprocesses}, we give some preliminary results about the asymptotic equivalence, regularly varying functions and superprocesses, respectively.
-%YX In Section 
 In Subsection 
 \ref{sec: Spine decompositions}, we present the generalized spine decomposition theorem.
-%YX In Section
 In Subsection 
 \ref{sec: Ergodicity}, we discuss the ergodicity of the spine process.
-%YX	In Section
     In Subsections
-\ref{sec: proof of result 1} and \ref{sec: proof of result 2} we give the poof of Theorem \ref{thm: main theorem}(1) and \ref{thm: main theorem}(2), respectively.
-%YX	In Section
+\ref{sec: proof of result 1} and \ref{sec: proof of result 2} we give the poofs of Theorem \ref{thm: main theorem}(1) and \ref{thm: main theorem}(2), respectively.
     In Subsection
 \ref{sec: conditional distribution}, we give the equation that characterize the one-dimensional distributions.
-%YX	In Section
     In Subsection
 \ref{sec: Characterizing the Zolotarev's distribution using an non-linear delay equation}, we give the equation that characterize Zolotarev's distribution.
 	Finally, 
-%YX	In Section
     In Subsection
 \ref{sec: proof of result 3}, we make comparison of these two equations and give the proof of Theorem \ref{thm: main theorem}(3).
 
-%YX \newpage
 \section{Preliminaries}
 \label{sec: Preliminaries}
 
 \subsection{Asymptotic equivalence}
 \label{sec: Asymptotic equivalence}
-%YX	In this section, 
   In this subsection, 
 we give a lemma on asymptotic equivalence.	
 	Let $t_0 \in [-\infty,\infty]$.
@@ -599,7 +620,7 @@ we give a lemma on asymptotic equivalence.
 \[
 	\int_E f_0(t,x)m(dx)
 	\stackrel[t\to t_0]{}{\sim}
-	\int_E f_1(t,x)m(dx)
+	\int_E f_1(t,x)m(dx).
 \]
 \end{lem}
 \begin{proof}
@@ -628,7 +649,7 @@ the assertion is valid.
 In this case we write  $f\in \mathcal R^\infty_\gamma$ (resp. $f\in \mathcal R^0_\gamma$).
 	Further, if $\gamma = 0$,
 	then we say $f$ is slowly varying.
-	According to \cite[Theorem 1.3.1.]{BinghamGoldieTeugels1989Regular}, if $L$ is a function which is slowly varying at $\infty$, then it can be written in the form
+	According to \cite[Theorem 1.3.1.]{BinghamGoldieTeugels1989Regular}, if $L$ is a function slowly varying at $\infty$, then it can be written in the form
 \[
 	L(t)
 	= c(t) \exp\Big\{\int_{t_0}^t \epsilon(u) \frac{du}{u}\Big\},\quad t\geq t_0,
@@ -696,16 +717,19 @@ In this case we write  $f\in \mathcal R^\infty_\gamma$ (resp. $f\in \mathcal R^0
 \end{proof}
 
 	The following lemma concerns the inverse of
-  %YX  an invertible, monotone, regularly varying function.
-   an invertible, monotone and regularly varying function.
-	In this paper, if a function $f$ is 	invertible,
+%   an invertible, monotone and regularly varying function.
+    a strictly monotone, regularly varying function.
+%	In this paper, if a function $f$ is 	invertible,
+	In this paper, if a function $f$ is strictly monotone, 
 	we write $f^{(-1)}$ for its inverse;
 	if a function $f\neq 0$, we write $f^{-1} := \frac{1}{f} $.
 
 \begin{lem}
 \label{lem: regularly variation and inverse}
-	%Suppose that $f$ is a reversible map from $(0,\infty)$ to $(0,\infty)$.
-	Suppose that $f$ is an invertible, monotone map from $(0,\infty)$ to $(0,\infty)$.
+	Suppose that $f$ is 
+%	an invertible, monotone map 
+   a strictly monotone map 
+	from $(0,\infty)$ to $(0,\infty)$.
 	Then, for each $\alpha > 0$, we have
 \[ \label{eq: inverse of a regularly varying function at infinity with alpha > 0}
 	f
@@ -753,7 +777,8 @@ In this case we write  $f\in \mathcal R^\infty_\gamma$ (resp. $f\in \mathcal R^0
 If $\alpha>0$, then according to \cite[Theorem 1.5.12.]{BinghamGoldieTeugels1989Regular}, we have \eqref{eq: inverse of a regularly varying function at infinity with alpha > 0} is true.
 	To see 	\eqref{eq: inverse of a regularly varying function at 0 with alpha > 0} is true, we write $h(t) : = f(t^{-1})^{-1}$.
 	It is  easy to verify that
-	$h$ is invertible and monotone
+%	$h$ is invertible and monotone
+   $h$ is strictly monotone
 	with $h^{(-1)}(t) := f^{(-1)}(t^{-1})^{-1}$.
 	Therefore,
 \[
@@ -769,7 +794,9 @@ If $\alpha>0$, then according to \cite[Theorem 1.5.12.]{BinghamGoldieTeugels1989
 
 	If $\alpha < 0$, to see	\eqref{eq: inverse of a regularly varying function with alpha < 0} is true, we write $g(t) : = f(t^{-1})$.
 	It is easy to verify that
-	$g$ is invertible and monotone with $g^{(-1)}(t) := f^{(-1)}(t)^{-1}$.
+%	$g$ is invertible and monotone 
+	$g$ is strictly monotone 
+	with $g^{(-1)}(t) := f^{(-1)}(t)^{-1}$.
 	Therefore,
 \[
 	f
@@ -784,7 +811,9 @@ If $\alpha>0$, then according to \cite[Theorem 1.5.12.]{BinghamGoldieTeugels1989
 	
 	Now, assume that
 	$f(t) \stackrel[t\to \infty]{}{\sim} c t^\alpha$ for some $\alpha > 0$ and $c > 0$, we want to show that $f^{(-1)}(t) \stackrel[t\to \infty]{}{\sim} c^{-1/\alpha} t^{1/\alpha}$.
-	Notice that, since $\alpha >0$, we must have $f$ is non-decreasing.
+	Notice that, since $\alpha >0$, we must have $f$ is 
+%	non-decreasing.
+   strictly increasing.
 	From the definition of the asymptotic equivalence, we have, for each $\epsilon> 0$,
 \[
 	\Big|\frac{f(t)}{c t^\alpha} - 1\Big|
@@ -798,7 +827,8 @@ If $\alpha>0$, then according to \cite[Theorem 1.5.12.]{BinghamGoldieTeugels1989
 	< (1+ \epsilon)c t^{\alpha},
 	\quad t \text{ large enough,}
 \]
-	which, by the non-decreasing nature of $f^{(-1)}$, gives that
+%	which, by the non-decreasing nature of $f^{(-1)}$, gives that
+	which, by the increasing nature of $f^{(-1)}$, gives that
 \[\label{eq: inverse and inequality}
 	f^{(-1)}[(1-\epsilon) c t^{\alpha}] \leq t \leq f^{(-1)}[(1+ \epsilon)c t^{\alpha}], \quad t \text{ large enough.}
 \]
@@ -841,7 +871,8 @@ If $\alpha>0$, then according to \cite[Theorem 1.5.12.]{BinghamGoldieTeugels1989
 	This implies that
 \[
 	\limsup_{t\to 0}\frac{\int_E \lambda^{\gamma(x)} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}
-	\leq \lambda ^{\gamma_0}.
+%	\leq \lambda ^{\gamma_0}.
+	\leq \lambda ^{\gamma_0}, 	\quad t\in (0,\infty).
 \]
 	Also, for any $\epsilon \in (0,\infty)$, we have
 \[\begin{split}
@@ -850,39 +881,45 @@ If $\alpha>0$, then according to \cite[Theorem 1.5.12.]{BinghamGoldieTeugels1989
 	\\&\quad \geq \lambda^{ \gamma_0 + \epsilon} \frac{ \int_{ \gamma(x) \leq \gamma_0 + \epsilon } t^{ \gamma(x)} m(dx) } { \int_{ \gamma(x) \leq \gamma_0 + \epsilon}t^{\gamma(x)}m(dx)+ \int_{\gamma(x) > \gamma_0 + \epsilon} t^{\gamma(x)}m(dx)}
 	\\&\quad = \lambda^{\gamma_0 + \epsilon} \frac{1}{1+ \frac{\int_{\gamma(x) > \gamma_0 + \epsilon}t^{\gamma(x) - (\gamma_0 + \epsilon)}m(dx)}{\int_{\gamma(x) \leq \gamma_0 + \epsilon}t^{\gamma(x)- (\gamma_0 + \epsilon)}m(dx)}}
 	\xrightarrow[t\to 0]{} \lambda ^{\gamma_0 + \epsilon},
-	\quad \epsilon\in (0, \infty),
+%	\quad \epsilon\in (0, \infty),
+	\quad t\in (0, \infty),
 \end{split}\]
 	where the last convergence is due to the monotone convergence theorem.
 	Therefore
 \[
 	\liminf_{t\to 0}\frac{\int_E \lambda^{\gamma(x)} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}
-	\geq \lambda ^{\gamma_0}.
+%	\geq \lambda ^{\gamma_0}.
+	\geq \lambda ^{\gamma_0}, \quad t\in (0, \infty).
 \]
 	Summarizing the above,  we get
 \[
 	\lim_{t\to 0}\frac{\int_E \lambda^{\gamma(x)} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}
 	= \lambda ^{\gamma_0},	
-	\quad \lambda \in (0,1].
+%	\quad \lambda \in (0,1].
+	\quad \lambda \in (0,1], t\in (0, \infty).
 \]
 	If $\lambda \in (1,\infty)$, taking $f(x, t):= t^{\gamma(x)}$, from what we have proved, we also have that
 \[
 	\lim_{t\to 0}\frac{\int_E f(x,\lambda t)m(dx)}{\int_E f(x, t)m(dx)}
 	= \lim_{t\to 0}\frac{\int_E f(x,t)m(dx)}{\int_E f(x, \lambda^{-1} t)m(dx)}
 	= \big((\lambda^{-1})^{\gamma_0} \big)^{-1}
-	= \lambda ^{\gamma_0}.
+%	= \lambda ^{\gamma_0}.
+	= \lambda ^{\gamma_0}, \quad t\in (0, \infty).
 \]
-	This proved the first part of the Lemma.
+	This proved the first part of the lemma.
 	
 	If further we have $m\{x:\gamma(x) = \gamma_0\}>0$, then by the monotone convergence theorem  it is easy to see that
 \[
 	\frac{\int_E t^{\gamma(x)} m(dx)}{t^{\gamma_0}}
-	\xrightarrow[t\to 0]{} m\{x:\gamma(x) = \gamma_0\}\in (0,\infty) .
+	\xrightarrow[t\to 0]{} m\{x:\gamma(x) = 
+	\gamma_0\}\in (0,\infty) .
 \]
 \end{proof}
 
 \subsection{Superprocesses}
 \label{sec: Superprocesses}
-	In this section, we recall some known results on the $(\xi, \psi)$-superprocess $\{X; \mathbf P\}$.
+%	In this section, we recall some known results on the $(\xi, \psi)$-superprocess $\{X; \mathbf P\}$.
+In this subsection, we recall some known results on the $(\xi, \psi)$-superprocess $\{X; \mathbf P\}$.
 	It is known, see \cite[Theorem 2.23]{Li2011Measure-valued} for example, that \eqref{eq:FKPP_in_definition} can be written as
 \[\label{eq:mean-fkpp}
 	V_t f(x) + \int_0^t P^\beta_{t-r} \psi_0(x,V_r f) dr
@@ -904,22 +941,20 @@ If $\alpha>0$, then according to \cite[Theorem 1.5.12.]{BinghamGoldieTeugels1989
 \]
 
 	Let $\mathbb W$ be the collection of all $\mathcal M^1_E$-valued 
-%YX cadlag 
  c\`{a}dl\`{a}g 
 paths on $[0,\infty)$.
 	We refer to $\mathbb W$ as the
 	\emph{canonical space of
-  %YX  $(X_t)$}.
     $(X_t)_{t\geq 0}$}.
 	In fact, $(X_t)$ can be viewed
 	as a $\mathbb W$-valued random variable.
 	We denote the \emph{coordinate process of $\mathbb W$} by $(W_t)_{t\geq 0}$.
 
 	We say that 
-%YX  $(X_t)$}
     $(X_t)_{t\geq 0}$ 
 is \emph{non-persistent}
-	if $\mathbf P_{\delta_x}(\|X_t\|\neq 0) > 0$ for all $x\in E$ and $t> 0$.
+%	if $\mathbf P_{\delta_x}(\|X_t\|\neq 0) > 0$ for all $x\in E$ and $t> 0$.
+if $\mathbf P_{\delta_x}(\|X_t\|= 0) > 0$ for all $x\in E$ and $t> 0$.
 	Suppose that $(X_t)_{t\geq 0}$ is non-persistent,
 	then according to \cite[Section 8]{Li2011Measure-valued}, there is a family of measures $(\mathbb N_x)_{x\in E}$ on $\mathbb W$ such that
 \begin{itemize}
@@ -942,7 +977,9 @@ is \emph{non-persistent}
 	\quad \mu \in \mathcal M_E^1, t>0,
 		f\in \mathscr B_b^+(E).
 \]
-	Taking $\mu = \delta_x$ for some $x\in E$, $f = \lambda \mathbf 1_E$ for $\lambda > 0$ in the above equation, and taking $\lambda \to \infty$, we can write
+	Taking $\mu = \delta_x$ for some $x\in E$, $f = \lambda \mathbf 1_E$ for $\lambda > 0$ in the above equation, 
+%	and taking $\lambda \to \infty$, we can write
+   and letting $\lambda \to \infty$, we get
 \[ \label{eq: definition of v_t(x)}
 	v_t(x)
 	:= \lim_{\lambda\to \infty} V_t(\lambda\mathbf 1_E)(x)
@@ -958,7 +995,8 @@ is \emph{non-persistent}
 	\\&= \lim_{\lambda \to \infty} \langle \mu, V_t(\lambda \mathbf 1_E)\rangle
 	= \mu(v_t).
 \end{split}\]
-    It is know that for any $f\in bp{\mathscr B}$,
+%    It is know that for any $f\in bp{\mathscr B}$,
+   It is know that for any $f\in\mathscr B_b^+(E)$,
 \[\label{eq: mean of kuz measure}
     \mathbb N_{\mu}[W_t(f)]
     =\mathbf P_{\mu}[X_t(f)]=\mu(P^\beta_tf),
@@ -989,15 +1027,21 @@ is \emph{non-persistent}
 \]
 \end{thm}
 	The second step of the theorem says that $\{(W_t)_{0\leq t\leq T}; \mathbb N^{W_T(g)}_\mu\}$ has a spine representation:
-	We say $\{(Y_t)_{ 0\leq t\leq T}; \dot {\mathbf P}^{(g,T)}_\mu\}$ is \emph{the spine representation of $\mathbb N^{W_T(g)}_\mu$}  if,
+%	We say $\{(Y_t)_{ 0\leq t\leq T}; \dot {\mathbf P}^{(g,T)}_\mu\}$ is \emph{the spine representation of $\mathbb N^{W_T(g)}_\mu$}  if,
+	We say $\{(\xi_t)_{0\leq t\leq T}, \mathbf n_T,  (Y_t)_{ 0\leq t\leq T}; \dot {\mathbf P}^{(g,T)}_\mu\}$ is a \emph{spine representation of $\mathbb N^{W_T(g)}_\mu$}  if,
 \begin{itemize}
 \item
-	\emph{The spine process} $\{(\xi_t)_{0\leq t\leq T}; \dot{\mathbf P}^{(g,T)}_\mu\}$ is a copy of $\{(\xi_t)_{0\leq t\leq T}; \Pi^{(g,T)}_{\mu}\}$, where $\Pi^{(g,T)}_{\mu}$ is
+	The \emph{spine process} $\{(\xi_t)_{0\leq t\leq T}; \dot{\mathbf P}^{(g,T)}_\mu\}$ is a copy of $\{(\xi_t)_{0\leq t\leq T}; \Pi^{(g,T)}_{\mu}\}$, where $\Pi^{(g,T)}_{\mu}$ is
 	the $g(\xi_T) \exp\{-\int_0^T \beta(\xi_s)ds\}$-transform
 	of the measure $\Pi_{\mu}(\cdot):=\int_{E}\mu(dx)\Pi_x(\cdot) $;
 \item
-	Conditioned on $\{(\xi_t)_{0\leq t\leq T}; \dot{\mathbf P}^{(g,T)}_\mu\}$, \emph{the immigrate measure} $\{\mathbf n_T; \dot{\mathbf P}^{(g,T)}_\mu[\cdot |(\xi_t)_{0\leq t\leq T}]\}$ is a Poisson random measure on $[0,T] \times \mathbb W$
-	with density
+%	Conditioned on $\{(\xi_t)_{0\leq t\leq T}; \dot{\mathbf P}^{(g,T)}_\mu\}$, 
+Given $\{(\xi_t)_{0\leq t\leq T}; \dot{\mathbf P}^{(g,T)}_\mu\}$, 
+%	\emph{the immigrate measure} 
+the \emph{immigration measure} 
+	$\{\mathbf n_T; \dot{\mathbf P}^{(g,T)}_\mu[\cdot |(\xi_t)_{0\leq t\leq T}]\}$ is a Poisson random measure on $[0,T] \times \mathbb W$
+%	with density
+	with intensity
 \[
 	\mathbf m^\xi_T(ds,dw)
 	:= 2 \alpha(\xi_s) ds \cdot \mathbb N_{\xi_s}(dw) + ds \cdot \int_{(0,\infty)} y \mathbf P_{y\delta_{\xi_s}}(X\in dw) \pi(\xi_s,dy);
@@ -1025,7 +1069,7 @@ is \emph{non-persistent}
 	Since $\mathbb N_{\mu}(\|W_0\|\neq 0) = 0$, we have $\mathbb N_\mu^{W_T(g)}(\|W_0\|= 0) = 1$.
 	Similarly, $\Pi_{\mu}$ is not typically a probability measure,
 	but after the transform, $\Pi_{\mu}^{(T,g)}$ is a probability measure.
-     We verify that
+     We note that
 \[\begin{split}
 	\Pi_{\mu}^{(T,g)} [ f(\xi_0) ]
 	&= \frac{1}{\mu(P^\beta_Tg)}\Pi_{\mu}\Big[g(\xi_T) \exp\Big\{-\int_0^T \beta(\xi_s)ds \Big\} f(\xi_0) \Big]
@@ -1040,7 +1084,8 @@ is \emph{non-persistent}
 \]
 
 	Now, suppose that $\{\xi; \Pi\}$ satisfies Assumption \ref{asp: 1}.
-	Denote by $\phi$ the principal eigenfunction of the mean semigroup of $X$.
+%	Denote by $\phi$ the principal eigenfunction of the mean semigroup of $X$.
+    Recall that $\phi$ is the principal eigenfunction of the mean semigroup of $X$.
 	The classical spine decomposition theorem, see \cite{EckhoffKyprianouWinkel2015Spines}, \cite{EnglanderKyprianou2004Local} and \cite{LiuRenSong2009Llog} for example, considered the case when $g = \phi$ only.
 	In this case, the family of probabilities $(\Pi_{\mu}^{(\phi,T)})_{T\geq 0}$ is consistent in the sense of Kolmogorov's extension theorem, that is,  the process $\{(\xi_t)_{0\leq t\leq T}; \Pi_{\mu}^{(\phi,T)} \}$ can be realized as the restriction of some process, say $\{(\xi_t)_{t\geq 0}; \Pi_{\mu}^{(\phi)}\}$, on the finite interval $[0,T]$.
 	In fact, one can also check that this consistence property is satisfied by  $(\mathbf P_\mu^{X_T(\phi)} )_{T\geq 0}$, $(\mathbb N^{W_T(\phi)}_\mu)_{T\geq 0}$ and $(\dot {\mathbf P}^{(\phi,T)}_\mu)$.
@@ -1072,10 +1117,11 @@ is \emph{non-persistent}
 
 	Let $\mu \in \mathcal M^{(\phi)}_\mu$, we say
 	$\{(\xi_t)_{t\geq 0}, \mathbf n, (Y_t)_{ t\geq 0}; \dot {\mathbf P}^{(\phi)}_\mu\}$
-	is \emph{the spine representation of $\mathbb N^{(\phi)}_\mu$}  if:
+%	is \emph{the spine representation of $\mathbb N^{(\phi)}_\mu$}  if:
+	is a \emph{spine representation of $\mathbb N^{(\phi)}_\mu$}  if:
 \begin{itemize}
 \item
-	\emph{The spine process} $\{(\xi_t)_{t\geq 0}; \dot{\mathbf P}^{(\phi)}_\mu\}$ is a copy of $\{(\xi_t)_{t\geq 0}; \Pi^{(\phi)}_{\mu}\}$ where the probability $\Pi_{\mu}^{(\phi)}$ is Doob's $h$-transform of $\Pi_\mu$ whose restriction on the natural filtration $(\mathscr F_t^\xi)$ of the process $(\xi_t)_{t\geq 0}$ is
+	The \emph{spine process} $\{(\xi_t)_{t\geq 0}; \dot{\mathbf P}^{(\phi)}_\mu\}$ is a copy of $\{(\xi_t)_{t\geq 0}; \Pi^{(\phi)}_{\mu}\}$ where the probability $\Pi_{\mu}^{(\phi)}$ is Doob's $h$-transform of $\Pi_\mu$ whose restriction on the natural filtration $(\mathscr F_t^\xi)$ of the process $(\xi_t)_{t\geq 0}$ is
 \[
 	d(\Pi_{\mu}^{(\phi)} |_{\mathscr F_t^\xi})
 	= \frac{\phi(\xi_t)e^{-\int_0^t \beta(\xi_s)ds}}{\mu(\phi)} d(\Pi_{\mu} |_{\mathscr F_t^\xi}),
@@ -1083,7 +1129,8 @@ is \emph{non-persistent}
 \]
 \item
 	Conditioned on $\{(\xi_t)_{t\geq 0}; \dot{\mathbf P}^{(\phi)}_\mu\}$, \emph{the immigration measure} $\{\mathbf n; \dot{\mathbf P}^{(\phi)}_\mu[\cdot |(\xi_t)_{t\geq 0}]\}$ is a Poisson random measure on $[0,\infty ) \times \mathbb W$ with
-   density
+%   density
+    intensity
 \[\label{eq:meanMeasImmigr}
 	\mathbf m^\xi(ds,dw)
 	:= 2 \alpha(\xi_s) ds \cdot \mathbb N_{\xi_s}(dw) + ds \cdot \int_{(0,\infty)} y \mathbf P_{y\delta_{\xi_s}}(X\in dw) \pi(\xi_s,dy);
@@ -1155,7 +1202,6 @@ Let   $c_0>0$ and $c_1>0$ be the constants  in \eqref{eq:q(t,x,y)}, then we have
 \begin{proof}
 	For each $(y,u,t)\in E\times [0,1]\times [0,\infty)$, define $\bar F(y,u,t) := \sup_{s:s\geq t} F(y,u,s)$.
 	Then $\bar F$ is a bounded Borel  function on $E\times [0,1]\times [0,\infty)$
-%YX with
 such that
 \[
 	F(x,u)
@@ -1178,8 +1224,6 @@ such that
 	\quad x\in E.
 \]
 	Finally,
-	%noting that that
-	%YX notice that
      noting that that
 	$0\leq F \leq \bar F$, we get
 \[\begin{split}
@@ -1194,20 +1238,25 @@ such that
 \section{Proofs}
 \subsection{Proof of Theorem \ref{thm: main theorem}(1)}
 \label{sec: proof of result 1}
-	Let $\{X; \mathbf P\}$ be a superprocess satisfying
+%	Let $\{X; \mathbf P\}$ be a superprocess satisfying
+	Let $\{X; \mathbf P\}$ be a $(\xi, \psi)$-superprocess satisfying
 	Assumptions \ref{asp: 1}--\ref{asp: 4}.
-    In this section, we will prove the following stronger result:
+%    In this section, we will prove the following stronger result:
+   In this subsection, we will prove the following result stronger than non-persistency:
 
 \begin{prop}
 \label{prop: non-presistent}
 	For each $t > 0$, $\inf_{x\in E} \mathbf P_{\delta_x}(\|X_t\|= 0) > 0$.
+
 \end{prop}
 
 \begin{proof}
-      Recall that $\kappa_0 : = \text{essinf}_{m(dx)} \kappa(x) $ and $\gamma_0 := \text{essinf}_{m(dx)} \gamma(x)$.
+      Recall that $\kappa_0 = \text{essinf}_{m(dx)} \kappa(x) $ and $\gamma_0 = \text{essinf}_{m(dx)} \gamma(x)$.
 For each $x\in E$, let $\tilde \kappa(x) := \kappa(x) \mathbf 1_{\kappa(x)\geq \kappa_0} + \kappa_0 \mathbf 1_{\kappa(x) < \kappa_0}$ and $\tilde \gamma(x) := \gamma(x) \mathbf 1_{\gamma(x)\geq \gamma_0} + \gamma_0 \mathbf 1_{\gamma(x) < \gamma_0}$.
     Then, we know that $m(\tilde \kappa \neq \kappa) = 0$ and $m(\tilde \gamma \neq \gamma) = 0$.
-	Define $\widetilde \psi(x,z) := - \beta(x)z+ \tilde \kappa(x)z^{\tilde \gamma(x)}$ for each $x\in E$ and $z\geq 0$, then we have that, for each $z\geq 0$, $\widetilde \psi(\cdot, z) = \psi(\cdot , z) $ almost everywhere with respect to the measure $m$.
+	Define $\widetilde \psi(x,z) := - \beta(x)z+ \tilde \kappa(x)z^{\tilde \gamma(x)}$ for each $x\in E$ and $z\geq 0$, then we have that, for each $z\geq 0$, $\widetilde \psi(\cdot, z) = \psi(\cdot , z) $ 
+	%almost everywhere with respect to the measure $m$.
+	$m$-almost everywhere.
 
 	If we replace $\psi$ with $\tilde\psi$ in \eqref{eq:FKPP_in_definition}, the solution $V_tf(x)$ of equation \eqref{eq:FKPP_in_definition} is also the solution of
 \[
@@ -1238,10 +1287,11 @@ For each $x\in E$, let $\tilde \kappa(x) := \kappa(x) \mathbf 1_{\kappa(x)\geq \
 
 \subsection{Proof of Theorem \ref{thm: main theorem}(2)}
 \label{sec: proof of result 2}
-	Let $\{X; \mathbf P\}$ be a superprocess satisfies
+%	Let $\{X; \mathbf P\}$ be a superprocess satisfies
+	Let $\{X; \mathbf P\}$ be a $(\xi, \psi)$-superprocess satisfying
 	Assumptions \ref{asp: 1}--\ref{asp: 4}.
 	From Proposition \ref{prop: non-presistent}, we know that our superprocess $\{X;\mathbf P\}$ is non-persistent,
-    i.e.
+    that is, 
 \[
     \mathbf P_{\delta_x}(\|X_t\| = 0)
     > 0,
@@ -1254,7 +1304,7 @@ For each $x\in E$, let $\tilde \kappa(x) := \kappa(x) \mathbf 1_{\kappa(x)\geq \
 \]
 	From these and \eqref{eq: definition of v_t(x)}, we have that $v_t \in \mathscr B^{++}_b(E)$.
 	According to \eqref{eq: definition of v_t(x)} and \eqref{eq:mean-fkpp},
-	by monotonicity, we see that $(v_t)$ satisfies the equation
+	by monotonicity, we see that $v_t$ satisfies the equation
 \[
 	v_{s+t}(x) + \int_0^t P^\beta_{t-r} \psi_0(x,v_{s+r}) dr
 	= P^\beta_t v_s(x)
@@ -1263,11 +1313,12 @@ For each $x\in E$, let $\tilde \kappa(x) := \kappa(x) \mathbf 1_{\kappa(x)\geq \
 \]
 
 		Notice that,
-	under the Assumption \ref{asp: 1}, according to \eqref{eq: p-t-beta is comparable to phi phi-star}, $d\nu:= \phi^* dm$ defines a finite measure on $E$.
+	under  Assumption \ref{asp: 1}, according to \eqref{eq: p-t-beta is comparable to phi phi-star}, $d\nu:= \phi^* dm$ defines a finite measure on $E$.
 	Therefore, $\langle v_t, \phi^*\rangle_m < \infty$ for each $t>0$.
 
-	According to \eqref{eq:langleVtfphiranglem_equation}, \eqref{eq: definition of v_t(x)} and monotone convergence theorem,
-	we have another equation
+	According to \eqref{eq:langleVtfphiranglem_equation}, \eqref{eq: definition of v_t(x)} and the monotone convergence theorem,
+%	we have another equation
+$v_t$ also satisfies the equation
 \[ \label{eq: equation of <vt,phi>}
 	 \langle v_t,\phi^*\rangle_m + \int_s^t \langle \psi_0(\cdot ,v_t) , \phi^*\rangle_m dr
 	= \langle v_s,\phi^*\rangle_m
@@ -1278,7 +1329,9 @@ For each $x\in E$, let $\tilde \kappa(x) := \kappa(x) \mathbf 1_{\kappa(x)\geq \
 \[\label{eq: uniform converges to 0}
     \|\phi^{-1}v_t\|_{\infty} \xrightarrow[t\to \infty]{} 0.
 \]
-	Therefore, to prove Theorem \ref{thm: main theorem}(2), we only have to consider the speed of this convergence.
+	Therefore, to prove Theorem \ref{thm: main theorem}(2), we only 
+	%have to consider the speed of this convergence.
+	 need to consider the speed of this convergence.
 	This is answered in two steps.
 	The first step says that $(\phi^{-1}v_t)(x)$ will converge to $0$ in the same speed as $\langle v_t,\phi^*\rangle_m $, uniformly in $x\in E$:
 
@@ -1290,7 +1343,7 @@ For each $x\in E$, let $\tilde \kappa(x) := \kappa(x) \mathbf 1_{\kappa(x)\geq \
 	The second step characterizes this speed:
 \begin{prop}
 \label{prop: regularly varying of vt-phi-star}
-	$\langle v_t,\phi^*\rangle_m $ is regularly varying with index $-\frac{1}{\gamma_0-1}$ at $\infty$.
+	$\langle v_t,\phi^*\rangle_m $ is regularly varying at $\infty$ with index $-\frac{1}{\gamma_0-1}$.
 	Furthermore, if $m(x: \gamma (x)= \gamma_0)>0$, then
 \[
 	\langle v_t,\phi^*\rangle_m
@@ -1305,7 +1358,8 @@ For each $x\in E$, let $\tilde \kappa(x) := \kappa(x) \mathbf 1_{\kappa(x)\geq \
 \begin{proof}[Proof of Proposition \ref{prop: convergence in a same speed}]
 	We use an argument similar to that used in \cite{RenSongSun2017Spine} for critical superprocesses with finite 2nd moment.
 	For each $\mu\in\mathcal M^\phi_E$, denote by
-	$\{(Y_t), (\xi_t),\mathbf m^\xi, \mathbf n; \dot {\mathbf P}^{(\phi)}_\mu\}$
+%	$\{(Y_t), (\xi_t),\mathbf m^\xi, \mathbf n; \dot {\mathbf P}^{(\phi)}_\mu\}$
+$\{(Y_t), (\xi_t),\mathbf n; \dot {\mathbf P}^{(\phi)}_\mu\}$
 	the spine representation of $\mathbb N^{(\phi)}_\mu$.
 	According to \eqref	{eq: equation for mu v-t}, \eqref{eq: mean of kuz measure} and Theorem \ref{thm: spine representation},
 	we have that for each $t>0$,
@@ -1334,7 +1388,7 @@ $
 	Y_t
 	= Y^{(0,t_0]}_t + Y^{(t_0,t]}_t.
 $
-	Using this decomposition, for each $0<t_0<t<\infty$ and $x\in E$, we can write
+	Using this decomposition, for each $0<t_0<t<\infty$ and $x\in E$, we have
 \[\label{eq: starting point of phi-1v_t(x)}
 	 \dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]
 	= \dot {\mathbf P}_\nu^{(\phi)} [Y^{(t_0,t]}_t(\phi)^{-1}] + \epsilon_x^1(t_0,t) +\epsilon_x^2(t_0,t),
@@ -1348,7 +1402,7 @@ $
 \end{split}\]
 
 	By the construction and the Markov property of $\{Y,\xi; \dot {\mathbf P}^{\phi}\}$,
-	we verify that
+	we have that
 \[\label{eq: some equations for PY-1}\begin{split}
 	\dot{\mathbf P}^{(\phi)} [Y_t^{(t_0,t]}(\phi)^{-1}|\mathscr F^\xi_{t_0}]
 	&= \dot{\mathbf P}_{\delta_{\xi_{t_0}}}^{(\phi)}  [Y_{t-t_0}(\phi)^{-1}]
@@ -1382,7 +1436,7 @@ $
 	|\epsilon_x^2(t_0,t)|
 	\leq t_0\|\kappa\gamma\phi^{\gamma - 1}\|_{\infty} \cdot \|\phi^{-1}v_{t-t_0}\|^{\gamma_0-1}_\infty (1+c_0 e^{-c_1 t_0}) \langle v_{t-t_0},\phi^* \rangle_m.
 \]
-	In fact, using the Markov property of the spine process $(\xi_t)$, and the property of the Poisson random measures, we have
+	In fact, using the Markov property of the spine process $(\xi_t)$ and the property of Poisson random measures, we have
 \[\label{eq:epsilon-2}\begin{split}
 	|\epsilon_x^2(t_0,t)|
 	&= \big| \dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1} - Y^{(t_0,t]}_t(\phi)^{-1}] \big|
@@ -1402,7 +1456,6 @@ $
 	\leq \|\kappa \gamma \phi^{\gamma - 1}\|_\infty \cdot \|\phi^{-1} v_{t-s}\|^{\gamma_0-1}_\infty
 	\leq \|\kappa\gamma\phi^{\gamma - 1}\|_\infty \cdot \|\phi^{-1}v_{t-t_0}\|^{\gamma_0-1}_\infty.
 \end{split}\]
-	%YX Therefore, while $t-t_0 \geq s_0$, using Campbell's formula, \eqref{eq: definition of Gamma function} and the fact that $e^{-x} \geq 1-x$, we have
 Therefore, using Campbell's formula, \eqref{eq: definition of Gamma function} and the fact that $e^{-x} \geq 1-x$, we have,  for $t-t_0 \geq s_0$,
 \[\begin{split}
 	&\dot{\mathbf P}_{\delta_x}^{(\phi)}[\mathbf 1_{Y_t^{(0,t_0]}\not \equiv  0}|\mathscr F^\xi_{t_0}]
@@ -1417,10 +1470,8 @@ Therefore, using Campbell's formula, \eqref{eq: definition of Gamma function} an
 	= \int_0^{t_0} \big( \kappa \gamma (v_{t-s})^{\gamma - 1} \big) (\xi_s)ds
 	\\&\quad \leq  t_0\|\kappa \gamma \phi^{\gamma - 1}\|_\infty \cdot \|\phi^{-1}v_{t-t_0}\|^{\gamma_0-1}_\infty.
 \end{split}\]
-	%YX Combine this with \eqref{eq:epsilon-2} and \eqref{eq:epsilon-2-final}, we get \eqref{eq:upperbound_of_epsilon-2}.
 Combining this with \eqref{eq:epsilon-2} and \eqref{eq:epsilon-2-final}, we get \eqref{eq:upperbound_of_epsilon-2}.
 
-%YX	Now, for each
 Now, for
 $0<t_0<t<\infty$ and $x\in E$, if $t_0 > 1$ and $t-t_0$ is large enough,
 	according to \eqref{eq: starting point of phi-1v_t(x)}, \eqref{eq: some equations for PY-1}, \eqref{eq: bound for epsilon1} and \eqref{eq:epsilon-2-final}, we have
@@ -1467,8 +1518,7 @@ $0<t_0<t<\infty$ and $x\in E$, if $t_0 > 1$ and $t-t_0$ is large enough,
 	On the other hand,
 	according to \eqref{eq: uniform converges to 0},
 	we have $\langle v_{t}, \phi^*\rangle_m \xrightarrow[t\to \infty]{} 0$.
-	Therefore, the map $t\mapsto \langle v_t,\phi^*  \rangle$ has an inverse (in the strict sense) on $(0,\infty)$
-%YX which we denote by
+	Therefore, the map $t\mapsto \langle v_t,\phi^*  \rangle$ has an inverse on $(0,\infty)$
 which is denoted by
 \[
 	R: (0,\infty) \to (0,\infty).
@@ -1486,7 +1536,8 @@ which is denoted by
 	= \big(1+ \epsilon_{R(\langle v_t,\phi^* \rangle)}(x) \big )\langle v_t,\phi^* \rangle \phi(x),
 	\quad t>0, x\in E.
 \]
-	Further, by Proposition \ref{prop: convergence in a same speed} and $R(u)\xrightarrow[u\to 0]{} \infty$, we have
+	Further, by Proposition \ref{prop: convergence in a same speed} and 
+	the fact that $R(u)\xrightarrow[u\to 0]{} \infty$, we have
 \[\label{eq: epsilon R converges to 0}
 	\sup_{x\in E}|\epsilon_{R(u)}(x)|
 	\xrightarrow[u\to 0]{} 0.
@@ -1498,8 +1549,9 @@ which is denoted by
 	= - \langle \psi_0(\cdot ,v_r) ,\phi^*\rangle_m
 	> 0
 \]
-	almost everywhere for $r\in (0,\infty)$ with respect to the Lebesgue measure.
-	Therefore, we have
+%	almost everywhere for $r\in (0,\infty)$ with respect to the Lebesgue measure.
+for Lebesgue 
+	Therefore, we have almost every $r\in (0,\infty)$.
 \[\begin{split}
 	s-t
 	& = \int_t^s dr
@@ -1520,9 +1572,13 @@ which is denoted by
 	\quad r\in (0,\infty).
 \]
 	
-	We are interested in checking the regularly varying property of $R(r)$ at $r=0$.
-	This can be done by considering the regularly varying property of $\big\langle \psi_0 \big(\cdot ,( 1 + \epsilon_{R(u)} ) u \phi \big), \phi^* \big\rangle_m$ at
-	$u = 0$.
+%	We are interested in checking the regularly varying property of $R(r)$ at $r=0$.
+We now check the regularly varying property of $R(r)$ at $r=0$.
+	This can be done by considering the regularly varying property of 
+	%$\big\langle \psi_0 \big(\cdot ,( 1 + \epsilon_{R(u)} ) u \phi \big), \phi^* \big\rangle_m$ at
+%	$u = 0$.
+ $u\to \big\langle \psi_0 \big(\cdot ,( 1 + \epsilon_{R(u)} ) u \phi \big), \phi^* \big\rangle_m$
+ at 0.
     According to \eqref{eq: epsilon R converges to 0},  $1+ \epsilon_{R(u)}(x) \stackrel[u\to 0]{x\in E}{\sim} 1$.
     Since $\gamma(\cdot)$ is bounded, we have $\big(1+ \epsilon_{R(u)}(x)\big)^{\gamma(x)}\stackrel[u\to 0]{x\in E}{\sim} 1$.
 	Therefore, from Lemma \ref{lem: asymptotic equivalent of integration}, we have that
@@ -1532,9 +1588,8 @@ which is denoted by
 	\\ &\quad \stackrel[u\to 0]{}{\sim}  \langle u^{\gamma(x)} , \kappa (x)\phi(x)^{\gamma(x)} \phi^*(x) \rangle_{m(dx)}.
 \end{split}\]
 	According to Lemma \ref{lem:regularly_variation_and_integration},
-%YX and the fact that
  and using the fact that
-$\kappa(x)\phi(x)^\gamma(x)$ is bounded and measure $\phi^* dm$ is finite, we have that $\langle \psi_0\big(\cdot,(1+\epsilon_{R(u)})u\phi \big), \phi^* \rangle_m$ is regularly varying at $u = 0$ with index $\gamma_0$.
+$\kappa(x)\phi(x)^\gamma(x)$ is bounded and the measure $\phi^* dm$ is finite, we have that $\langle \psi_0\big(\cdot,(1+\epsilon_{R(u)})u\phi \big), \phi^* \rangle_m$ is regularly varying at $u = 0$ with index $\gamma_0$.
 	Notice that $-\gamma_0 < 0$, according to Corollary \ref{cro: power law and ingetration} and \eqref{eq: integral equation for R}, $R$ is regularly varying at $0$ with index $-(\gamma_0 - 1)$.
 	Therefore, from $R(\langle v_s, \phi^*\rangle_m) = s$ and \eqref{eq: inverse of a regularly varying function with alpha < 0}, we have that $(\langle v_s, \phi^*\rangle_m)_{s\in (0,\infty)}$ is regularly varying at $\infty$ with index $-(\gamma_0 - 1)^{-1}$.
 	
@@ -1542,14 +1597,12 @@ $\kappa(x)\phi(x)^\gamma(x)$ is bounded and measure $\phi^* dm$ is finite, we ha
 \[\begin{split}
 	&\big\langle \psi_0 \big(x,( 1 + \epsilon_{R(u)} ) u \phi \big), \phi^* \big\rangle_m
 	\stackrel[u\to 0]{}{\sim}  \langle u^{\gamma(x)} , \kappa (x)\phi(x)^{\gamma(x)} \phi^*(x)
-	%\rangle_m.
-	\rangle_{m(dx)}.
+	\rangle_{m(dx)}
 	\\ &\quad \stackrel[u\to 0]{}{\sim}  \langle \mathbf 1_{\gamma(x)= \gamma_0}, \kappa (x)\phi(x)^{\gamma_0} \phi^*(x)
-	%\rangle_m u^{\gamma_0}
 	\rangle_{m(dx)} u^{\gamma_0}
 	=: C_X u^{\gamma_0}.
 \end{split}\]
-	Therefore, we can write $\big\langle \psi_0 \big(x,( 1 + \epsilon_{R(u)} ) u \phi \big), \phi^* \big\rangle_m^{-1} = u^{-\gamma_0} l(u)$ where $l(u)$ converges to the constant $C_X^{-1}$ when $u \to 0$.
+	Therefore, we have $\big\langle \psi_0 \big(x,( 1 + \epsilon_{R(u)} ) u \phi \big), \phi^* \big\rangle_m^{-1} = u^{-\gamma_0} l(u)$ where $l(u)$ converges to the constant $C_X^{-1}$ when $u \to 0$.
 	Now according to
 	Corollary \ref{cro: power law and ingetration} and \eqref{eq: integral equation for R}
 	we have that
@@ -1572,13 +1625,12 @@ $\kappa(x)\phi(x)^\gamma(x)$ is bounded and measure $\phi^* dm$ is finite, we ha
 \subsection{Characterization of the one dimensional distribution}
 \label{sec: conditional distribution}
 	Let $\{(X_t)_{t\geq 0}; \mathbf P\}$
-    %YX  be a superprocess satisfies
-    be a superprocess which satisfies
+    be a $(\xi, \psi)$-superprocess satisfying
 	Assumptions \ref{asp: 1}--\ref{asp: 4}.
-	Suppose that $m(x: \gamma(x) = \gamma_0)>0$.
+	Suppose  $m(x: \gamma(x) = \gamma_0)>0$.
 	Recall that we want to find a proper normalization $(\eta_t)_{t\geq 0}$ such that $\big\{\big(\eta_t X_t(f))_{t \geq 0}; \mathbf P_\mu(\cdot | \|X_t\| \neq 0\big)\big\}$
 	converges weakly
-	to a non-degenerate distribution for a large class of functions $f$ and initial configuration $\mu$.
+	to a non-degenerate distribution for a large class of functions $f$ and initial configurations $\mu$.
 	Our guess of $(\eta_t)$ is
 \[\label{eq: definition of eta}
 	\eta_t
@@ -1599,9 +1651,11 @@ $\kappa(x)\phi(x)^\gamma(x)$ is bounded and measure $\phi^* dm$ is finite, we ha
  	\xrightarrow[t\to \infty]{}  \phi(x) \langle f,\phi^*\rangle_m.
  \]
  	
-%YX 	From the Laplace transform point of view, 
-From the point of Laplace transform,
- the desired result that $\big\{\big(\eta_t X_t(f)\big)_{t \geq 0}; \mathbf P_{\delta_x}(\cdot | X_t \not \equiv 0)\big\}$
+%From the point of Laplace transform,
+From the point of view of Laplace transforms,
+% the desired result that 
+the desired result that, for any $f\in \mathscr B^+_b(E)$ and $x\in E$,
+ $\big\{\big(\eta_t X_t(f)\big)_{t \geq 0}; \mathbf P_{\delta_x}(\cdot | X_t \not \equiv 0)\big\}$
  converge weakly
  	to some probability distribution $F_{f,x}$ is equivalent to the following convergence:
 \[\begin{split}
@@ -1618,9 +1672,13 @@ From the point of Laplace transform,
 	Therefore, to
 	establish the weak convergence of $\big\{\big(\eta_t X_t(f)\big)_{t \geq 0}; \mathbf P_{\delta_x}(\cdot | \|X_t\|\neq 0)\big\}$, one only needs to verify \eqref{eq: equivalent result}.
 	
-	In order to investigate the convergence of $(\frac{ V_t(\theta \eta_t f)(x)}{\eta_t})$, we need to characterize the dynamics of $V_t(\theta f)$ as $\theta$ is varying.
-	(Note that \eqref{eq:mean-fkpp} only characterizes the dynamics of $V_t(\theta f)$ as $t$ is varying.)
-	This is done by the following proposition:
+	In order to investigate the convergence of $(\frac{ V_t(\theta \eta_t f)(x)}{\eta_t})$, 
+	%we need to characterize the dynamics of $V_t(\theta f)$ as $\theta$ is varying.
+	we need to investigate the properties of $\theta\to V_t(\theta f)$.
+	(Note that \eqref{eq:mean-fkpp} 
+	%only characterizes the dynamics of $V_t(\theta f)$ as $t$ is varying.)
+	only gives the the dynamics of $t\to V_t(\theta f)$.)
+	This is done in the following proposition:
 
 \begin{prop}
 	For any $f\in \mathscr B^+_b(E),\theta \geq 0,x\in E$ and $T>0$, we have
@@ -1637,11 +1695,13 @@ From the point of Laplace transform,
 	= \mathbf P_{\delta_x}^{X_T(f)} [e^{-\theta X_T(f)}]
 	= \mathbf P_{\delta_x} [e^{-\theta X_T(f)}] \dot {\mathbf P}_x^{(T,f)}[e^{-\theta Y_T(f)}],
 \]
-	where $\{Y; \dot {\mathbf P}^{(f,T)}_x\}$ is the spine representation of $\mathbb N^{W_T(f)}_x$ with spine process $\xi$,
-immigration measure
-	$\mathbf n_T$ and
-conditional mean measure
-	$\mathbf m^\xi_T$.
+%	where $\{Y; \dot {\mathbf P}^{(f,T)}_x\}$ is the spine representation of $\mathbb N^{W_T(f)}_x$ with spine process $\xi$,
+%immigration measure
+%	$\mathbf n_T$ and
+%conditional mean measure
+%	$\mathbf m^\xi_T$.
+where $\{(\xi)_{0\le t\le T}, \mathbf n_T, (Y)_{0\le t\le T}; \dot {\mathbf P}^{(f,T)}_x\}$ is a spine representation of $\mathbb N^{W_T(f)}_x$ with $\mathbf m^\xi_T$ being the 
+intensity if the immigration measure $\mathbf n_T$ conditioned on $\{(\xi)_{0\le t\le T}; \dot {\mathbf P}^{(f,T)}_x\}$.
 	From this, we have
 \[ \label{eq: dynamic of theta on v_t theta reason 1}
 	\frac{\partial}{\partial_\theta}
@@ -1684,14 +1744,13 @@ as required.
 \label{sec: Characterizing the Zolotarev's distribution using an non-linear delay equation}
 
 	Recall that a 
-%YX non negative 
   non-negative 
 random variable $\mathbf z^{(\gamma_0 - 1)}$ is said to have Zolotarev's distribution with parameter $\gamma_0 - 1 \in (0,1)$ if
 \[
 	E[1-e^{-\theta\mathbf z^{(\gamma_0 - 1)}}]
 	=\Big( \frac{1}{1+\theta^{-(\gamma_0 - 1)}} \Big)^{\frac{1}{\gamma_0 - 1}}.
 \]
-	It turns out that we can characterize this distribution by the following result:
+	It turns out that we can characterize this distribution by the following result.
 
 \begin{lem}
 \label{lem: characterize the general Mittag-Leffler distribution}
@@ -1764,12 +1823,19 @@ random variable $\mathbf z^{(\gamma_0 - 1)}$ is said to have Zolotarev's distrib
 	In fact, if \eqref{eq: FATLC} is true, then for each $\theta \leq \frac{1}{C}$ and $\alpha \leq \rho$,
 \[\begin{split}
 	F_\alpha (\theta)
-	&\leq C\int_\alpha^{\alpha + \theta} \|F(ru^{\frac{1}{\gamma_0 - 1}}) \|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr
-	=  C\int_0^\theta \big \|F\big( (\alpha + r)u^{\frac{1}{\gamma_0 - 1}} \big ) \big \|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr
+	&\leq C\int_\alpha^{\alpha + \theta} \|F(ru^{\frac{1}{\gamma_0 - 1}}) 
+	%\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr
+	\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr\\
+%	=  C\int_0^\theta \big \|F\big( (\alpha + r)u^{\frac{1}{\gamma_0 - 1}} \big ) 
+   &=  C\int_0^\theta \big \|F\big( (\alpha + r)u^{\frac{1}{\gamma_0 - 1}} \big )
+	\big \|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr
 	\\& =  C\int_0^\theta \|F_{\alpha u^{\frac{1}{\gamma_0 - 1}}}( ru^{\frac{1}{\gamma_0 - 1}}) \|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr
-	\leq C\int_0^ \theta \|C^k (\rho C+ 1) r^k u^{\frac{k}{\gamma_0 - 1} } \|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr
+%	\leq C\int_0^ \theta \|C^k (\rho C+ 1) r^k u^{\frac{k}{\gamma_0 - 1} } 
+  \\&\leq C\int_0^ \theta \|C^k (\rho C+ 1) r^k u^{\frac{k}{\gamma_0 - 1} } 
+	\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr
 	\\&\leq C^{k+1} (\rho C + 1) \theta^{k+1} \|u^{\frac{k}{\gamma_0 - 1} } \|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1}
-	\leq C^{k+1} (\rho C+1) \theta^{k+1} .
+%	\leq C^{k+1} (\rho C+1) \theta^{k+1} .
+\\&\leq C^{k+1} (\rho C+1) \theta^{k+1} .
 \end{split}\]
 	Therefore, by induction, we have
 \[
@@ -1814,7 +1880,9 @@ random variable $\mathbf z^{(\gamma_0 - 1)}$ is said to have Zolotarev's distrib
 	\leq C_0 \int_0^\theta \|  F(ru^{\frac{1}{\gamma_0 - 1}})\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \gamma_0 - 1} dr, \quad \theta \geq 0,
 \]
 	for some constant $C_0 > 0$.
-	In fact, according to the Minkowski inequality of the $L^p$ norm with $p = \frac{1}{\gamma_0 - 1} > 1$, we have
+	In fact, %according to 
+%	the Minkowski inequality of the $L^p$ norm with $p = \frac{1}{\gamma_0 - 1} > 1$, we have
+by the $L^p$ Minkowski inequality with $p = \frac{1}{\gamma_0 - 1} > 1$, we have
 \[\begin{split}
 	&|G(\theta)^{\gamma_0 - 1} - G_0(\theta)^{\gamma_0 - 1}|
 	\\&\quad = \Big| \|e^{-\gamma_0\int_0^1 G(ru^{\frac{1}{\gamma_0 - 1}})^{\gamma_0 - 1} \frac{du}{u}} \|_{\mathbf 1_{0<r<\theta}dr;\frac{1}{\gamma_0 - 1}} - \|e^{-\gamma_0\int_0^1 G_0(ru^{\frac{1}{\gamma_0 - 1}})^{\gamma_0 - 1} \frac{du}{u}} \|_{\mathbf 1_{0<r<\theta}dr;\frac{1}{\gamma_0 - 1}} \Big|
@@ -1837,7 +1905,7 @@ random variable $\mathbf z^{(\gamma_0 - 1)}$ is said to have Zolotarev's distrib
 	Let $f \in \mathscr B^+(E)$ be  such that $ \langle f, \phi^* \rangle_m > 0$  and $c_f:=\| \phi^{-1}f \|_\infty < \infty$.
 	
 	Without loss of generality, we assume that $\langle f, \phi^* \rangle_m = 1$.
-	As have been discussed in Section \ref{sec: conditional distribution},
+	As have been discussed in Subsection \ref{sec: conditional distribution},
 	in order to prove Theorem \ref{thm: main theorem}(3), we only need to show that
 \[
 	g(t,\theta,x)
@@ -1848,7 +1916,6 @@ random variable $\mathbf z^{(\gamma_0 - 1)}$ is said to have Zolotarev's distrib
 \]
 		
 	From Lemma \ref{lem: characterize the general Mittag-Leffler distribution},
-%YX we have an equation for $G$:
 we have that $G$ satisfies
 \[\label{eq: equation for G}
 	G(\theta)
@@ -1862,7 +1929,6 @@ we have that $G$ satisfies
 	\quad r\geq 0 .
 \]
 	According to \eqref{eq: equation for normalized V_T},
- %YX we have an equation for $g$:
   we know that $g$ satisfies that
 \[\label{eq: equation for g}
 	g(t,\theta, x)= \int_0^{\theta} \Pi_x^{(\phi)} [ (\phi^{-1}f)(\xi_t) e^{-\frac{1}{\gamma_0 - 1} J_g(t,r,\xi) } ] dr,
@@ -1933,7 +1999,9 @@ we have that $G$ satisfies
 	Step 2: We will show that, for each $t\geq 0, \theta \geq 0,$ and $x\in E$
 \[\begin{split}
 	&|  G(\theta)^{\gamma_0 - 1} - g(t,\theta,x)^{\gamma_0 - 1} |
-	\\&\quad \leq I_1(t,\theta,x) +c^{\gamma_0 - 1}_f I_2(t,\theta,x) +c^{\gamma_0 - 1}_f I_3(t,\theta,x) + c^{\gamma_0 - 1}_f I_4(t,\theta,x).
+	\\&\quad \leq I_1(t,\theta,x) +c^{\gamma_0 - 1}_f I_2(t,\theta,x) 
+	%+c^{\gamma_0 - 1}_f I_3(t,\theta,x) + c^{\gamma_0 - 1}_f I_4(t,\theta,x).
+	+c^{\gamma_0 - 1}_f I_3(t,\theta,x) + c^{\gamma_0 - 1}_f I_4(t,\theta,x),
 \end{split}\]
 	where
 \[\begin{split}
@@ -1961,7 +2029,7 @@ we have that $G$ satisfies
 	=\Big\| \| (\phi^{-1}f)(\xi_t) ^{\gamma_0 - 1} e^{-J_g(t,r,\xi)} \|_{\Pi_x^{(\phi)};\frac{1}{\gamma_0 - 1}} \Big\|_{\mathbf 1_{0\leq r\leq \theta} dr;\frac{1}{\gamma_0 - 1}},
 	\quad t\geq 0, \theta \geq 0, x\in E.
 \]
-	Therefore, by the Minkowski inequality we have that
+	Therefore, by Minkowski's inequality we have that
 \[\begin{split}
 	&|  G(\theta)^{\gamma_0 - 1} - g(t,\theta,x)^{\gamma_0 - 1} |
 	\\&\quad \leq \Big\| e^{ - J_G(r)} - \| (\phi^{-1}f)(\xi_t)^{\gamma_0 - 1} e^{-J_g(t, r,\xi)} \|_{\Pi_x^{(\phi)};\frac{1}{\gamma_0 - 1}} \Big\|_{\mathbf 1_{0\leq r\leq \theta} dr;\frac{1}{\gamma_0 - 1}}.
@@ -1975,7 +2043,7 @@ we have that $G$ satisfies
 	
 	Step 3: We will show that, for each $\theta \geq 0$ and $x\in E$, $I_1(t,\theta,x) \xrightarrow[t\to \infty]{} 0$.
 	Notice that,
-	by \eqref{eq:q(t,x,y)}
+	by \eqref{eq:q(t,x,y)},
 \[
 	\Pi_x^{(\phi)} [(\phi^{-1}f)(\xi_t)]
 	= \phi(x)^{-1}\Pi_x[f(\xi_t) e^{- \int_0^t \beta(\xi_s) ds}]
@@ -2106,7 +2174,8 @@ we have that $G$ satisfies
 	\leq |r^{\gamma_0 - 1} + c_f^{\gamma_0 - 1} r^{\gamma_0 - 1} | ^{\frac{1}{\gamma_0 - 1}}
 	=: c_6 r,
 \]
-	where the constant $c_6$ is not related to $t$ and $x$.
+%	where the constant $c_6$ is not related to $t$ and $x$.
+	where the constant $c_6$ is independent of $t$ and $x$.
 	Therefore, we have
 \[
 	M(r,x)
@@ -2135,7 +2204,6 @@ we have that $G$ satisfies
 \]
 	since it is a bounded Borel function on $E\times (0,1) \times [0,\infty)$.
 	Now, according to Lemma \ref{lem: Fatou-ergodic lemma for the uderlying process},  \eqref{eq: differences between J'_G and J'_g} and 
-%YX the definition of
     the definitions of  
 $M(r,x), M(r)$ and $C_X$, we have
 \[\label{eq: limsup of J_G - J'_g}\begin{split}
@@ -2185,7 +2253,9 @@ $M(r,x), M(r)$ and $C_X$, we have
 \]
 		According to that $M(\theta) \leq c_6 \theta$ for each $\theta$, we can apply Lemma \ref{lem: F is zero} to the above inequality to get the desired result.
 	
-	Finally, recalling the definition of $M$, by showing that $M\equiv 0$, the proof is complete.
+	Finally, 
+	%recalling the definition of $M$, by showing that $M\equiv 0$, the proof is complete.
+	by the definition of $M$,  $M\equiv 0$ implies the desired assertion.
 
 \begin{thebibliography}{10}
 	
