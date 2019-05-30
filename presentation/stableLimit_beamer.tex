@@ -417,6 +417,56 @@ For each non-negative measurable function $F$ on $\mathbb D$ with $\mathbb N_\mu
       $F(w) = w_t(\phi)^2$ using a {\color{red} 2-Spine Decomposition Theorem.}
     \end{itemize}
 \end{frame}
+% ** Size-biased add-on functions
+\subsection{Size-biased add-on functions}
+
+\begin{frame}{Methods/Size-biased add-on functions}
+Recall that
+\begin{align}
+- \log E[e^{\theta \mathbf z^{(\gamma_0 - 1)}}] 
+  \approx 1 -  E[e^{\theta \mathbf z^{(\gamma_0 - 1)}}] 
+= \left( \frac{1}{1+\theta^{-(\gamma_0- 1)}} \right)^{\frac{1}{\gamma_0 - 1}}
+\end{align}
+\begin{block}{Lemma 2}
+The non-linear delay equation 
+ \begin{align}
+{\color{blue} G(\theta) } 
+= \int_0^\theta {\color{red}\exp\left\{ - \frac{\gamma_0}{\gamma_0 - 1} \int_0^1  G(ru^{\frac{1}{\gamma_0 - 1}})^{\gamma_0 - 1} \frac{du}{u} \right\} } dr,
+\quad \theta \geq 0,
+  \end{align}
+has a unique solution:
+\begin{align}
+G(\theta) 
+  = \left( \frac{1}{1+\theta^{-(\gamma_0- 1)}} \right)^{\frac{1}{\gamma_0 - 1}},
+\quad \theta \geq 0. 
+\end{align}
+\end{block}
+
+So the {\color{red} red part} can be considered as an approximation of the size-biased add-on functions of random variable $\mathbf z^{(\gamma_0 - 1)}$.
+\end{frame}
+
+\begin{frame}{Methods/Size-biased add-on functions}
+  Recall that ${\color{blue} V_T(\theta f)(x)} = - \log \mathbf P_{\delta_x}[e^{- \theta X_T(f)}]$
+  \begin{block}{Theorem 4.}
+    For each non-negative bounded measurable function $f$, each $\theta \geq 0, x\in E$ and $T > 0$, we have
+    \begin{align}
+      &{\color{blue}V_T(\theta f)(x)} 
+      \\&= \phi(x) \int_0^\theta {\color{Red} \Pi_{x}^{(\phi)} \left[ \frac{f(\xi_T)}{\phi(\xi_T)} \exp \left\{ - \int_0^T \left( \kappa \gamma V_{T - s}(rf)^{\gamma - 1} (\xi_s) \right) \right\}\right] } dr.
+    \end{align}
+  \end{block}
+\begin{itemize}
+\item
+  The {\color{red} red} part is the size-biased add-on function of $X_T(f)$.
+\item  
+From Theorem 4 and Lemma 2, we can verify (details omitted) that
+  \begin{align}
+    \frac{V_t(\theta \eta_t f)(x)}{\eta_t \phi(x)} 
+    \xrightarrow[t\to \infty]{} G(\theta),\quad \theta >0.
+  \end{align}
+\end{itemize}
+\end{frame}
+
+
 
 % * Few References
 \section{Few References}
