@@ -1,0 +1,57 @@
+% * The preamble
+% ! This TeX file uses 'amsart' for its document class. 
+\documentclass[12pt,a4paper]{amsart}
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-2in}
+\calclayout
+% ! 'amsmath', 'amsthm', 'amsfonts' package is automatically loaded by 'amsart' class.
+% ! Below is the configuration of 'amsmath' package.
+\numberwithin{equation}{section}
+\allowdisplaybreaks
+% ! Below is the configuration of 'amsthm' package.
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollaray}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{exa}[thm]{Example}
+\newtheorem{asp}{Assumption}
+\newtheorem{iss}{Issue}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{ack}{Acknowledgment}
+% ! 'inputenc' package is used to specify the set of characters allowed to input into this TeX file.
+% \usepackage[utf8]{inputenc}
+% ! 'foutenc' package is used to specify the set of characters allowed to output into the generated pdf file.
+% \usepackage[T1]{fontenc}
+% ! 'amssymb', 'mathrsfs' and 'mathtools' packages provide additional math symbols from the AMS default symbol fonts. They are compatible with the AMS class and is recommended to be used.
+\usepackage{amssymb}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs}
+\usepackage{mathrsfs}
+% ! 'hyperref' package is used to handle cross-referencing in the generated pdf file.
+\usepackage[backref]{hyperref}
+% ! Other packages
+\usepackage{xcolor}
+\usepackage{comment}
+% * Top matter
+\begin{document}
+\title
+[short title]
+{Response}
+\maketitle
+% * Document body
+We are grateful to the referees' for their helpful comments.
+We have incorporated all the comments made by the referee.
+Here are the specific changes in response to the comments of the referees.
+\section*{Response to the comments of Referee 1}
+\begin{enumerate}
+\item
+
+\end{enumerate}
+% * Bibliographic references
+\bibliographystyle{plain}
+\bibliography{../orggtd/bib.bib}
+\end{document}
