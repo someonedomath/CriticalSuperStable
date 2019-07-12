@@ -18,3 +18,11 @@ references/presentation/_region_\.tex
 *.el
 
 presentation/_region_\.tex
+
+*.fmt
+
+stableLimit\.prv/tmpJKFyMk/
+
+*.fls
+
+*.fdb_latexmk
