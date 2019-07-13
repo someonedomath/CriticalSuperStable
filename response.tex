@@ -39,17 +39,219 @@
 % * Top matter
 \begin{document}
 \title
-[short title]
+[Response]
 {Response}
 \maketitle
 % * Document body
 We are grateful to the referees' for their helpful comments.
-We have incorporated all the comments made by the referee.
+We have incorporated all the comments made by the referees.
 Here are the specific changes in response to the comments of the referees.
 \section*{Response to the comments of Referee 1}
 \begin{enumerate}
 \item
+  p.4 l.4: It has to be They showd that. 
 
+  {\it Changed as suggested.}
+\item
+  p.12 l.-10: Equation (2.4) is not only integrating both sides of (2.3), please explain more.
+  
+  {\it We added some explanations before (2.4).}
+\item
+  p.20 l.4: In the first equality in the denominator it has to be $y^{1+\gamma(\zeta_s)}$.
+  
+  {\it We think the referee means $y^{1+\gamma(\xi_s)}$.
+    Changed as suggested. }
+\item
+  p.20 l.10 eq.(3.11): You don't need to add $x$ in the norm of $\|\kappa \gamma \phi^{\gamma - 1}\|$.
+  
+  {\it Done, as suggested.}
+\item
+  p.20 eq.(3.13) and p.21 in 9 more times: You missed an $m$ in $\left\langle v, \phi^* \right\rangle_m$.
+  
+  {\it We added them back, as suggested.}
+\item
+  p.21 l.1: I will add: On the other hand, according to (3.2) and Proposition 3.2.
+  
+  {\it Added, as suggested.}
+\item
+  p.23 l.-4: I will add then by Assumption 4, the spine representation, Campbell's formula...
+  
+  {\it Changed, as suggested.}
+\item
+  p.25 eq.(3.27) and the next equation: I think that in your equations you missed a factorial, i.e.
+  \begin{align}
+    F_\alpha(\theta) 
+    \leq \frac{C^k}{k!} \left( \rho C+1 \right) \theta^k 
+  \end{align}
+  and
+  \begin{align}
+    F_\alpha(\theta) 
+    \leq \frac{C^{k+1}}{(k+1)!} \left( \rho  C+1 \right) \theta^{k+1}
+  \end{align}
+  The reason is that in your next computation, Page 25 line -4 and -3. You missed an $\frac{1}{k+1}$ from the integration. 
+  In this case, you need to add a $\frac{1}{k}$ on the last equation of page 25.
+    
+  {\it We give a new proof of this Lemma which is shorter and better.}
+\item
+  p.29 in step 3: I will add: Notice that, by (1.20) and since $\left\langle f, \phi^* \right\rangle_m = 1$.
+  
+  {\it Added, as suggested.}
+\end{enumerate}
+\section*{Response to the comments of Referee 2}
+\begin{enumerate}
+\item
+  {\bf (Important!)} General remark: There are a number of restrictive looking assumptions and thus it is crucial that the authors provide examples which are covered by the settings.
+  It is true that before Assumption 4, there is a reference to [24] `for a list of examples,' but this is somewhat hidden.
+  At least a brief summary of examples should be placed at a more visible spot that convinces the reader that the scope is not as restricted as it seems.
+
+  In [24] there are indeed 12 examples given. 
+  I would at least vaguely describe (some of) these, possibly in an appendix and definitely without proofs, just mentioning that details and proofs (of these being examples) are in [24].
+  If it is relegated to an appendix then somewhere at the beginning at a visible spot I'd refer the reader to the appendix. 
+  
+  {\it TBD.}
+\item
+  p.2 in the middle: define positively regular.
+  
+  {\it We added the definition, as suggested.}
+\item
+  p.2. l.4: `They showed' instead `he showed'.
+  
+  {\it Changed, as suggested.}
+\item
+  p.4. display.4: Explain how this fits into the general formula with the integral term.
+  
+  {\it We explained it with more details.}
+\item
+  p.4. (1.16) and (1.17): perhaps mention that the limits do not depend on $x$ resp. $\mu$.
+  
+  {\it Done, as suggested.}
+\item 
+  p.5 right after (1.18): Here $\beta$ has not been defined yet, only later in Assumption 4 it will be.
+  
+  {\it We added a new sentence there which gives the function $\beta$.}
+\item
+  p.6 l.-15: Why isn't it $P_t^\beta \phi(x) = e^{\lambda t}\phi(x)$ and $P_t^{\beta*} \phi^*(x) = e^{\lambda t}\phi^*(x)$?
+  
+  {\it Should be $P_t^\beta \phi(x) = e^{\lambda t}\phi(x)$ and $P_t^{\beta*} \phi^*(x) = e^{\lambda t}\phi^*(x)$. Corrected as suggested.}
+\item
+  p.6 paragraph after Assumption 2: The notation is a bit confusing. So $\phi$ is the principal eigenfunction for the motion with the potential $\beta$ but $\varphi$ is the same without the potential. 
+  This should be made more clear.
+  
+  {\it We added a paragraph after Assumption 2 to make this more clear. 
+    Note that in the new version the notation $\varphi$ and $\varphi^*$ is changed into $\widetilde \phi$ and $\widetilde \phi^*$, respectively.}
+\item
+  Same place ({\bf Important!}): It is not clear why $\varphi$ is well defined. 
+  Let's say $\xi$ is a diffusion process.
+  If $\mathcal L$ is the elliptic operator corresponding to it and $\lambda(\mathcal L)$ is its (generalized) principal eigenvalue then $\mathcal L - \lambda(\mathcal L)$ may or may not have a Green's function.
+  In the second case everything is fine and $\varphi$ is uniquely determined up to constant multiples; it is the ground state.
+  However, in the first case the cone of positive harmonic functions w.r.t. $\mathcal L - \lambda(\mathcal L)$ is not necessarily one dimensional. 
+  For example, if we know that $\xi$ is recurrent (and so $\lambda(\mathcal L) = 0$), then we are fine.
+  But when it is transient, uniqueness does not follow.
+  
+  {\it Assumption 2 excluded the first case. We added a paragraph after Assumption 2 which explains that the principal eigenfunction without the potential is indeed well defined. 
+    Note that in the new version the notations $\varphi$ and $\varphi^*$ are changed into $\widetilde \phi$ and $\widetilde \phi^*$, respectively.}
+\item
+  p.8 l.6: I would rather say that the family of functions is just $(e^{\lambda t} \phi)_{t\geq 0}$, while $(e^{\lambda t} X_t(\phi))_{t\geq 0}$ is indeed the martingale.
+  
+  {\it We restated this paragraph to make our intuitive explanations of the spine decomposition theorem more accurate. }
+\item
+  p.11 Lemma 2.4 and Corollary 2.5:
+  Why do we suddenly use $\alpha$ instead of $\gamma$?
+  
+  {\it Should always use $\alpha$.
+     We changed several $\gamma$ into $\alpha$ there.} 
+\item
+  p.12: Explain how you get (2.4) from (2.3).
+  
+  {\it We explained this with more details.}
+\item
+  p.13 top: Why not `$\mathcal N$ is a Poisson random measure on $\mathbb W$'?
+  
+  {\it Changed as suggested.}
+\item
+  p.14 top: Give an intuitive description of what the three bullet points formulate.
+  
+  {\it We gave an intuitive explanations in the paragraph before those bullet points. }
+\item
+  p.17 l.-7: The RHS has a factor $e^{\lambda t}$ too. 
+  Also, you should explain that this follows from the ergodicity of the $\phi$-transformed motion.
+  (Two lines later you should refer to Proposition 3.1.)
+  
+  {\it We added more details there as suggested.}
+\item
+  p.18 l.8: ... with the same speed.
+  
+  {\it Changed, as suggested.}
+\item
+  p.18 l.-11: Please remind us that $\nu = \phi^* m$.
+  
+  {\it Done, as suggested.}
+\item
+  p.19 above (3.10): On the other hand,...
+  
+  {\it Done, as suggested.}
+\item 
+  p.19-20: It's easier to read the proof backwards. So perhaps you should tell at the beginning that your goal is to show (3.12) and (3.13), etc.
+  For the same reason, I'd move the few lines ``Proof of Thm 1.1(2)'' from p.22 to the beginning so that one can understand why the two propositions are needed.
+  
+  {\it We rearranged the Proof of Thm 1.1 (2) so that it is easier for the readers to get the structure of the Proof. }
+\item
+  p.21 l.1: Why is this ``according to (3.2)''?
+  
+  {\it We explained this in more details.}
+\item
+  p.21 before (3.14): Make it one sentence: if ... then ...
+  
+  {\it Done, as suggested.}
+\item
+  p.21 (3.14): $m$ is missing from the scalar product.
+  
+  {\it We added it back, as suggested.}
+\item
+  p.24 Lemma 3.5: Say that the assumption on $\gamma_0$ is $\gamma_0 \in (1,2)$. 
+  This looks like a stand alone lemma, so perhaps the reader does not connect it with the previous definition of $\gamma_0$.
+  
+  {\it It is indeed a stand along lemma. 
+    We changed all $\gamma_0$ into $\alpha$ in this Lemma.
+    Similar changes are made in the next Lemma due to same reasons.}
+\item
+  p.24 l.-2: When $0 < p < 1$, this is in fact not even a norm.
+  
+  {\it We agree. 
+    This doesn't compromise the later proofs.
+    We emphasized this in the new version to avoid any confusions.}
+\item
+  p.26 l.1: explain a bit more on ``Since this is true for all $k$, we get that $F(\alpha+\theta) = 0$ for all $\theta \leq 1/C, \alpha \leq \rho$, and so $F = 0$ on $[0, \rho+1/C]$.
+  
+  {\it The prove of this Lemma is simplified and the concerned argument is deleted.}
+\item
+  pp.24-26: Don't you what to move the analytical lemmas Lemma 3.5 and Lemma 3.6 move into an appendix?
+  
+  {\it Those Lemmas are now moved into an appendix as suggested.}
+\item
+  p.26: Instead of (3.28), why don't you simply say that $F$ satisfies the inequality in Lemma 3.6 (number that one) with $C = \gamma_0^{1/(\gamma_0 - 1)}$?
+  
+  {\it We should simply say that. 
+    Done, as suggested.}
+\item
+  p.28 end of Step 1: $J_g(t,r,\xi)$ and the two other terms you upper estimate are random variables.
+  So, do you mean the upper bounds almost surely?
+  
+  {\it Yes, we mean almost surely. 
+  We added ``almost surely'' at several places as suggested.}
+\item
+  p.29 l.-12: You should also recall that $\left\langle f, \phi^* \right\rangle_m = 1$.
+  
+  {\it Done, as suggested.}
+\item
+  p.32 l.-7: reverse instead of revers. 
+  Also ``use this ... to have that ...''.
+
+  {\it Done, as suggested.}
+\item
+  p.33 last sentence: I would say: ``Finally, $M \equiv 0$ clearly implies that $\lim_{t\to \infty} I_3(t,\theta,x) = 0$, and thus completes the verification of (3.29).''
+
+  {\it Done, as suggested.}
 \end{enumerate}
 % * Bibliographic references
 \bibliographystyle{plain}
