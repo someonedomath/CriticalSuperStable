@@ -1,10 +1,10 @@
 % * The preamble
 \documentclass[12pt,a4paper]{amsart}
 \setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-2in}\calclayout
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
-\def\MR#1{\href{http://www.ams.org/mathscinet-getitem?mr=#1}{MR-#1}}
-\def\ARXIV#1{\href{https://arxiv.org/abs/#1}{arXiv:#1}}
+% \def\MR#1{\href{http://www.ams.org/mathscinet-getitem?mr=#1}{MR-#1}}
+% \def\ARXIV#1{\href{https://arxiv.org/abs/#1}{arXiv:#1}}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
 \mathtoolsset{showonlyrefs}
@@ -85,7 +85,9 @@ Notice that \eqref{eq: Kolmogorov's result with finite variance} and \eqref{eq: 
 see \cite{KestenNeySpitzer1966The-Galton-Watson} for example.
 In this case, the limits in \eqref{eq: Kolmogorov's result with finite variance} and \eqref{eq: Yaglom's result with finite variance} are degenerate, and thus more appropriate scalings are needed.
 Research in this direction was first conducted by Zolotarev \cite{Zolotarev1957More} in a simplified continuous time set-up, which is then extended by Slack \cite{Slack1968A-branching} to discrete time critical Galton-Watson processes allowing infinite variance.
-The main result of  \cite{Slack1968A-branching} can be stated as follows. Consider a critical Galton-Watson process $\{(Z_n)_{n\geq 0}; P\}$ with infinite variance.
+The main result of  \cite{Slack1968A-branching} can be stated as follows. 
+% Consider a critical Galton-Watson process $\{(Z_n)_{n\geq 0}; P\}$ with infinite variance.
+Consider a critical Galton-Watson process $\{(Z_n)_{n\geq 0}; P\}$.
 Assume that the  generating function $f(s)$ of the offspring distribution is of the form
 \begin{align}\label{eq: offspring generating function with alpha moment}
 	f(s)
@@ -159,12 +161,15 @@ When the second moment is infinite, under a condition  parallel  to \eqref{eq: r
 In this paper, we are interested in a class of measure-valued branching Markov processes known as $(\xi, \psi)$-superprocesses:
 $\xi$, the spatial motion of the superprocess, is a Hunt process on a locally compact separable metric space $E$;
 $\psi$, the branching mechanism of the superprocess, is a function on $E \times [0,\infty)$ of the form
-\begin{align} \label{eq: branching mechanism}
+\begin{align} 
+\label{eq: branching mechanism}
 	\psi(x,z):=
-	- \beta(x) z + \alpha (x) z^2 + \int_{(0,\infty)} (e^{-zy} - 1 + zy) \pi(x,dy),
+	% - \beta(x) z + \alpha (x) z^2 + \int_{(0,\infty)} (e^{-zy} - 1 + zy) \pi(x,dy),
+	- \beta(x) z + \sigma (x)^2 z^2 + \int_{(0,\infty)} (e^{-zy} - 1 + zy) \pi(x,dy),
 	\quad x\in E, z\geq 0,
 \end{align}
-where $\beta \in \mathscr B_b(E)$, $\alpha \in \mathscr B^+_b(E)$ and $\pi(x,dy)$ is a kernel from $E$ to $(0,\infty)$ such that $\sup_{x\in E} \int_{(0,\infty)} (y\wedge y^2) \pi(x,dy) < \infty$.
+% where $\beta \in \mathscr B_b(E)$, $\alpha \in \mathscr B^+_b(E)$ and $\pi(x,dy)$ is a kernel from $E$ to $(0,\infty)$ such that $\sup_{x\in E} \int_{(0,\infty)} (y\wedge y^2) \pi(x,dy) < \infty$.
+where $\beta, \sigma\in \mathscr B_b(E)$ and $\pi(x,dy)$ is a kernel from $E$ to $(0,\infty)$ such that $\sup_{x\in E} \int_{(0,\infty)} (y\wedge y^2) \pi(x,dy) < \infty$.
 For the precise definition and properties of superprocesses, see \cite{Li2011Measure-valued}.
 
 Results parallel to \eqref{eq: Kolmogorov's result with finite variance} and \eqref{eq: Yaglom's result with finite variance} have been obtained for some critical superprocesses by Evans and Perkins \cite{EvansPerkins1990Measure-valued} and Ren, Song and Zhang \cite{RenSongZhang2015Limit}.
@@ -314,14 +319,14 @@ This can be done under the following assumptions on the spatial motion $\xi$:
 \end{asp}
 
 We will write $\langle f, g\rangle_m$ for $\int_E fg dm$ to emphasize that it is the inner product in the Hilbert space $L^2(E, m)$.
-
 Let $(P_t^*)_{t\geq 0}$ be the dual of the transition semigroup $(P_t)_{t\geq 0}$ in $L^2(E, m)$, i.e.,
 \begin{align}
   P_0^* = I;
   \quad P_t^* f(x) := \int_E p_t(y,x) f(y) m(dy),
   \quad t > 0, x\in E, f\in \mathscr B_b(E).
 \end{align}
-Under Assumption \ref{asp: 1}, it is proved in \cite{RenSongZhang2015Limit} and \cite{RenSongZhang2017Central} that $(P_t)_{t \geq 0}$ and $(P^*_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators in $L^2(E,m)$.
+% Under Assumption \ref{asp: 1}, it is proved in \cite{RenSongZhang2015Limit} and \cite{RenSongZhang2017Central} that $(P_t)_{t \geq 0}$ and $(P^*_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators in $L^2(E,m)$.
+Under Assumption \ref{asp: 1}, it is proved in \cite{RenSongZhang2015Limit} and \cite{RenSongZhang2017Central} that $(P_t)_{t \geq 0}$ and $(P^*_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators on $L^2(E,m)$.
 Let $\widetilde L$ and $\widetilde L^*$ be the generators of the semigroups $(P_t)_{t \geq 0}$ and $(P^*_t)_{t \geq 0}$, respectively.
 Denote by $\sigma(\widetilde L)$ and $\sigma(\widetilde L^*)$ the spectra of $\widetilde L$ and $\widetilde L^*$, respectively.
 According to \cite[Theorem V.6.6]{Schaefer1974Banach},
@@ -351,7 +356,8 @@ Define the dual semigroup $(P^{\beta *}_t)_{t \geq 0}$ by
 	:= \int_E p^\beta_t (y,x) f(y) m(dy),
 	\quad t>0, x\in E, f\in \mathscr B_b(E).
 \end{align}
-It is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that $(P^\beta_t)_{t \geq 0}$ and $(P^{\beta *}_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators in $L^2(E,m)$.
+% It is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that $(P^\beta_t)_{t \geq 0}$ and $(P^{\beta *}_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators in $L^2(E,m)$.
+It is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that $(P^\beta_t)_{t \geq 0}$ and $(P^{\beta *}_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators on $L^2(E,m)$.
 Let $L$ and $L^*$ be the generators of the semigroups $(P^\beta_t)_{t \geq 0}$ and $(P^{\beta *}_t)_{t \geq 0}$, respectively.
 Denote by $\sigma(L)$ and $\sigma(L^*)$ the spectra of $L$ and $L^*$, respectively.
 According to \cite[Theorem V.6.6]{Schaefer1974Banach}, $\lambda := \sup \text{Re}(\sigma(L)) = \sup \text{Re}(\sigma(L^*))$ is a common eigenvalue of multiplicity $1$ for both $L$ and $L^*$.
@@ -400,9 +406,9 @@ In \cite{RenSongZhang2015Limit},  a list of examples of processes satisfying Ass
 For the convenience of our readers, we will
 briefly recall some of these examples in Subsection \ref{sec:examples}.
 
-% DELETED
 % Our assumption is on the branching mechanism:
-% END DELETED
+Recall that the branching mechanism is given by \eqref{eq: branching mechanism}. 
+We assume the following:
 \begin{asp} \label{asp: 4}
 	The branching mechanism $\psi$ is of the form:
   \begin{align}
@@ -452,7 +458,8 @@ We now present the main results of this paper:
 \subsection{Methods and overview}
 	
 To establish Theorem \ref{thm: main theorem}(2) and Theorem \ref{thm: main theorem}(3), we use a spine decomposition theorem for 	$X$.
-  Roughly speaking, the spine is the trajectory of an immortal moving particle and the spine decomposition theorem says that, after a martingale change of measure, the transformed superprocess can be decomposed in law as the sum of a copy of the original superprocess and an measure-valued immigration process along this spine, see \cite{EckhoffKyprianouWinkel2015Spines, EnglanderKyprianou2004Local, LiuRenSong2009Llog}.
+  % Roughly speaking, the spine is the trajectory of an immortal moving particle and the spine decomposition theorem says that, after a martingale change of measure, the transformed superprocess can be decomposed in law as the sum of a copy of the original superprocess and an measure-valued immigration process along this spine, see \cite{EckhoffKyprianouWinkel2015Spines, EnglanderKyprianou2004Local, LiuRenSong2009Llog}.
+  Roughly speaking, the spine is the trajectory of an immortal moving particle and the spine decomposition theorem says that, after a martingale change of measure, the transformed superprocess can be decomposed in law as the sum of a copy of the original superprocess and a measure-valued immigration process along this spine, see \cite{EckhoffKyprianouWinkel2015Spines, EnglanderKyprianou2004Local, LiuRenSong2009Llog}.
 The martingale used for the change of measure is $(e^{-\lambda t} X_t(\phi))_{t\geq 0}$.
 Under Assumptions \ref{asp: 1} and \ref{asp: 3}, the spine process $\{\xi; \Pi^{(\phi)}\}$ is an ergodic process.
 We take advantage of this ergodicity to study the asymptotic behavior of the superprocess.
@@ -489,8 +496,10 @@ In Subsection \ref{sec: proof of result 3}, we give the proof of Theorem \ref{th
 % In Appendix \ref{sec: Characterizing the Zolotarev's distribution using an non-linear delay equation}, we give the equation that characterizes the distribution with Laplace transform \eqref{e:zloltarev}, which is used in the proof of Theorem \ref{thm: main theorem}(3) given Subsection \ref{sec: proof of result 3}.
 In Appendix \ref{sec: Characterizing the Zolotarev's distribution using an non-linear delay equation}, we give the equation that characterizes the distribution with Laplace transform \eqref{e:zloltarev}, which is used in the proof of Theorem \ref{thm: main theorem}(3).
 
-\section{Preliminaries} \label{sec: Preliminaries}
-\subsection{Asymptotic equivalence} \label{sec: Asymptotic equivalence}
+\section{Preliminaries} 
+\label{sec: Preliminaries}
+\subsection{Asymptotic equivalence} 
+\label{sec: Asymptotic equivalence}
 In this subsection, we give a lemma on asymptotic equivalence.	
 Let $t_0 \in [-\infty,\infty]$.
 In this Subsection, $(E, \mathscr E)$ is assume to be a  measurable space.
@@ -500,21 +509,23 @@ For any strictly positive measurable functions $g_0, g_1$ on $\mathbb R\times E$
 
 \begin{lem} \label{lem: asymptotic equivalent of integration}
 	Suppose that $f_0,f_1$ are bounded strictly positive measurable functions on $\mathbb R \times E$ and $f_0(t,x)\stackrel[t\to t_0]{x\in E}{\sim}f_1(t,x)$.
-% If $f$ is a finite measure on $(E, \mathscr E)$, then
-If $m$ is a finite measure on $(E, \mathscr E)$, then
+  % If $f$ is a finite measure on $(E, \mathscr E)$, then
+  % If $m$ is a finite measure on $(E, \mathscr E)$, then
+  If $\rho$ is a finite non-degenerate measure on $(E, \mathscr E)$, then
+  % Sun: I changed several m into \rho without further mentioning
   \begin{align}
-    \int_E f_0(t,x)m(dx)
+    \int_E f_0(t,x)\rho(dx)
     \stackrel[t\to t_0]{}{\sim}
-    \int_E f_1(t,x)m(dx).
+    \int_E f_1(t,x)\rho(dx).
   \end{align}
 \end{lem}
 \begin{proof}
 	Since
 \begin{align}
-	&\Big| \frac{	\int_E f_0(t,x)m(dx) }{ 	\int_E f_1(t,x)m(dx)  } - 1 \Big|
-   = \Big| \int_E \frac{f_0(t,x)}{f_1(t,x)} \frac{f_1(t,x)m(dx)}{	\int_E f_1(t,y)m(dy)  } - 1\Big|
-	\\&\quad \leq \int_E \Big|  \frac{f_0(t,x)}{f_1(t,x)} - 1 \Big| \frac{f_1(t,x)m(dx)}{	\int_E f_1(t,y)m(dy)  }
-	\leq \sup_{x\in E} \Big|  \frac{f_0(t,x)}{f_1(t,x)} - 1 \Big|
+	&\Big| \frac{	\int_E f_0(t,x) \rho(dx) }{ 	\int_E f_1(t,x) \rho(dx)  } - 1 \Big|
+   = \Big| \int_E \frac{f_0(t,x)}{f_1(t,x)} \frac{f_1(t,x) \rho(dx)}{	\int_E f_1(t,y) \rho(dy)  } - 1\Big|
+	\\&\quad \leq \int_E \Big|  \frac{f_0(t,x)}{f_1(t,x)} - 1 \Big| \frac{f_1(t,x) \rho(dx)}{	\int_E f_1(t,y) \rho(dy)  }
+	\leq \sup_{x\in E} \Big|  \frac {f_0(t,x)} {f_1(t,x)} - 1 \Big|
 	\xrightarrow[t\to t_0]{} 0,
 \end{align}
 the assertion is valid.
@@ -647,71 +658,75 @@ In particular, we know that, there is $t_0 > 0$ large enough such that $L$ is lo
 
 \begin{lem}\label{lem:regularly_variation_and_integration}
   % Let $(E, \mathscr E)$ be a measurable space and $m$ a  non-degenerate measure on $(E, \mathscr E)$.
-  Let $(E, \mathscr E)$ be a measurable space and $m$ be a  non-degenerate measure on $(E, \mathscr E)$.
+  Let $(E, \mathscr E)$ be a measurable space and $\rho$ a finite non-degenerate measure on $(E, \mathscr E)$.
   % Let $f$ be a bounded measurable function on $E$ with 
-  Let $\gamma$ be a bounded measurable function on $E$ with 
+  Let $\alpha$ be a bounded measurable function on $E$ with 
+% Sun: I changed several gamma into alpha without further mentioning. 
+% Sun: I also changed m into \rho in this lemma.
   \begin{align}
-    \gamma_0
-    := \operatorname*{ess\,inf}_{m(dx)} \gamma(x)
-    := \sup\{r:m(x:\gamma(x) < r) = 0\}.
+    \alpha_0
+    := \operatorname*{ess\,inf}_{\rho(dx)} \alpha(x)
+    % := \sup\{r:\rho(x:\alpha(x) < r) = 0\}.
+    := \sup\{r:\rho(x:\alpha(x) < r) = 0\} \in \mathbb R.
   \end{align}
-	Then $\big(\int_E t^{\gamma(x)} m(dx)\big)_{t\in (0,\infty)} \in \mathcal R^0_{\gamma_0}$.
-	Further, if $m\{x:\gamma(x) = \gamma_0\}>0$, then
+	Then $\big(\int_E t^{\alpha(x)} \rho(dx)\big)_{t\in (0,\infty)} \in \mathcal R^0_{\alpha_0}$.
+	Further, if $\rho \{x:\alpha(x) = \alpha_0\}>0$, then
 \begin{align}
-	\int_E t^{\gamma(x)} m(dx)
-	\stackrel[t\to 0]{}{\sim}  m\{x:\gamma(x) = \gamma_0\} t^{\gamma_0}.
+	\int_E t^{\alpha(x)} \rho(dx)
+	\stackrel[t\to 0]{}{\sim}  \rho\{x:\alpha(x) = \alpha_0\} t^{\alpha_0}.
 \end{align}
 \end{lem}
 
 \begin{proof}
-	If $\lambda \in (0,1]$, then we have
+	% If $\lambda \in (0,1]$, then we have
+  % SUN: I changed several \lambda to u without further mentioning.
+	If $u \in (0,1]$, then we have
   \begin{align}
-    \frac{\int_E \lambda^{\gamma(x)} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}
-    \leq \frac{\int_E \lambda^{\gamma_0} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}
-    = \lambda^{\gamma_0},
+    \frac{\int_E u^{\alpha(x)} t^{\alpha(x)} \rho(dx)}{\int_E t^{\alpha(x)} \rho(dx)}
+    \leq \frac{\int_E u^{\alpha_0} t^{\alpha(x)} \rho(dx)}{\int_E t^{\alpha(x)} \rho(dx)}
+    = u^{\alpha_0},
     \quad t\in (0,\infty).
   \end{align}
 	This implies that
   \begin{align}
-    \limsup_{(0,\infty) \ni t\to 0}\frac{\int_E \lambda^{\gamma(x)} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}	
-    \leq \lambda ^{\gamma_0}.
+    \limsup_{(0,\infty) \ni t\to 0}\frac{\int_E u^{\alpha(x)} t^{\alpha(x)} \rho(dx)}{\int_E t^{\alpha(x)} \rho(dx)}	
+    \leq u^{\alpha_0}.
   \end{align}
 	Also, for any $\epsilon \in (0,\infty)$, we have
   \begin{align}
-    &\frac{\int_E \lambda^{\gamma(x)} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}
-      \geq \frac{ \int_{ \gamma(x) \leq  \gamma_0 + \epsilon } \lambda^{ \gamma(x) } t^{ \gamma(x)} m(dx) } { \int_E t^{ \gamma(x) } m(dx) }
-    \\&\quad \geq \lambda^{ \gamma_0 + \epsilon} \frac{ \int_{ \gamma(x) \leq \gamma_0 + \epsilon } t^{ \gamma(x)} m(dx) } { \int_{ \gamma(x) \leq \gamma_0 + \epsilon}t^{\gamma(x)}m(dx)+ \int_{\gamma(x) > \gamma_0 + \epsilon} t^{\gamma(x)}m(dx)}
-    \\&\quad = \lambda^{\gamma_0 + \epsilon} \frac{1}{1+ \frac{\int_{\gamma(x) > \gamma_0 + \epsilon}t^{\gamma(x) - (\gamma_0 + \epsilon)}m(dx)}{\int_{\gamma(x) \leq \gamma_0 + \epsilon}t^{\gamma(x)- (\gamma_0 + \epsilon)}m(dx)}},
+    &\frac{\int_E u^{\alpha(x)} t^{\alpha(x)} \rho(dx)}{\int_E t^{\alpha(x)} \rho(dx)}
+      \geq \frac{ \int_{ \alpha(x) \leq  \alpha_0 + \epsilon } u^{ \alpha(x) } t^{ \alpha(x)} \rho(dx) } { \int_E t^{ \alpha(x) } \rho(dx) }
+    \\&\quad \geq u^{ \alpha_0 + \epsilon} \frac{ \int_{ \alpha(x) \leq \alpha_0 + \epsilon } t^{ \alpha(x)} \rho(dx) } { \int_{ \alpha(x) \leq \alpha_0 + \epsilon}t^{\alpha(x)} \rho(dx)+ \int_{\alpha(x) > \alpha_0 + \epsilon} t^{\alpha(x)} \rho(dx)}
+    \\&\quad = u^{\alpha_0 + \epsilon} \frac{1}{1+ \frac{\int_{\alpha(x) > \alpha_0 + \epsilon}t^{\alpha(x) - (\alpha_0 + \epsilon)} \rho(dx)}{\int_{\alpha(x) \leq \alpha_0 + \epsilon}t^{\alpha(x)- (\alpha_0 + \epsilon)} \rho(dx)}},
     \quad t\in (0, \infty),
     \\&\quad \xrightarrow[(0,\infty) \ni t\to 0]{}
-    \lambda ^{\gamma_0 + \epsilon},
+    u^{\alpha_0 + \epsilon},
   \end{align}
 	where the last convergence is due to the monotone convergence theorem.
 	Therefore
   \begin{align}
-    \liminf_{(0,\infty) \ni t\to 0}\frac{\int_E \lambda^{\gamma(x)} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}
-    \geq \lambda ^{\gamma_0}.
+    \liminf_{(0,\infty) \ni t\to 0}\frac{\int_E u^{\alpha(x)} t^{\alpha(x)} \rho(dx)}{\int_E t^{\alpha(x)} \rho(dx)}
+    \geq u^{\alpha_0}.
   \end{align}
 	Summarizing the above,  we get
   \begin{align}
-    \lim_{(0,\infty) \ni t\to 0}\frac{\int_E \lambda^{\gamma(x)} t^{\gamma(x)} m(dx)}{\int_E t^{\gamma(x)} m(dx)}
-    = \lambda ^{\gamma_0},	
-    \quad \lambda \in (0,1].
+    \lim_{(0,\infty) \ni t\to 0}\frac{\int_E u^{\alpha(x)} t^{\alpha(x)} \rho(dx)}{\int_E t^{\alpha(x)} \rho(dx)}
+    = u^{\alpha_0},	
+    \quad u \in (0,1].
   \end{align}
-	If $\lambda \in (1,\infty)$, taking $f(x, t):= t^{\gamma(x)}$, from what we have proved, we also have that
+	If $u \in (1,\infty)$, taking $f(x, t):= t^{\alpha(x)}$, from what we have proved, we also have that
   \begin{align}
-    \lim_{(0,\infty)\ni t\to 0}\frac{\int_E f(x,\lambda t)m(dx)}{\int_E f(x, t)m(dx)}
-    = \lim_{(0,\infty)\ni t\to 0}\frac{\int_E f(x,t)m(dx)}{\int_E f(x, \lambda^{-1} t)m(dx)}
-    = \big((\lambda^{-1})^{\gamma_0} \big)^{-1}
-    = \lambda ^{\gamma_0}.
+    \lim_{(0,\infty)\ni t\to 0}\frac{\int_E f(x,u t) \rho(dx)}{\int_E f(x, t) \rho(dx)}
+    = \lim_{(0,\infty)\ni t\to 0}\frac{\int_E f(x,t) \rho(dx)}{\int_E f(x, u^{-1} t) \rho(dx)}
+    = \big(( u^{-1})^{\alpha_0} \big)^{-1}
+    = u^{\alpha_0}.
   \end{align}
 	This proved the first part of the lemma.
 	
-	If further
-	we have $m(x:\gamma(x) = \gamma_0)>0$, then by the monotone convergence theorem  it is easy to see that
+	If further we have $\rho(x:\alpha(x) = \alpha_0)>0$, then by the monotone convergence theorem  it is easy to see that
   \begin{equation}
-    \frac{\int_E t^{\gamma(x)} m(dx)}{t^{\gamma_0}}
-    \xrightarrow[(0,\infty)\ni t\to 0]{} m(x:\gamma(x) = \gamma_0)\in (0,\infty).
+    \frac{\int_E t^{\alpha(x)} \rho(dx)}{t^{\alpha_0}}
+    \xrightarrow[(0,\infty)\ni t\to 0]{} \rho(x:\alpha(x) = \alpha_0)\in (0,\infty).
     \qedhere
   \end{equation}
 \end{proof}
@@ -727,7 +742,8 @@ It is known, see \cite[Theorem 2.23]{Li2011Measure-valued} for example, that \eq
 where
 \begin{align}
 	\psi_0(x,z)
-	:= \alpha(x) z^2 + \int_{(0,\infty)} (e^{-z y} - 1 + z y) \pi(x,dy),
+	% := \alpha(x) z^2 + \int_{(0,\infty)} (e^{-z y} - 1 + z y) \pi(x,dy),
+	:= \psi(x,z) + \beta(x)z,
 	\quad x \in E,z \geq 0.
 \end{align}
 Suppose that Assumptions \ref{asp: 1}--\ref{asp: 2} hold.
@@ -761,11 +777,14 @@ We say that $(X_t)_{t\geq 0}$ is \emph{non-persistent} if $\mathbf P_{\delta_x}(
 Suppose that $(X_t)_{t\geq 0}$ is non-persistent, then according to \cite[Section 8.4]{Li2011Measure-valued}, there is a family of measures $(\mathbb N_x)_{x\in E}$ on $\mathbb W$ such that
 \begin{itemize}
 \item
-	$\mathbb N_x (\forall t \geq 0, \|W_t\|=0) =0$;
+	% $\mathbb N_x (\forall t \geq 0, \|W_t\|=0) =0$;
+	for each $x\in E$, $\mathbb N_x (\forall t > 0, \|W_t\|=0) =0$;
 \item
-	$\mathbb N_x(\|W_0 \|\neq 0) = 0$;
+	% $\mathbb N_x(\|W_0 \|\neq 0) = 0$;
+	for each $x\in E$, $\mathbb N_x(\|W_0 \|\neq 0) = 0$;
 \item
-	For any $\mu \in \mathcal M_E^1$, if $\mathcal N$ is a Poisson random measure on $\mathbb W$ with intensity $\mathbb N_\mu(\cdot):= \int_E \mathbb N_x(\cdot )\mu(dx)$, then the superprocess $\{X;\mathbf P_\mu\}$ can be realized by $\widetilde X_0 := \mu$ and $\widetilde X_t(\cdot) := \mathcal N[W_t(\cdot)]$ for each $t>0$.
+	% For any $\mu \in \mathcal M_E^1$, if $\mathcal N$ is a Poisson random measure on $\mathbb W$ with intensity $\mathbb N_\mu(\cdot):= \int_E \mathbb N_x(\cdot )\mu(dx)$, then the superprocess $\{X;\mathbf P_\mu\}$ can be realized by $\widetilde X_0 := \mu$ and $\widetilde X_t(\cdot) := \mathcal N[W_t(\cdot)]$ for each $t>0$.
+	for any $\mu \in \mathcal M_E^1$, if $\mathcal N$ is a Poisson random measure on $\mathbb W$ with intensity $\mathbb N_\mu(\cdot):= \int_E \mathbb N_x(\cdot )\mu(dx)$, then the superprocess $\{X;\mathbf P_\mu\}$ can be realized by $\widetilde X_0 := \mu$ and $\widetilde X_t(\cdot) := \mathcal N[W_t(\cdot)],t>0$.
 \end{itemize}
 We refer to $(\mathbb N_x)_{x\in E}$ as the \emph{Kuznetsov measures} of $X$.
 For the existence and further properties of such measures, we refer our readers to \cite{Li2011Measure-valued}.
@@ -792,13 +811,16 @@ For each $\mu \in \mathcal M_E^1$ and $t > 0$, by \eqref{eq: equation for N meas
 	&= \lim_{\lambda \to \infty} \langle \mu, V_t(\lambda \mathbf 1_E)\rangle
    = \mu(v_t).
 \end{align}
-It is know that for any $f\in\mathscr B_b^+(E)$,
+% It is know that for any $f\in\mathscr B_b^+(E)$,
+It is also known that for any $f\in\mathscr B_b^+(E)$,
 \begin{align}\label{eq: mean of kuz measure}
   \mathbb N_{\mu}[W_t(f)]
   =\mathbf P_{\mu}[X_t(f)]=\mu(P^\beta_tf),
-	\quad t \geq 0,
-\end{align}
-see \cite[Lemma 3.3]{RenSongSun2017Spine} for example.
+%	\quad t \geq 0,
+% \end{align}
+% see \cite[Lemma 3.3]{RenSongSun2017Spine} for example.
+  \quad t \geq 0.
+  \end{align}
 
 \subsection{Spine decompositions}
 \label{sec: Spine decompositions}
@@ -824,12 +846,14 @@ The first step of the theorem says that $\{(X_t)_{t\geq 0}; \mathbf P_\mu^{X_T(g
     \overset{f.d.d.}{=} \{(X_t+W_t)_{t\geq 0}; \mathbf P_\mu  \otimes \mathbb N^{W_T(g)}_\mu\}.
   \end{align}
 \end{thm}
-The second step of the spine decomposition theorem says that $\{(W_t)_{0\leq t\leq T}; \mathbb N^{W_T(g)}_\mu\}$ has a spine representation, which intuitively says that, under probability $\mathbb N_\mu^{W_T(g)}$, the measure-valued process $(W_t)_{0\leq t\leq T}$ can be decomposed as an measure-valued immigration process along the trajectory of the spine process in a Poissonian way.
+The second step of the spine decomposition theorem says that $\{(W_t)_{0\leq t\leq T}; \mathbb N^{W_T(g)}_\mu\}$ has a spine representation, which intuitively says that, under probability $\mathbb N_\mu^{W_T(g)}$, 
+% the measure-valued process $(W_t)_{0\leq t\leq T}$ can be decomposed as an measure-valued immigration process along the trajectory of the spine process in a Poissonian way.
+the measure-valued process $(W_t)_{0\leq t\leq T}$ can be decomposed as an measure-valued immigration process along the trajectory of a spine process in a Poissonian way.
 
 
 
 More precisely,
-we say $\{(\xi_t)_{0\leq t\leq T}, \mathbf n_T,  (Y_t)_{ 0\leq t\leq T}; \dot {\mathbf P}^{(g,T)}_\mu\}$ is a \emph{spine representation of $\mathbb N^{W_T(g)}_\mu$}  if,
+we say $\{(\xi_t)_{0\leq t\leq T}, \mathbf n_T,  (Y_t)_{ 0\leq t\leq T}; \dot {\mathbf P}^{(g,T)}_\mu\}$ is a \emph{spine representation of $\mathbb N^{W_T(g)}_\mu$}  if:
 \begin{itemize}
 \item
 	The \emph{spine process} $\{(\xi_t)_{0\leq t\leq T}; \dot{\mathbf P}^{(g,T)}_\mu\}$ is a copy of $\{(\xi_t)_{0\leq t\leq T}; \Pi^{(g,T)}_{\mu}\}$, where $\Pi^{(g,T)}_{\mu}$ is the $g(\xi_T) \exp\{\int_0^T \beta(\xi_s)ds\}$-transform of the measure $\Pi_{\mu}(\cdot):=\int_{E}\mu(dx)\Pi_x(\cdot) $;
@@ -963,7 +987,8 @@ This implies that the process $\{\xi; \Pi^{(\phi)}_x\}$ is ergodic.
 One can easily get from \eqref{eq: asymptotic for q_t(x,y)} that $(\phi\phi^*)(x)m(dx)$ is the unique invariant probability measure of $\{\xi; \Pi^{(\phi)}_x\}$.
 The following two lemmas are also simple consequences of \eqref{eq: asymptotic for q_t(x,y)}.
 They will be needed in the proof of  Theorem \ref{thm: main theorem}(3).
-\begin{lem}[{\cite[Lemma 5.6]{RenSongSun2017Spine}}] \label{lem: ergodicity of the underlying process}
+% \begin{lem}[{\cite[Lemma 5.6]{RenSongSun2017Spine}}] \label{lem: ergodicity of the underlying process}
+\begin{lem}[{\cite[Lemma 5.1]{RenSongSun2017Spine}}] \label{lem: ergodicity of the underlying process}
 If $F\in \mathscr B_b(E\times [0,1]\times [0,\infty)$ is
 such that $F(y,u):= \lim_{t\to \infty} F(y,u,t)$ exists for each $y\in E$ and $u \in [0,1]$, then
 \begin{align}
@@ -1099,7 +1124,8 @@ As a consequence, we have the desired result.
     \in [0,\infty),
     \quad s, t > 0.
   \end{align}
-  One of the consequences of this equation is that, see \cite[Lemma 5.1]{RenSongSun2017Spine} for example,
+  % One of the consequences of this equation is that, see \cite[Lemma 5.1]{RenSongSun2017Spine} for example,
+  One of the consequences of this equation is that, see \cite[Lemma 5.2]{RenSongSun2017Spine} for example,
   \begin{align}
     \label{eq: uniform converges to 0}
     \|\phi^{-1}v_t\|_{\infty} \xrightarrow[t\to \infty]{} 0.
@@ -1147,145 +1173,171 @@ As a consequence, we have the desired result.
 \begin{proof}
   [Proof of Proposition \ref{prop: convergence in a same speed}]
 	We use an argument similar to that used in \cite{RenSongSun2017Spine} for critical superprocesses with finite 2nd moment.
-We will prove that for an appropriate map $t_0$ with
-$$
-	t_0(t)
-	\xrightarrow[t\to\infty]{} \infty;
-	\quad t_0(t)\| \phi^{-1}v_{t-t_0(t)}\|^{\gamma_0 - 1}_\infty
-	\xrightarrow[t\to\infty]{} 0,
-$$	
-we have
-$$
-\sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
-	\xrightarrow[t\to\infty]{} 0
-$$
-and
-$$
-\Big |\frac {\langle v_t, \phi^*\rangle_m} {\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big |
-     \xrightarrow[t\to\infty]{} 0.
-$$
-Then the desired assertion follows easily from these and properties of uniform convergence.
+  % CHANGE
+  % We will prove that for an appropriate map $t_0$ with
+  % $$
+  %	t_0(t)
+  %	\xrightarrow[t\to\infty]{} \infty;
+  %	\quad t_0(t)\| \phi^{-1}v_{t-t_0(t)}\|^{\gamma_0 - 1}_\infty
+  %	\xrightarrow[t\to\infty]{} 0,
+  % $$	
+  % we have
+  % $$
+  % \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
+	% \xrightarrow[t\to\infty]{} 0
+  % $$
+  % and
+  % $$
+  % \Big |\frac {\langle v_t, \phi^*\rangle_m} {\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big |
+  % \xrightarrow[t\to\infty]{} 0.
+  % $$
+  % Then the desired assertion follows easily from these and properties of uniform convergence.
+  We only need to prove that there exists a map $t\mapsto a_t > 0$ such that
+  \begin{align}
+    \label{eq:k1}
+    \sup_{x\in E} \Big| \frac{ ( \phi^{-1} v_t )(x)}{ a_t} - 1 \Big|
+    \xrightarrow[t\to \infty]{} 0.
+  \end{align}
+  In fact, once this is proved, we will have that
+  \begin{align}
+    \label{eq:k2}
+    \Big |\frac {\langle v_t, \phi^*\rangle_m} {a_t } - 1 \Big |
+    & \leq \int \Big | \frac{(\phi^{-1}v_t)(x)}{ a_t } - 1 \Big| \phi \phi^*(x) m(dx)\\
+    & \leq \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{ a_t }-1 \Big|
+        \xrightarrow[t\to\infty]{} 0.
+  \end{align}
+  Then, by \eqref{eq:k1}, \eqref{eq:k2} and the property of uniform convergence, we will get the desired result:
+  \begin{align}
+    \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t},\phi^* \rangle_m}-1 \Big|
+    \xrightarrow[t\to\infty]{} 0.
+  \end{align}
+  % END CHANGE
 	
-%end new
-For each $\mu\in\mathcal M^\phi_E$, denote by $\{(Y_t), (\xi_t),\mathbf n; \dot {\mathbf P}^{(\phi)}_\mu\}$ the spine representation of $\mathbb N^{(\phi)}_\mu$.
+  For each $\mu\in\mathcal M^\phi_E$, denote by $\{(Y_t), (\xi_t),\mathbf n; \dot {\mathbf P}^{(\phi)}_\mu\}$ the spine representation of $\mathbb N^{(\phi)}_\mu$.
 	According to \eqref	{eq: equation for mu v-t}, \eqref{eq: mean of kuz measure} and Theorem \ref{thm: spine representation}, we have that for each $t>0$,
-\begin{align}
-\label{eq:vt-and-Y}
-	\langle \mu,\phi \rangle \dot {\mathbf P}^{(\phi)}_\mu [Y_t(\phi)^{-1}]
-	= \mathbb N_\mu[W_t(\phi)] \mathbb N^{W_t(\phi)}_\mu [W_t(\phi)^{-1}]
-	= \mathbb N_\mu(W_t(\phi) > 0)
-	= \mu(v_t).
-\end{align}
-Taking $\mu = \delta_x$ in \eqref{eq:vt-and-Y}, we get $(\phi^{-1}v_t)(x) =\dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]$.
-Recall that $d\nu = \phi^* dm$.
-Taking $\mu = \nu$ in \eqref{eq:vt-and-Y}, we get $\langle v_t, \phi^*\rangle_m = \dot {\mathbf P}_{\nu}^{(\phi)} [Y_t(\phi)^{-1}]$.
-Therefore, to complete the proof, we only need to show that
-\begin{align}
-  \label{eq:desired_for_main_theorem_2}
-	\dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]
-	\stackrel[t\to \infty]{x\in E}{\sim}  \dot {\mathbf P}_\nu^{(\phi)} [Y_t(\phi)^{-1}].
-\end{align}
-
-
-In order to show this, we consider a decomposition of the immigration process $(Y_t)_{t\geq 0}$.
-For any $t>0$ and any $G\in \mathscr B((0,t])$, define
-\begin{align}
-	Y^G_t
-	:= \int_{G\times \mathbb W} w_{t-s} \mathbf n(ds,dw).
-\end{align}
-Then for any $0 < t_0 < t$, we can decompose $Y_t$ into
-\begin{align}
-	Y_t
-	= Y^{(0,t_0]}_t + Y^{(t_0,t]}_t.
-\end{align}
-Using this decomposition, for each $0<t_0<t<\infty$ and $x\in E$, we have
-\begin{align}
-  \label{eq: starting point of phi-1v_t(x)}
-  \dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]
-	= \dot {\mathbf P}_\nu^{(\phi)} [Y^{(t_0,t]}_t(\phi)^{-1}] + \epsilon_x^1(t_0,t) +\epsilon_x^2(t_0,t),
-\end{align}
-where
-\begin{align}
-	\epsilon_x^1(t_0,t)
-	&:= \dot {\mathbf P}_{\delta_x}^{(\phi)} [Y^{(t_0,t]}_t(\phi)^{-1}] - \dot {\mathbf P}_\nu^{(\phi)} [Y^{(t_0,t]}_t(\phi)^{-1}];
-	\\\epsilon_x^2(t_0,t)
-	&:= \dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1} - Y^{(t_0,t]}_t(\phi)^{-1}].
-\end{align}
-
-By the construction of the spine representation $\{(Y_t), (\xi_t),\mathbf n; \dot {\mathbf P}^{(\phi)}_\mu\}$ and its Markov property, we have that
-\begin{align}
-	\label{eq: some equations for PY-1-1}
-	&\dot{\mathbf P}^{(\phi)} [Y_t^{(t_0,t]}(\phi)^{-1}|\mathscr F^\xi_{t_0}]
-   = \dot{\mathbf P}_{\delta_{\xi_{t_0}}}^{(\phi)}  [Y_{t-t_0}(\phi)^{-1}]
-   = (\phi^{-1}v_{t-t_0})(\xi_{t_0});
-	\\ \label{eq: some equations for PY-1-2}
-	&\dot{\mathbf P}_\nu^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]
-   = \Pi_{\nu}^{(\phi)}[(\phi^{-1}v_{t-t_0})(\xi_{t_0}) ]
-   = \langle v_{t-t_0},\phi^* \rangle_m;
-	\\ \label{eq: some equations for PY-1-3}
-	&\dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]
-   = \Pi_x^{(\phi)}[(\phi^{-1}v_{t-t_0})(\xi_{t_0}) ]
-   = \int_E  q_{t_0}(x,y)(\phi^{-1}v_{t-t_0})(y) m(dy).
-\end{align}
-
-The main idea is to show that both $\epsilon_x^1(t_0,t)$ and $\epsilon_x^2(t_0,t)$ are very small compared to $\dot {\mathbf P}_\nu^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]$ provided $t_0$ and $t- t_0$ are large enough.
-This is done in the following two lemmas whose proofs are postponed after this proof.
-
-
-Let $c_0, c_1>0$ be the constants in \eqref{eq:q(t,x,y)}.
-\begin{lem}
-  \label{lem:bound_for_epsilon1}
-  For each $t > t_0 > 1$, we have that
   \begin{align}
-    |\epsilon_x^1(t_0,t)|
-    \leq c_0 e^{-c_1 t_0}\langle v_{t-t_0},\phi^* \rangle_m.
+    \label{eq:vt-and-Y}
+    \langle \mu,\phi \rangle \dot {\mathbf P}^{(\phi)}_\mu [Y_t(\phi)^{-1}]
+    = \mathbb N_\mu[W_t(\phi)] \mathbb N^{W_t(\phi)}_\mu [W_t(\phi)^{-1}]
+    = \mathbb N_\mu(W_t(\phi) > 0)
+    = \mu(v_t).
   \end{align}
-\end{lem}
-
-\begin{lem}
-  \label{lem:upperbound_of_epsilon-2}
-  For each $t_0 > 1$ and $t - t_0$ large enough, we have
+  Taking $\mu = \delta_x$ in \eqref{eq:vt-and-Y}, we get $(\phi^{-1}v_t)(x) =\dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]$.
+  Recall that $d\nu = \phi^* dm$.
+  Taking $\mu = \nu$ in \eqref{eq:vt-and-Y}, we get $\langle v_t, \phi^*\rangle_m = \dot {\mathbf P}_{\nu}^{(\phi)} [Y_t(\phi)^{-1}]$.
+  % DELETED
+  % Therefore, to complete the proof, we only need to show that
+  % \begin{align}
+  %  \label{eq:desired_for_main_theorem_2}
+  %  \dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]
+  %  \stackrel[t\to \infty]{x\in E}{\sim}  \dot {\mathbf P}_\nu^{(\phi)} [Y_t(\phi)^{-1}].
+  % \end{align}
+  % END DELETED
+  
+  % In order to show this, we consider a decomposition of the immigration process $(Y_t)_{t\geq 0}$.
+  In order to construct an $(a_t)_{t\geq 0}$ satisfying \eqref{eq:k1}, we consider a decomposition of the immigration process $(Y_t)_{t\geq 0}$.
+  For any $t>0$ and any $G\in \mathscr B((0,t])$, define
   \begin{align}
-    \label{eq:upperbound_of_epsilon-2}
-    |\epsilon_x^2(t_0,t)|
-    \leq t_0\|\kappa\gamma\phi^{\gamma - 1}\|_{\infty} \cdot \|\phi^{-1}v_{t-t_0}\|^{\gamma_0-1}_\infty (1+c_0 e^{-c_1 t_0}) \langle v_{t-t_0},\phi^* \rangle_m.
+    Y^G_t
+    := \int_{G\times \mathbb W} w_{t-s} \mathbf n(ds,dw).
   \end{align}
-\end{lem}
+  Then for any $0 < t_0 < t$, we can decompose $Y_t$ into
+  \begin{align}
+    Y_t
+    = Y^{(0,t_0]}_t + Y^{(t_0,t]}_t.
+  \end{align}
+  Using this decomposition, for each $0<t_0<t<\infty$ and $x\in E$, we have
+  \begin{align}
+    \label{eq: starting point of phi-1v_t(x)}
+    \dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]
+    = \dot {\mathbf P}_\nu^{(\phi)} [Y^{(t_0,t]}_t(\phi)^{-1}] + \epsilon_x^1(t_0,t) +\epsilon_x^2(t_0,t),
+  \end{align}
+  where
+  \begin{align}
+    \epsilon_x^1(t_0,t)
+    &:= \dot {\mathbf P}_{\delta_x}^{(\phi)} [Y^{(t_0,t]}_t(\phi)^{-1}] - \dot {\mathbf P}_\nu^{(\phi)} [Y^{(t_0,t]}_t(\phi)^{-1}];
+    \\\epsilon_x^2(t_0,t)
+    &:= \dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1} - Y^{(t_0,t]}_t(\phi)^{-1}].
+  \end{align}
 
-Now, for each $t_0 > 1$ and $t-t_0$ large enough, according to
-\eqref{eq:vt-and-Y},  \eqref{eq: starting point of phi-1v_t(x)}, \eqref{eq: some equations for PY-1-2},
-Lemmas \ref{lem:bound_for_epsilon1} and \ref{lem:upperbound_of_epsilon-2}, we have
-\begin{align} \label{vts-inequality}
-	&\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0},\phi^* \rangle_m}-1 \Big|
-   \leq \frac{|\epsilon_x^1(t_0,t)|}{\langle v_{t-t_0},\phi^* \rangle_m} + \frac{|\epsilon_x^2(t_0,t)|}{\langle v_{t-t_0},\phi^* \rangle_m}\\
-     & \quad \leq c_0e^{-c_1 t_0} +t_0\|\kappa\gamma\phi^{\gamma - 1}\|_{\infty}
-       \cdot \|\phi^{-1}v_{t-t_0}\|^{\gamma_0-1}_\infty (1+c_0 e^{-c_1 t_0}).
-\end{align}
-According to \eqref{eq: uniform converges to 0}, there exists a map $t\mapsto t_0(t)$ such that,
-\begin{align}
-	t_0(t)
-	\xrightarrow[t\to\infty]{} \infty;
-	\quad t_0(t)\| \phi^{-1}v_{t-t_0(t)}\|^{\gamma_0 - 1}_\infty
-	\xrightarrow[t\to\infty]{} 0.
-\end{align}
-Plugging this choice of $t_0(t)$ back into \eqref{vts-inequality}, we have that
-\begin{align}\label{eq:k1}
-	\sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
-	\xrightarrow[t\to\infty]{} 0.
-\end{align}
-Notice that
-\begin{align}\label{eq:k2}
-	\Big |\frac {\langle v_t, \phi^*\rangle_m} {\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big |
-      & \leq \int \Big | \frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big| \phi \phi^*(x) m(dx)\\
-    & \leq \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
-      \xrightarrow[t\to\infty]{} 0.
-\end{align}
-Therefore, by \eqref{eq:k1}, \eqref{eq:k2} and the property of uniform convergence, we get
-\begin{align}
-	\sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t},\phi^* \rangle_m}-1 \Big|
-	\xrightarrow[t\to\infty]{} 0,
-\end{align}
-as desired.
+  By the construction of the spine representation $\{(Y_t), (\xi_t),\mathbf n; \dot {\mathbf P}^{(\phi)}_\mu\}$ and its Markov property, we have that
+  \begin{align}
+    \label{eq: some equations for PY-1-1}
+    &\dot{\mathbf P}^{(\phi)} [Y_t^{(t_0,t]}(\phi)^{-1}|\mathscr F^\xi_{t_0}]
+      = \dot{\mathbf P}_{\delta_{\xi_{t_0}}}^{(\phi)}  [Y_{t-t_0}(\phi)^{-1}]
+      = (\phi^{-1}v_{t-t_0})(\xi_{t_0});
+    \\ \label{eq: some equations for PY-1-2}
+    &\dot{\mathbf P}_\nu^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]
+      = \Pi_{\nu}^{(\phi)}[(\phi^{-1}v_{t-t_0})(\xi_{t_0}) ]
+      = \langle v_{t-t_0},\phi^* \rangle_m;
+    \\ \label{eq: some equations for PY-1-3}
+    &\dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]
+      = \Pi_x^{(\phi)}[(\phi^{-1}v_{t-t_0})(\xi_{t_0}) ]
+      = \int_E  q_{t_0}(x,y)(\phi^{-1}v_{t-t_0})(y) m(dy).
+  \end{align}
+
+  % The main idea is to show that both $\epsilon_x^1(t_0,t)$ and $\epsilon_x^2(t_0,t)$ are very small compared to $\dot {\mathbf P}_\nu^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]$ provided $t_0$ and $t- t_0$ are large enough.
+  We will show that both $\epsilon_x^1(t_0,t)$ and $\epsilon_x^2(t_0,t)$ are very small compared to $\dot {\mathbf P}_\nu^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]$ provided $t_0$ and $t- t_0$ are large enough.
+  This is done in the following two lemmas whose proofs are postponed after this proof.
+
+  Let $c_0, c_1>0$ be the constants in \eqref{eq:q(t,x,y)}.
+  \begin{lem}
+    \label{lem:bound_for_epsilon1}
+    For each $t > t_0 > 1$, we have that
+    \begin{align}
+      |\epsilon_x^1(t_0,t)|
+      \leq c_0 e^{-c_1 t_0}\langle v_{t-t_0},\phi^* \rangle_m.
+    \end{align}
+  \end{lem}
+  
+  \begin{lem}
+    \label{lem:upperbound_of_epsilon-2}
+    For each $t_0 > 1$ and $t - t_0$ large enough, we have
+    \begin{align}
+      \label{eq:upperbound_of_epsilon-2}
+      |\epsilon_x^2(t_0,t)|
+      \leq t_0\|\kappa\gamma\phi^{\gamma - 1}\|_{\infty} \cdot \|\phi^{-1}v_{t-t_0}\|^{\gamma_0-1}_\infty (1+c_0 e^{-c_1 t_0}) \langle v_{t-t_0},\phi^* \rangle_m.
+    \end{align}
+  \end{lem}
+
+  Now, for each $t_0 > 1$ and $t-t_0$ large enough, according to \eqref{eq:vt-and-Y},  \eqref{eq: starting point of phi-1v_t(x)}, \eqref{eq: some equations for PY-1-2}, Lemmas \ref{lem:bound_for_epsilon1} and \ref{lem:upperbound_of_epsilon-2}, we have
+  \begin{align} 
+    \label{vts-inequality}
+    &\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0},\phi^* \rangle_m}-1 \Big|
+      \leq \frac{|\epsilon_x^1(t_0,t)|}{\langle v_{t-t_0},\phi^* \rangle_m} + \frac{|\epsilon_x^2(t_0,t)|}{\langle v_{t-t_0},\phi^* \rangle_m}\\
+    & \quad \leq c_0e^{-c_1 t_0} +t_0\|\kappa\gamma\phi^{\gamma - 1}\|_{\infty}
+      \cdot \|\phi^{-1}v_{t-t_0}\|^{\gamma_0-1}_\infty (1+c_0 e^{-c_1 t_0}).
+  \end{align}
+  According to \eqref{eq: uniform converges to 0}, there exists a map $t\mapsto t_0(t)$ such that,
+  \begin{align}
+    t_0(t)
+    \xrightarrow[t\to\infty]{} \infty;
+    \quad t_0(t)\| \phi^{-1}v_{t-t_0(t)}\|^{\gamma_0 - 1}_\infty
+    \xrightarrow[t\to\infty]{} 0.
+  \end{align}
+  Plugging this choice of $t_0(t)$ back into \eqref{vts-inequality}, we have that
+  \begin{align}\label{eq:k1}
+    \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
+    \xrightarrow[t\to\infty]{} 0.
+  \end{align}
+  % ADDED
+  Therefore, the desired assertion \eqref{eq:k1} is valid for $a_t := \langle v_{t-t_0(t)},\phi^* \rangle_m$.
+  % END ADDED
+  % DELETED
+  % Notice that
+  % \begin{align}\label{eq:k2}
+  %   \Big |\frac {\langle v_t, \phi^*\rangle_m} {\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big |
+  %   & \leq \int \Big | \frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big| \phi \phi^*(x) m(dx)\\
+  %   & \leq \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
+  %   \xrightarrow[t\to\infty]{} 0.
+  % \end{align}
+  % Therefore, by \eqref{eq:k1}, \eqref{eq:k2} and the property of uniform convergence, we get
+  % \begin{align}
+  %   \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t},\phi^* \rangle_m}-1 \Big|
+  %   \xrightarrow[t\to\infty]{} 0,
+  % \end{align}
+  % as desired.
+  % END DELETED
 \end{proof}
 
 \begin{proof}
@@ -1645,16 +1697,19 @@ From \eqref{eq: equation for g}, we have
 	g(t,r, x) \leq c_f r,
 	\quad t\geq 0, r \geq 0, x\in E.
 \end{align}
-From \eqref{eq: definition of eta}, \eqref{eq: definition for J_g}, \eqref{eq: upper bound for g} and the fact that $\gamma(\cdot) - 1 < 1$, we have almost surely
+% From \eqref{eq: definition of eta}, \eqref{eq: definition for J_g}, \eqref{eq: upper bound for g} and the fact that $\gamma(\cdot) - 1 < 1$, we have almost surely
+From \eqref{eq: definition of eta}, \eqref{eq: definition for J_g}, \eqref{eq: upper bound for g} and the fact that $\gamma(\cdot) - 1 < 1$, we have $\Pi^{(\phi)}_{\cdot}$-almost surely
 \begin{align}
 	J_g(t,r, \xi)
 	&\leq \|\kappa \cdot (c_f\phi)^{\gamma - 1} \|_\infty \int_0^1 \big(  t\eta_{ut}^{\gamma - 1} (ru^{\frac{1}{\gamma_0 - 1}} )^{\gamma-1}  \big) \big(  \xi_{(1-u)t} \big) du
 	\\&= \| \kappa \cdot (c_f\phi)^{\gamma - 1} \|_\infty \int_0^1 \big(  r^{\gamma - 1}t^{1-\frac{\gamma - 1}{\gamma_0 - 1}}  \big( C_X (\gamma_0 - 1) \big)^{-\frac{\gamma - 1}{\gamma_0 - 1}}  \big) \big( \xi_{(1-u)t} \big) du
 	\\& \leq \max\{1,r\} \cdot \| \kappa \cdot (c_f\phi)^{\gamma - 1} \|_\infty \Big\|  \big( C_X (\gamma_0 - 1) \big)^{-\frac{\gamma - 1}{\gamma_0 - 1}}\Big\|_\infty
-	\\& := c_2 \cdot \max  \{1,r\},
+	% \\& := c_2 \cdot \max  \{1,r\},
+	\\& =: c_2 \cdot \max  \{1,r\},
 	\quad t\geq 1, r\geq 0.
 \end{align}
-From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_g} and \eqref{eq: upper bound for g}, we have almost surely
+% From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_g} and \eqref{eq: upper bound for g}, we have almost surely
+From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_g} and \eqref{eq: upper bound for g}, we have $\Pi_{\cdot}^{(\phi)}$-almost surely
 \begin{align}
 	J'_g(t,r,\xi)
 	&\leq \gamma_0 (\gamma_0 - 1) t \int_0^1 \big( \mathbf 1_{\gamma(\cdot) = \gamma_0} \kappa \cdot (\phi \eta_{ut})^{\gamma_0 - 1} (c_f ru^{\frac{1}{\gamma_0 - 1}})^{\gamma_0 - 1}\big) (\xi_{(1-u)t}) du
@@ -1662,7 +1717,8 @@ From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_g} and \eqref{eq
 	\\&=: c_3 \cdot r^{\gamma_0 - 1},
 	\quad t\geq 0, r\geq 0.
 \end{align}
-From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_G} and \eqref{eq: upper bound for G}, we have almost surely
+% From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_G} and \eqref{eq: upper bound for G}, we have almost surely
+From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_G} and \eqref{eq: upper bound for G}, we have $\Pi^{(\phi)}_\cdot$-almost surely
 \begin{align}\label{eq: upper bound for J'_G}
 	J'_G(t,r,\xi)
 	& \leq \gamma_0 (\gamma_0 - 1) t \int_0^1 \big( \mathbf 1_{\gamma(\cdot) = \gamma_0} \kappa \cdot (\phi \eta_{ut})^{\gamma_0 - 1} (ru^{\frac{1}{\gamma_0 - 1}})^{\gamma_0 - 1}\big) (\xi_{(1-u)t}) du
@@ -1943,69 +1999,65 @@ Step 8: Finally, $M \equiv 0$ clearly implies that $\lim_{t\to \infty} I_3(t,\th
 In this Subsection, we briefly recall from \cite{RenSongZhang2015Limit} some examples of Markov processes satisfying Assumptions \ref{asp: 1} and \ref{asp: 3}. We will not try to give the most
 general examples. For details and more examples, we refer our readers to \cite{RenSongZhang2015Limit}.
 
-\begin{exa} {\rm
+% ADDED
+\begin{exa}
+  Suppose that $E$ is a finite state space and $m$ is the counting measure on $E$. 
+  Let $\xi$ be an irreducible, continuous-time Markov chain. 
+  Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies Assumptions \ref{asp: 1} and \ref{asp: 3}.
+\end{exa}
+% END ADDED
+
+\begin{exa} 
 Suppose that $E$ is a bounded Lipschitz connected  open set of $\mathbb R^d$ and that $m$ denotes the Lebesgue measure on $E$.
-Let $\xi$ be the subprocess in $E$ of a diffusion
-process in $\mathbb{R}^d$ corresponding to a uniformly elliptic divergence form second order
-differential operator.  Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies
-Assumptions \ref{asp: 1} and \ref{asp: 3}. 
-}
+Let $\xi$ be the subprocess in $E$ of a diffusion process in $\mathbb{R}^d$ corresponding to a uniformly elliptic divergence form second order differential operator.  
+Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies Assumptions \ref{asp: 1} and \ref{asp: 3}.
 \end{exa}
 
-\begin{exa} {\rm
+\begin{exa}
 Suppose that $E$ is the closure of a bounded $C^2$ connected  open set of $\mathbb R^d$ and that $m$ denotes the Lebesgue measure on $E$.
-Let $\xi$ be the reflecting Brownian motion
-in $E$. Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies
-Assumptions \ref{asp: 1} and \ref{asp: 3}. 
-}
-\end{exa}
-
-\begin{exa} {\rm
-Suppose that $E$ is a bounded   open set of $\mathbb R^d$ and  $m$ denotes the Lebesgue measure on $E$.
-$\xi$ be the subprocesses in $E$ of any of
-the subordinate Brownian motions studied in \cite{KSV1, KSV2}.  Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies
-Assumptions \ref{asp: 1} and \ref{asp: 3}. 
-}
-\end{exa}
-
-\begin{exa} {\rm
-Suppose $a>2$ is a constant.
-Assume that $E=\mathbb{R}^d$ and $m$ is the Lebesgue measure on $\mathbb{R}^d$.
-Let $\xi$ be a Markov process on $\mathbb{R}^d$ corresponding to the infinitesimal
-generator $\Delta-|x|^a$. Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies
-Assumption \ref{asp: 1} and \ref{asp: 3}. 
-}
-\end{exa}
-
-\begin{exa} {\rm
-Assume that $E=\mathbb{R}^d$ and $m$ is the Lebesgue measure on $\mathbb{R}^d$.
-Suppose that $V$ is a nonnegative and locally bounded function on  $\mathbb{R}^d$
-such that there exist $R>0$ and $M\ge 1$ such that for all $|x|>R$,
-$$
-M^{-1}(1+V(x))\le V(y)\le M(1+V(x)), \qquad y\in B(x, 1),
-$$
-and that
-$$
-\lim_{|x|\to\infty}\frac{V(x)}{\log|x|}=\infty.
-$$
-Suppose $\beta\in (0, 2)$ is a constant.
-Let $\xi$ be a Markov process on $\mathbb{R}^d$ corresponding to the infinitesimal
-generator $-(-\Delta)^{\beta/2}-V(x)$. 
+Let $\xi$ be the reflecting Brownian motion in $E$. 
 Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies
 Assumptions \ref{asp: 1} and \ref{asp: 3}. 
-}
 \end{exa}
 
-\begin{exa} {\rm
-Suppose that $\beta\in (0, 2)$ and that $\xi^{(1)}=\{\xi^{(1)}_t: t\ge0\}$ is a strictly
-$\beta$-stable process in $\mathbb{R}^d$. Suppose that, in the case $d\ge 2$, the spherical
-part $\eta$ of the L\'evy measure $\mu$ of $\xi^{(1)}$ satisfies the following assumption: there
-exist a positive function $\Phi$ on the unit sphere $S$ in $\mathbb{R}^d$ and $\kappa>1$
+\begin{exa}
+  Suppose that $E$ is a bounded   open set of $\mathbb R^d$ and  $m$ denotes the Lebesgue measure on $E$.
+  $\xi$ be the subprocesses in $E$ of any of the subordinate Brownian motions studied in \cite{KSV1, KSV2}.  
+  Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies Assumptions \ref{asp: 1} and \ref{asp: 3}. 
+\end{exa}
+
+\begin{exa}
+  Suppose $a>2$ is a constant.
+  Assume that $E=\mathbb{R}^d$ and $m$ is the Lebesgue measure on $\mathbb{R}^d$.
+  Let $\xi$ be a Markov process on $\mathbb{R}^d$ corresponding to the infinitesimal generator $\Delta-|x|^a$. 
+  Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies Assumption \ref{asp: 1} and \ref{asp: 3}. 
+\end{exa}
+
+\begin{exa} 
+  Assume that $E=\mathbb{R}^d$ and $m$ is the Lebesgue measure on $\mathbb{R}^d$.
+  Suppose that $V$ is a nonnegative and locally bounded function on  $\mathbb{R}^d$ such that there exist $R>0$ and $M\ge 1$ such that for all $|x|>R$,
+  \begin{align}
+    M^{-1}(1+V(x))\le V(y)\le M(1+V(x)), \qquad y\in B(x, 1),
+  \end{align}
+  and that
+  \begin{align}
+    \lim_{|x|\to\infty}\frac{V(x)}{\log|x|}=\infty.
+  \end{align}
+  Suppose $\beta\in (0, 2)$ is a constant.
+  Let $\xi$ be a Markov process on $\mathbb{R}^d$ corresponding to the infinitesimal generator $-(-\Delta)^{\beta/2}-V(x)$. 
+  Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies
+  Assumptions \ref{asp: 1} and \ref{asp: 3}. 
+\end{exa}
+
+\begin{exa}
+  Suppose that $\beta\in (0, 2)$ and that $\xi^{(1)}=\{\xi^{(1)}_t: t\ge0\}$ is a strictly $\beta$-stable process in $\mathbb{R}^d$. 
+  Suppose that, in the case $d\ge 2$, the spherical part $\eta$ of the L\'evy measure $\mu$ of $\xi^{(1)}$ satisfies the following assumption: 
+  there exist a positive function $\Phi$ on the unit sphere $S$ in $\mathbb{R}^d$ and $\kappa>1$
 such that
-$$
-\Phi=\frac{d\eta}{d\sigma} \quad \mbox{and} \quad
-\kappa^{-1}\le \Phi(z)\le \kappa \quad \mbox{on } S
-$$
+\begin{align}
+  \Phi=\frac{d\eta}{d\sigma} \quad \text{and} \quad
+  \kappa^{-1}\le \Phi(z)\le \kappa \quad \text{on } S
+\end{align}
 where $\sigma$ is the surface measure on $S$. In the case $d=1$, we assume that the L\'evy
 measure of $\xi^{(1)}$ is given by
 $$
@@ -2015,8 +2067,7 @@ with $c_1, c_2>0$. Suppose that $E$ is a bounded open set in $\mathbb{R}^d$
 and $m$ is the Lebesgue measure on $E$.
 Let $\xi$ be the process in $E$ obtained by killing $\xi^{(1)}$ upon exiting $E$.
 Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies
-Assumptions \ref{asp: 1} and \ref{asp: 3}. 
-}
+Assumptions \ref{asp: 1} and \ref{asp: 3}.
 \end{exa}
 %end new
 
@@ -2054,9 +2105,9 @@ However, when $p \in (0,1)$, $\|\cdot\|_{\mu; p}$ is not a norm.
   In fact, when $k = 1$ this is trival. Now if \eqref{eq:upperbound_for_F} is true for a fixed $k \in \mathbb N$, then from
   \begin{align}
     &F(\theta)
-      \leq C \int_0^\theta \left\|  F\left(ru^{ \frac{1}{\alpha - 1}  }\right)\right\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \alpha - 1} dr
-      \leq C \int_0^\theta \left\|  \frac{1}{k!}\left(Cru^{ \frac{1}{\alpha - 1}  } \right)^k \right\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \alpha - 1} dr
-    \\ &\leq \frac{C^{k+1}}{k!} \left(\int_0^\theta r^k dr\right) \cdot \left\|u^{\frac{k}{\alpha - 1}} \right\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \alpha - 1} \leq \frac{C^{k+1} \theta^{k+1}}{(k+1)!},
+      \leq C \int_0^\theta \big\|  F(ru^{ \frac{1}{\alpha - 1}  })\big\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \alpha - 1} dr
+      \leq C \int_0^\theta \Big\|  \frac{1}{k!}(Cru^{ \frac{1}{\alpha - 1}  })^k \Big\|_{\mathbf 1_{0<u<1}\frac{du}{u}; \alpha - 1} dr
+    \\ &\leq \frac{C^{k+1}}{k!} \Big(\int_0^\theta r^k dr\Big) \cdot \|u^{\frac{k}{\alpha - 1}} \|_{\mathbf 1_{0<u<1}\frac{du}{u}; \alpha - 1} \leq \frac{C^{k+1} \theta^{k+1}}{(k+1)!},
   \end{align}
   we have that \eqref{eq:upperbound_for_F} is true for $k+1$.
   Therefore, by induction, \eqref{eq:upperbound_for_F} is true for all $k \in \mathbb N$.
