@@ -41,7 +41,6 @@
 {Renming Song\\
 	Dept of Mathematics\\
 	University of Illinois at Urbana-Champaign\\
-	% Urbana, IL 61801}
 	Urbana, IL, USA, 61801}
 \email{rsong@illinois.edu}
 \thanks{The research of Renming Song is supported in part by the Simons Foundation (\#429343, Renming Song).}
@@ -50,7 +49,6 @@
 {Zhenyao Sun\\
 School of Mathematics and Statistics\\
 Wuhan University\\
-% Wuhan, Hubei 430072, P. R. China}
 Wuhan, Hubei, P. R. China, 430072}
 \email{zhenyao.sun@pku.edu.cn}
 \thanks{Zhenyao Sun is the corresponding author.}
@@ -86,7 +84,6 @@ see \cite{KestenNeySpitzer1966The-Galton-Watson} for example.
 In this case, the limits in \eqref{eq: Kolmogorov's result with finite variance} and \eqref{eq: Yaglom's result with finite variance} are degenerate, and thus more appropriate scalings are needed.
 Research in this direction was first conducted by Zolotarev \cite{Zolotarev1957More} in a simplified continuous time set-up, which is then extended by Slack \cite{Slack1968A-branching} to discrete time critical Galton-Watson processes allowing infinite variance.
 The main result of  \cite{Slack1968A-branching} can be stated as follows. 
-% Consider a critical Galton-Watson process $\{(Z_n)_{n\geq 0}; P\}$ with infinite variance.
 Consider a critical Galton-Watson process $\{(Z_n)_{n\geq 0}; P\}$.
 Assume that the  generating function $f(s)$ of the offspring distribution is of the form
 \begin{align}\label{eq: offspring generating function with alpha moment}
@@ -164,12 +161,12 @@ $\psi$, the branching mechanism of the superprocess, is a function on $E \times 
 \begin{align} 
 \label{eq: branching mechanism}
 	\psi(x,z):=
-	% - \beta(x) z + \alpha (x) z^2 + \int_{(0,\infty)} (e^{-zy} - 1 + zy) \pi(x,dy),
 	- \beta(x) z + \sigma (x)^2 z^2 + \int_{(0,\infty)} (e^{-zy} - 1 + zy) \pi(x,dy),
 	\quad x\in E, z\geq 0,
 \end{align}
-% where $\beta \in \mathscr B_b(E)$, $\alpha \in \mathscr B^+_b(E)$ and $\pi(x,dy)$ is a kernel from $E$ to $(0,\infty)$ such that $\sup_{x\in E} \int_{(0,\infty)} (y\wedge y^2) \pi(x,dy) < \infty$.
-where $\beta, \sigma\in \mathscr B_b(E)$ and $\pi(x,dy)$ is a kernel from $E$ to $(0,\infty)$ such that $\sup_{x\in E} \int_{(0,\infty)} (y\wedge y^2) \pi(x,dy) < \infty$.
+%where $\beta, \sigma\in \mathscr B_b(E)$ 
+where $\beta\in \mathscr B_b(E)$, $\sigma\in \mathscr B_b^+(E)$ 
+and $\pi(x,dy)$ is a kernel from $E$ to $(0,\infty)$ such that $\sup_{x\in E} \int_{(0,\infty)} (y\wedge y^2) \pi(x,dy) < \infty$.
 For the precise definition and properties of superprocesses, see \cite{Li2011Measure-valued}.
 
 Results parallel to \eqref{eq: Kolmogorov's result with finite variance} and \eqref{eq: Yaglom's result with finite variance} have been obtained for some critical superprocesses by Evans and Perkins \cite{EvansPerkins1990Measure-valued} and Ren, Song and Zhang \cite{RenSongZhang2015Limit}.
@@ -253,7 +250,10 @@ and for a large class of non-negative testing functions $f$,
 	\langle f, \phi^*\rangle_m \mathbf z^{(\gamma_0 - 1)},
 \end{align}
 where $\eta_t := \big( C_X(\gamma_0 - 1) t \big)^{- \frac {1} {\gamma_0 - 1} },$ $C_X := \langle \mathbf 1_{\gamma(\cdot) = \gamma_0} \kappa\cdot \phi^{\gamma_0}, \phi^* \rangle_m$ and $\mathbf z^{(\gamma_0 - 1)}$ is a random variable with Laplace transform given by \eqref{e:zloltarev} (with $\alpha=\gamma_0-1$).
-Notice that the distribution of the weak limit $\langle f, \phi^*\rangle_m \mathbf z^{(\gamma_0 - 1)}$ does not depend on the initial configuration $\mu$.
+Notice that the distribution of the weak limit 
+$\langle f, \phi^*\rangle_m \mathbf z^{(\gamma_0 - 1)}$ does not depend 
+%on the initial configuration $\mu$.
+on the initial distribution $\mu$.
 Precise statements of the assumptions and the results are presented in the next subsection.
 It is interesting to mention here that, even though the stable index $\gamma(x)$ is spatially dependent, the limiting behavior of the critical superprocess $\{X; \mathbf P\}$ depends primarily on the lowest index $\gamma_0$.
 
@@ -325,7 +325,6 @@ Let $(P_t^*)_{t\geq 0}$ be the dual of the transition semigroup $(P_t)_{t\geq 0}
   \quad P_t^* f(x) := \int_E p_t(y,x) f(y) m(dy),
   \quad t > 0, x\in E, f\in \mathscr B_b(E).
 \end{align}
-% Under Assumption \ref{asp: 1}, it is proved in \cite{RenSongZhang2015Limit} and \cite{RenSongZhang2017Central} that $(P_t)_{t \geq 0}$ and $(P^*_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators in $L^2(E,m)$.
 Under Assumption \ref{asp: 1}, it is proved in \cite{RenSongZhang2015Limit} and \cite{RenSongZhang2017Central} that $(P_t)_{t \geq 0}$ and $(P^*_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators on $L^2(E,m)$.
 Let $\widetilde L$ and $\widetilde L^*$ be the generators of the semigroups $(P_t)_{t \geq 0}$ and $(P^*_t)_{t \geq 0}$, respectively.
 Denote by $\sigma(\widetilde L)$ and $\sigma(\widetilde L^*)$ the spectra of $\widetilde L$ and $\widetilde L^*$, respectively.
@@ -356,7 +355,6 @@ Define the dual semigroup $(P^{\beta *}_t)_{t \geq 0}$ by
 	:= \int_E p^\beta_t (y,x) f(y) m(dy),
 	\quad t>0, x\in E, f\in \mathscr B_b(E).
 \end{align}
-% It is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that $(P^\beta_t)_{t \geq 0}$ and $(P^{\beta *}_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators in $L^2(E,m)$.
 It is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that $(P^\beta_t)_{t \geq 0}$ and $(P^{\beta *}_t)_{t \geq 0}$ are both strongly continuous semigroups of compact operators on $L^2(E,m)$.
 Let $L$ and $L^*$ be the generators of the semigroups $(P^\beta_t)_{t \geq 0}$ and $(P^{\beta *}_t)_{t \geq 0}$, respectively.
 Denote by $\sigma(L)$ and $\sigma(L^*)$ the spectra of $L$ and $L^*$, respectively.
@@ -401,12 +399,18 @@ It is also shown in \cite{KimSong2008Intrinsic} that there are constants $c_0, c
 	\leq c_0 e^{-c_1 t},
 	\quad t > 1.
 \end{align}
-Assumption \ref{asp: 3} is a pretty strong assumption on the semigroup $\{P_t : t \ge 0\}$. However, this assumption is satisfied in a lot of cases.  
-In \cite{RenSongZhang2015Limit},  a list of examples of processes satisfying Assumption \ref{asp: 1} and \ref{asp: 3} were given. 
+Assumption \ref{asp: 3} is a pretty strong assumption on the semigroup $\{P_t : t \ge 0\}$.
+%new
+For example, it rules out the semigroup of Brownian motion on $\mathbb R^d$ and the semgroup of
+Ornstein-Uhlenbeck process on $\mathbb R^d$.
+%end new
+ However, this assumption is satisfied in a lot of cases.  
+In \cite{RenSongZhang2015Limit},  a list of examples of processes satisfying 
+ Assumptions \ref{asp: 1} and \ref{asp: 3} were given. 
 For the convenience of our readers, we will
 briefly recall some of these examples in Subsection \ref{sec:examples}.
 
-% Our assumption is on the branching mechanism:
+
 Recall that the branching mechanism is given by \eqref{eq: branching mechanism}. 
 We assume the following:
 \begin{asp} \label{asp: 4}
@@ -426,7 +430,8 @@ Here we used the definition of the Gamma function on the negative half line:
   \quad -n< x< -n+1, n\in \mathbb N.
 \end{align}
 	
-We now present the main results of this paper:
+%We now present the main results of this paper:
+We now present the main result of this paper:
 \begin{thm}
 \label{thm: main theorem}
   Suppose that $\{(X_t)_{t\geq 0}; (\mathbf P_\mu)_{\mu \in \mathcal M_E^1}\}$ is a $(\xi, \psi)$-superprocess satisfying Assumptions \ref{asp: 1}--\ref{asp: 4}.
@@ -458,7 +463,6 @@ We now present the main results of this paper:
 \subsection{Methods and overview}
 	
 To establish Theorem \ref{thm: main theorem}(2) and Theorem \ref{thm: main theorem}(3), we use a spine decomposition theorem for 	$X$.
-  % Roughly speaking, the spine is the trajectory of an immortal moving particle and the spine decomposition theorem says that, after a martingale change of measure, the transformed superprocess can be decomposed in law as the sum of a copy of the original superprocess and an measure-valued immigration process along this spine, see \cite{EckhoffKyprianouWinkel2015Spines, EnglanderKyprianou2004Local, LiuRenSong2009Llog}.
   Roughly speaking, the spine is the trajectory of an immortal moving particle and the spine decomposition theorem says that, after a martingale change of measure, the transformed superprocess can be decomposed in law as the sum of a copy of the original superprocess and a measure-valued immigration process along this spine, see \cite{EckhoffKyprianouWinkel2015Spines, EnglanderKyprianou2004Local, LiuRenSong2009Llog}.
 The martingale used for the change of measure is $(e^{-\lambda t} X_t(\phi))_{t\geq 0}$.
 Under Assumptions \ref{asp: 1} and \ref{asp: 3}, the spine process $\{\xi; \Pi^{(\phi)}\}$ is an ergodic process.
@@ -487,13 +491,14 @@ However, in the present case, since we are not assuming the second moment condit
 Instead, we use a generalized spine decomposition theorem, which is developed in \cite{RenSongSun2017Spine}, to establish Theorem \ref{thm: main theorem}(3) for a large class of general testing functions in one stroke.
 
 The rest of this paper is organized as follows:
-In Subsections \ref{sec: Asymptotic equivalence}, \ref{sec: Regularly variation} and \ref{sec: Superprocesses}, we give some preliminary results about the asymptotic equivalence, regularly varying functions and superprocesses, respectively.
+In Subsections \ref{sec: Asymptotic equivalence}, \ref{sec: Regularly variation} and \ref{sec: Superprocesses}, we give some preliminary results about the asymptotic equivalence, 
+%regularly varying functions and superprocesses, respectively.
+regularly variation and superprocesses, respectively.
 In Subsection \ref{sec: Spine decompositions}, we present the generalized spine decomposition theorem.
 In Subsection \ref{sec: Ergodicity}, we discuss the ergodicity of the spine process.
 In Subsections \ref{sec: proof of result 1} and \ref{sec: proof of result 2} we give the poofs of Theorem \ref{thm: main theorem}(1) and \ref{thm: main theorem}(2), respectively.
 In Subsection \ref{sec: conditional distribution}, we give the equation that characterize the one-dimensional distributions.
 In Subsection \ref{sec: proof of result 3}, we give the proof of Theorem \ref{thm: main theorem}(3).
-% In Appendix \ref{sec: Characterizing the Zolotarev's distribution using an non-linear delay equation}, we give the equation that characterizes the distribution with Laplace transform \eqref{e:zloltarev}, which is used in the proof of Theorem \ref{thm: main theorem}(3) given Subsection \ref{sec: proof of result 3}.
 In Appendix \ref{sec: Characterizing the Zolotarev's distribution using an non-linear delay equation}, we give the equation that characterizes the distribution with Laplace transform \eqref{e:zloltarev}, which is used in the proof of Theorem \ref{thm: main theorem}(3).
 
 \section{Preliminaries} 
@@ -502,17 +507,15 @@ In Appendix \ref{sec: Characterizing the Zolotarev's distribution using an non-l
 \label{sec: Asymptotic equivalence}
 In this subsection, we give a lemma on asymptotic equivalence.	
 Let $t_0 \in [-\infty,\infty]$.
-In this Subsection, $(E, \mathscr E)$ is assume to be a  measurable space.
+%In this Subsection, $(E, \mathscr E)$ is assume to be a  measurable space.
+In this subsection, $(E, \mathscr E)$ is assumed to be a  measurable space.
 For any $f_0, f_1\in \mathscr B^{++}({\mathbb R})$, we say $f_0$ and $f_1$ are \emph{asymptotically equivalent at $t_0$}, if $\big|\frac{f_0(t)}{f_1(t)} - 1\big| \xrightarrow[t\to t_0]{} 0$;
 and in this case, we write $f_0(t) \stackrel[t\to t_0]{}{\sim} f_1(t)$.
 For any strictly positive measurable functions $g_0, g_1$ on $\mathbb R\times E$, we say $g_0$ and $g_1$ are \emph{uniformly asymptotically equivalent at $t_0$}, if $\sup_{x\in E}\big|\frac{g_0(t,x)}{g_1(t,x)} - 1\big| \xrightarrow[t\to t_0]{} 0$; and in this case, we write $g_0(t,x)\stackrel[t\to t_0]{x\in E}{\sim}g_1(t,x)$.
 
 \begin{lem} \label{lem: asymptotic equivalent of integration}
 	Suppose that $f_0,f_1$ are bounded strictly positive measurable functions on $\mathbb R \times E$ and $f_0(t,x)\stackrel[t\to t_0]{x\in E}{\sim}f_1(t,x)$.
-  % If $f$ is a finite measure on $(E, \mathscr E)$, then
-  % If $m$ is a finite measure on $(E, \mathscr E)$, then
   If $\rho$ is a finite non-degenerate measure on $(E, \mathscr E)$, then
-  % Sun: I changed several m into \rho without further mentioning
   \begin{align}
     \int_E f_0(t,x)\rho(dx)
     \stackrel[t\to t_0]{}{\sim}
@@ -657,16 +660,12 @@ In particular, we know that, there is $t_0 > 0$ large enough such that $L$ is lo
 \end{proof}
 
 \begin{lem}\label{lem:regularly_variation_and_integration}
-  % Let $(E, \mathscr E)$ be a measurable space and $m$ a  non-degenerate measure on $(E, \mathscr E)$.
+
   Let $(E, \mathscr E)$ be a measurable space and $\rho$ a finite non-degenerate measure on $(E, \mathscr E)$.
-  % Let $f$ be a bounded measurable function on $E$ with 
   Let $\alpha$ be a bounded measurable function on $E$ with 
-% Sun: I changed several gamma into alpha without further mentioning. 
-% Sun: I also changed m into \rho in this lemma.
   \begin{align}
     \alpha_0
     := \operatorname*{ess\,inf}_{\rho(dx)} \alpha(x)
-    % := \sup\{r:\rho(x:\alpha(x) < r) = 0\}.
     := \sup\{r:\rho(x:\alpha(x) < r) = 0\} \in \mathbb R.
   \end{align}
 	Then $\big(\int_E t^{\alpha(x)} \rho(dx)\big)_{t\in (0,\infty)} \in \mathcal R^0_{\alpha_0}$.
@@ -678,8 +677,6 @@ In particular, we know that, there is $t_0 > 0$ large enough such that $L$ is lo
 \end{lem}
 
 \begin{proof}
-	% If $\lambda \in (0,1]$, then we have
-  % SUN: I changed several \lambda to u without further mentioning.
 	If $u \in (0,1]$, then we have
   \begin{align}
     \frac{\int_E u^{\alpha(x)} t^{\alpha(x)} \rho(dx)}{\int_E t^{\alpha(x)} \rho(dx)}
@@ -742,7 +739,6 @@ It is known, see \cite[Theorem 2.23]{Li2011Measure-valued} for example, that \eq
 where
 \begin{align}
 	\psi_0(x,z)
-	% := \alpha(x) z^2 + \int_{(0,\infty)} (e^{-z y} - 1 + z y) \pi(x,dy),
 	:= \psi(x,z) + \beta(x)z,
 	\quad x \in E,z \geq 0.
 \end{align}
@@ -777,13 +773,10 @@ We say that $(X_t)_{t\geq 0}$ is \emph{non-persistent} if $\mathbf P_{\delta_x}(
 Suppose that $(X_t)_{t\geq 0}$ is non-persistent, then according to \cite[Section 8.4]{Li2011Measure-valued}, there is a family of measures $(\mathbb N_x)_{x\in E}$ on $\mathbb W$ such that
 \begin{itemize}
 \item
-	% $\mathbb N_x (\forall t \geq 0, \|W_t\|=0) =0$;
 	for each $x\in E$, $\mathbb N_x (\forall t > 0, \|W_t\|=0) =0$;
 \item
-	% $\mathbb N_x(\|W_0 \|\neq 0) = 0$;
 	for each $x\in E$, $\mathbb N_x(\|W_0 \|\neq 0) = 0$;
 \item
-	% For any $\mu \in \mathcal M_E^1$, if $\mathcal N$ is a Poisson random measure on $\mathbb W$ with intensity $\mathbb N_\mu(\cdot):= \int_E \mathbb N_x(\cdot )\mu(dx)$, then the superprocess $\{X;\mathbf P_\mu\}$ can be realized by $\widetilde X_0 := \mu$ and $\widetilde X_t(\cdot) := \mathcal N[W_t(\cdot)]$ for each $t>0$.
 	for any $\mu \in \mathcal M_E^1$, if $\mathcal N$ is a Poisson random measure on $\mathbb W$ with intensity $\mathbb N_\mu(\cdot):= \int_E \mathbb N_x(\cdot )\mu(dx)$, then the superprocess $\{X;\mathbf P_\mu\}$ can be realized by $\widetilde X_0 := \mu$ and $\widetilde X_t(\cdot) := \mathcal N[W_t(\cdot)],t>0$.
 \end{itemize}
 We refer to $(\mathbb N_x)_{x\in E}$ as the \emph{Kuznetsov measures} of $X$.
@@ -811,14 +804,10 @@ For each $\mu \in \mathcal M_E^1$ and $t > 0$, by \eqref{eq: equation for N meas
 	&= \lim_{\lambda \to \infty} \langle \mu, V_t(\lambda \mathbf 1_E)\rangle
    = \mu(v_t).
 \end{align}
-% It is know that for any $f\in\mathscr B_b^+(E)$,
 It is also known that for any $f\in\mathscr B_b^+(E)$,
 \begin{align}\label{eq: mean of kuz measure}
   \mathbb N_{\mu}[W_t(f)]
   =\mathbf P_{\mu}[X_t(f)]=\mu(P^\beta_tf),
-%	\quad t \geq 0,
-% \end{align}
-% see \cite[Lemma 3.3]{RenSongSun2017Spine} for example.
   \quad t \geq 0.
   \end{align}
 
@@ -847,10 +836,8 @@ The first step of the theorem says that $\{(X_t)_{t\geq 0}; \mathbf P_\mu^{X_T(g
   \end{align}
 \end{thm}
 The second step of the spine decomposition theorem says that $\{(W_t)_{0\leq t\leq T}; \mathbb N^{W_T(g)}_\mu\}$ has a spine representation, which intuitively says that, under probability $\mathbb N_\mu^{W_T(g)}$, 
-% the measure-valued process $(W_t)_{0\leq t\leq T}$ can be decomposed as an measure-valued immigration process along the trajectory of the spine process in a Poissonian way.
-the measure-valued process $(W_t)_{0\leq t\leq T}$ can be decomposed as an measure-valued immigration process along the trajectory of a spine process in a Poissonian way.
-
-
+%the measure-valued process $(W_t)_{0\leq t\leq T}$ can be decomposed as an measure-valued immigration process along the trajectory of a spine process in a Poissonian way.
+the measure-valued process $(W_t)_{0\leq t\leq T}$ can be decomposed as a measure-valued immigration process along the trajectory of a spine process in a Poissonian way.
 
 More precisely,
 we say $\{(\xi_t)_{0\leq t\leq T}, \mathbf n_T,  (Y_t)_{ 0\leq t\leq T}; \dot {\mathbf P}^{(g,T)}_\mu\}$ is a \emph{spine representation of $\mathbb N^{W_T(g)}_\mu$}  if:
@@ -903,7 +890,6 @@ Now, suppose that $\{\xi; \Pi\}$ satisfies Assumption \ref{asp: 1}.
 Recall that $\phi$ is the principal eigenfunction of the mean semigroup of $X$.
 The classical spine decomposition theorem, see 
 \cite{EckhoffKyprianouWinkel2015Spines, EnglanderKyprianou2004Local, LiuRenSong2009Llog} for example, 
-% considered the case when $g = \phi$ only.
 considered the case $g = \phi$ only.
 In this case, the family of probabilities $(\Pi_{\mu}^{(\phi,T)})_{T\geq 0}$ is consistent in the sense of Kolmogorov's extension theorem, that is, the process $\{(\xi_t)_{0\leq t\leq T}; \Pi_{\mu}^{(\phi,T)} \}$ can be realized as the restriction of some process, say $\{(\xi_t)_{t\geq 0}; \Pi_{\mu}^{(\phi)}\}$,	on the finite time interval $[0,T]$.
 In fact, one can also check that this consistency property is satisfied by  $(\mathbf P_\mu^{X_T(\phi)} )_{T\geq 0}$, $(\mathbb N^{W_T(\phi)}_\mu)_{T\geq 0}$ and $(\dot {\mathbf P}^{(\phi,T)}_\mu)_{T\geq 0}$.
@@ -987,7 +973,6 @@ This implies that the process $\{\xi; \Pi^{(\phi)}_x\}$ is ergodic.
 One can easily get from \eqref{eq: asymptotic for q_t(x,y)} that $(\phi\phi^*)(x)m(dx)$ is the unique invariant probability measure of $\{\xi; \Pi^{(\phi)}_x\}$.
 The following two lemmas are also simple consequences of \eqref{eq: asymptotic for q_t(x,y)}.
 They will be needed in the proof of  Theorem \ref{thm: main theorem}(3).
-% \begin{lem}[{\cite[Lemma 5.6]{RenSongSun2017Spine}}] \label{lem: ergodicity of the underlying process}
 \begin{lem}[{\cite[Lemma 5.1]{RenSongSun2017Spine}}] \label{lem: ergodicity of the underlying process}
 If $F\in \mathscr B_b(E\times [0,1]\times [0,\infty)$ is
 such that $F(y,u):= \lim_{t\to \infty} F(y,u,t)$ exists for each $y\in E$ and $u \in [0,1]$, then
@@ -1011,7 +996,6 @@ such that $F(y,u):= \lim_{t\to \infty} F(y,u,t)$ exists for each $y\in E$ and $u
 
 \begin{proof}
 	For each $(y,u,t)\in E\times [0,1]\times [0,\infty)$, define $\bar F(y,u,t) := \sup_{s:s\geq t} F(y,u,s)$.
-% Then $F\in \mathscr B_b(E\times [0,1]\times [0,\infty))$ and
 Then $\bar F\in \mathscr B_b(E\times [0,1]\times [0,\infty))$ and
 \begin{align}
 	F(x,u)
@@ -1124,7 +1108,6 @@ As a consequence, we have the desired result.
     \in [0,\infty),
     \quad s, t > 0.
   \end{align}
-  % One of the consequences of this equation is that, see \cite[Lemma 5.1]{RenSongSun2017Spine} for example,
   One of the consequences of this equation is that, see \cite[Lemma 5.2]{RenSongSun2017Spine} for example,
   \begin{align}
     \label{eq: uniform converges to 0}
@@ -1173,25 +1156,6 @@ As a consequence, we have the desired result.
 \begin{proof}
   [Proof of Proposition \ref{prop: convergence in a same speed}]
 	We use an argument similar to that used in \cite{RenSongSun2017Spine} for critical superprocesses with finite 2nd moment.
-  % CHANGE
-  % We will prove that for an appropriate map $t_0$ with
-  % $$
-  %	t_0(t)
-  %	\xrightarrow[t\to\infty]{} \infty;
-  %	\quad t_0(t)\| \phi^{-1}v_{t-t_0(t)}\|^{\gamma_0 - 1}_\infty
-  %	\xrightarrow[t\to\infty]{} 0,
-  % $$	
-  % we have
-  % $$
-  % \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
-	% \xrightarrow[t\to\infty]{} 0
-  % $$
-  % and
-  % $$
-  % \Big |\frac {\langle v_t, \phi^*\rangle_m} {\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big |
-  % \xrightarrow[t\to\infty]{} 0.
-  % $$
-  % Then the desired assertion follows easily from these and properties of uniform convergence.
   We only need to prove that there exists a map $t\mapsto a_t > 0$ such that
   \begin{align}
     \label{eq:k1}
@@ -1211,7 +1175,6 @@ As a consequence, we have the desired result.
     \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t},\phi^* \rangle_m}-1 \Big|
     \xrightarrow[t\to\infty]{} 0.
   \end{align}
-  % END CHANGE
 	
   For each $\mu\in\mathcal M^\phi_E$, denote by $\{(Y_t), (\xi_t),\mathbf n; \dot {\mathbf P}^{(\phi)}_\mu\}$ the spine representation of $\mathbb N^{(\phi)}_\mu$.
 	According to \eqref	{eq: equation for mu v-t}, \eqref{eq: mean of kuz measure} and Theorem \ref{thm: spine representation}, we have that for each $t>0$,
@@ -1225,16 +1188,7 @@ As a consequence, we have the desired result.
   Taking $\mu = \delta_x$ in \eqref{eq:vt-and-Y}, we get $(\phi^{-1}v_t)(x) =\dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]$.
   Recall that $d\nu = \phi^* dm$.
   Taking $\mu = \nu$ in \eqref{eq:vt-and-Y}, we get $\langle v_t, \phi^*\rangle_m = \dot {\mathbf P}_{\nu}^{(\phi)} [Y_t(\phi)^{-1}]$.
-  % DELETED
-  % Therefore, to complete the proof, we only need to show that
-  % \begin{align}
-  %  \label{eq:desired_for_main_theorem_2}
-  %  \dot{\mathbf P}_{\delta_x}^{(\phi)}[Y_t(\phi)^{-1}]
-  %  \stackrel[t\to \infty]{x\in E}{\sim}  \dot {\mathbf P}_\nu^{(\phi)} [Y_t(\phi)^{-1}].
-  % \end{align}
-  % END DELETED
-  
-  % In order to show this, we consider a decomposition of the immigration process $(Y_t)_{t\geq 0}$.
+
   In order to construct an $(a_t)_{t\geq 0}$ satisfying \eqref{eq:k1}, we consider a decomposition of the immigration process $(Y_t)_{t\geq 0}$.
   For any $t>0$ and any $G\in \mathscr B((0,t])$, define
   \begin{align}
@@ -1276,7 +1230,7 @@ As a consequence, we have the desired result.
       = \int_E  q_{t_0}(x,y)(\phi^{-1}v_{t-t_0})(y) m(dy).
   \end{align}
 
-  % The main idea is to show that both $\epsilon_x^1(t_0,t)$ and $\epsilon_x^2(t_0,t)$ are very small compared to $\dot {\mathbf P}_\nu^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]$ provided $t_0$ and $t- t_0$ are large enough.
+
   We will show that both $\epsilon_x^1(t_0,t)$ and $\epsilon_x^2(t_0,t)$ are very small compared to $\dot {\mathbf P}_\nu^{(\phi)}[Y_t^{(t_0,t]}(\phi)^{-1}]$ provided $t_0$ and $t- t_0$ are large enough.
   This is done in the following two lemmas whose proofs are postponed after this proof.
 
@@ -1315,29 +1269,13 @@ As a consequence, we have the desired result.
     \quad t_0(t)\| \phi^{-1}v_{t-t_0(t)}\|^{\gamma_0 - 1}_\infty
     \xrightarrow[t\to\infty]{} 0.
   \end{align}
-  Plugging this choice of $t_0(t)$ back into \eqref{vts-inequality}, we have that
-  \begin{align}\label{eq:k1}
-    \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
-    \xrightarrow[t\to\infty]{} 0.
-  \end{align}
-  % ADDED
+ % Plugging this choice of $t_0(t)$ back into \eqref{vts-inequality}, we have that
+%  \begin{align}\label{eq:k1}
+ %   \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
+ %   \xrightarrow[t\to\infty]{} 0.
+ % \end{align}
+ Plugging this choice of $t_0(t)$ into \eqref{vts-inequality}, we get \eqref{eq:k1}.
   Therefore, the desired assertion \eqref{eq:k1} is valid for $a_t := \langle v_{t-t_0(t)},\phi^* \rangle_m$.
-  % END ADDED
-  % DELETED
-  % Notice that
-  % \begin{align}\label{eq:k2}
-  %   \Big |\frac {\langle v_t, \phi^*\rangle_m} {\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big |
-  %   & \leq \int \Big | \frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)} , \phi^*\rangle_m} - 1 \Big| \phi \phi^*(x) m(dx)\\
-  %   & \leq \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t-t_0(t)},\phi^* \rangle_m}-1 \Big|
-  %   \xrightarrow[t\to\infty]{} 0.
-  % \end{align}
-  % Therefore, by \eqref{eq:k1}, \eqref{eq:k2} and the property of uniform convergence, we get
-  % \begin{align}
-  %   \sup_{x\in E}\Big|\frac{(\phi^{-1}v_t)(x)}{\langle v_{t},\phi^* \rangle_m}-1 \Big|
-  %   \xrightarrow[t\to\infty]{} 0,
-  % \end{align}
-  % as desired.
-  % END DELETED
 \end{proof}
 
 \begin{proof}
@@ -1357,7 +1295,6 @@ As a consequence, we have the desired result.
 
 \begin{proof}
   [Proof of Lemma \ref{lem:upperbound_of_epsilon-2}]
-% Using the Markov property of the spine process and properties Poisson random measures, we have
 Using the Markov property of the spine process and properties of Poisson random measures, we have
 \begin{align}\label{eq:epsilon-2}
 	|\epsilon_x^2(t_0,t)|
@@ -1697,18 +1634,15 @@ From \eqref{eq: equation for g}, we have
 	g(t,r, x) \leq c_f r,
 	\quad t\geq 0, r \geq 0, x\in E.
 \end{align}
-% From \eqref{eq: definition of eta}, \eqref{eq: definition for J_g}, \eqref{eq: upper bound for g} and the fact that $\gamma(\cdot) - 1 < 1$, we have almost surely
 From \eqref{eq: definition of eta}, \eqref{eq: definition for J_g}, \eqref{eq: upper bound for g} and the fact that $\gamma(\cdot) - 1 < 1$, we have $\Pi^{(\phi)}_{\cdot}$-almost surely
 \begin{align}
 	J_g(t,r, \xi)
 	&\leq \|\kappa \cdot (c_f\phi)^{\gamma - 1} \|_\infty \int_0^1 \big(  t\eta_{ut}^{\gamma - 1} (ru^{\frac{1}{\gamma_0 - 1}} )^{\gamma-1}  \big) \big(  \xi_{(1-u)t} \big) du
 	\\&= \| \kappa \cdot (c_f\phi)^{\gamma - 1} \|_\infty \int_0^1 \big(  r^{\gamma - 1}t^{1-\frac{\gamma - 1}{\gamma_0 - 1}}  \big( C_X (\gamma_0 - 1) \big)^{-\frac{\gamma - 1}{\gamma_0 - 1}}  \big) \big( \xi_{(1-u)t} \big) du
 	\\& \leq \max\{1,r\} \cdot \| \kappa \cdot (c_f\phi)^{\gamma - 1} \|_\infty \Big\|  \big( C_X (\gamma_0 - 1) \big)^{-\frac{\gamma - 1}{\gamma_0 - 1}}\Big\|_\infty
-	% \\& := c_2 \cdot \max  \{1,r\},
 	\\& =: c_2 \cdot \max  \{1,r\},
 	\quad t\geq 1, r\geq 0.
 \end{align}
-% From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_g} and \eqref{eq: upper bound for g}, we have almost surely
 From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_g} and \eqref{eq: upper bound for g}, we have $\Pi_{\cdot}^{(\phi)}$-almost surely
 \begin{align}
 	J'_g(t,r,\xi)
@@ -1717,7 +1651,6 @@ From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_g} and \eqref{eq
 	\\&=: c_3 \cdot r^{\gamma_0 - 1},
 	\quad t\geq 0, r\geq 0.
 \end{align}
-% From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_G} and \eqref{eq: upper bound for G}, we have almost surely
 From \eqref{eq: definition of eta}, \eqref{eq: definition of J'_G} and \eqref{eq: upper bound for G}, we have $\Pi^{(\phi)}_\cdot$-almost surely
 \begin{align}\label{eq: upper bound for J'_G}
 	J'_G(t,r,\xi)
@@ -1993,19 +1926,16 @@ Step 8: Finally, $M \equiv 0$ clearly implies that $\lim_{t\to \infty} I_3(t,\th
 \appendix
 \section{}
 \subsection{Examples}
-%new
 \label{sec:examples}
 
 In this Subsection, we briefly recall from \cite{RenSongZhang2015Limit} some examples of Markov processes satisfying Assumptions \ref{asp: 1} and \ref{asp: 3}. We will not try to give the most
 general examples. For details and more examples, we refer our readers to \cite{RenSongZhang2015Limit}.
 
-% ADDED
 \begin{exa}
   Suppose that $E$ is a finite state space and $m$ is the counting measure on $E$. 
   Let $\xi$ be an irreducible, continuous-time Markov chain. 
   Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies Assumptions \ref{asp: 1} and \ref{asp: 3}.
 \end{exa}
-% END ADDED
 
 \begin{exa} 
 Suppose that $E$ is a bounded Lipschitz connected  open set of $\mathbb R^d$ and that $m$ denotes the Lebesgue measure on $E$.
@@ -2069,7 +1999,7 @@ Let $\xi$ be the process in $E$ obtained by killing $\xi^{(1)}$ upon exiting $E$
 Then the semigroup $(P_t)_{t\ge 0}$ of $\xi$ satisfies
 Assumptions \ref{asp: 1} and \ref{asp: 3}.
 \end{exa}
-%end new
+
 
 \subsection{Analytical results}
 \label{sec: Characterizing the Zolotarev's distribution using an non-linear delay equation}
@@ -2220,7 +2150,6 @@ We thank the referees for helpful comments on the first version of this paper.
 	
 	
 \bibitem{EnglanderKyprianou2004Local}
-	% Engländer, J. and Kyprianou, A.:
 	Engl\"{a}nder, J. and Kyprianou, A.:
 	\emph{Local extinction versus local exponential growth for spatial branching processes.}
 	Ann. Probab. \textbf{32} (2004), no. 1A, 78–99.
@@ -2269,16 +2198,13 @@ We thank the referees for helpful comments on the first version of this paper.
 
 \bibitem{KSV1} 
   Kim, P., Song, R. and Vondracek, Z.:
-  % Two-sided Green function estimates for killed subordinate Brownian motions.
   \emph{Two-sided Green function estimates for killed subordinate Brownian motions.}
-  % \emph{Proc. London Math. Soc.} \textbf{104} (2012), 927--958.
   Proc. London Math. Soc. \textbf{104} (2012), 927--958.
 
 \bibitem{KSV2} 
   Kim, P., Song, R. and Vondracek, Z.:
-  % Potential theory of subordinate Brownian motions with Gaussian components.
+
   \emph{Potential theory of subordinate Brownian motions with Gaussian components.}
-  % \emph{Stoch. Proc. Appl.} \textbf{123} (2013), 764--795.
   Stoch. Proc. Appl. \textbf{123} (2013), 764--795.
 	
 \bibitem{Kolmogorov1938Zur-losung}
