@@ -26,3 +26,7 @@ stableLimit\.prv/tmpJKFyMk/
 *.fls
 
 *.fdb_latexmk
+
+.ipynb_checkpoints/
+
+stableLimit.pdf
